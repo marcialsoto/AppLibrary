@@ -1,0 +1,59 @@
+extends includes/base
+block globals
+    - var title= 'Tipografía'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Tipografía')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Tipografía", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Cabeceras', '', '')
+            pre
+                code
+                    = '<h1>h1. Bootstrap heading</h1>'
+                    |
+                    |
+                    = '<h2>h2. Bootstrap heading</h2>'
+                    |
+                    |
+                    = '<h3>h3. Bootstrap heading</h3>'
+                    |
+                    |
+                    = '<h4>h4. Bootstrap heading</h4>'
+                    |
+                    |
+                    = '<h5>h5. Bootstrap heading</h5>'
+                    |
+                    |
+                    = '<h6>h6. Bootstrap heading</h6>'
+
+            h1 h1. Bootstrap heading
+            h2 h2. Bootstrap heading
+            h3 h3. Bootstrap heading
+            h4 h4. Bootstrap heading
+            h5 h5. Bootstrap heading
+            h6 h6. Bootstrap heading
+        
+        +card('Cabeceras Display', '', '')
+            pre
+                code
+                    = '<h1 class="display-1">Display 1</h1>'
+                    |
+                    |
+                    = '<h1 class="display-2">Display 2</h1>'
+                    |
+                    |
+                    = '<h1 class="display-3">Display 3</h1>'
+                    |
+                    |
+                    = '<h1 class="display-4">Display 4</h1>'
+
+            h1.display-1 Display 1
+            h1.display-2 Display 2
+            h1.display-3 Display 3
+            h1.display-4 Display 4

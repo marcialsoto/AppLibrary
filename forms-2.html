@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Formularios 2</title>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="dist/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <body class="theme-default" id="page">
+      <div id="wrapper">
+        <nav class="header">
+          <div class="navbar-header">
+            <h1 id="brand"><a href="./dashboard.html">SAITT</a></h1>
+          </div>
+          <button class="btn btn-link sidebartoggler hamburger hamburger--spin" id="sidebartoggler" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                <picture> <i class="fas fa-user-circle"></i></picture><span class="name"> Eistein Dolores </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
+          </ul>
+        </nav>
+        <section id="content">
+          <nav class="main-nav" id="sidebar">
+            <div class="user-profile">
+              <div class="profile-img">
+                <picture> <i class="fas fa-user-circle"></i></picture>
+              </div>
+              <div class="profile-menu">
+                <h5>Eistein Dolores</h5><small>Administrador</small>
+              </div>
+            </div>
+                        <ul class="nav flex-column components">   
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled show" id="contenido">
+                              <li><a href="./buttons.html" title="Botones">Botones</a>
+                              </li>
+                              <li><a href="./forms.html" title="Formularios">Formularios</a>
+                              </li>
+                              <li><a class="active" href="./forms-2.html" title="Formularios 2">Formularios 2</a>
+                              </li>
+                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              </li>
+                              <li><a href="./iframe.html" title="Iframe">Iframe</a>
+                              </li>
+                              <li><a href="./index.html" title="Login">Login</a>
+                              </li>
+                              <li><a href="./modals.html" title="Modales">Modales</a>
+                              </li>
+                              <li><a href="./tables.html" title="Tablas">Tablas</a>
+                              </li>
+                              <li><a href="./typo.html" title="Tipografía">Tipografía</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+          </nav>
+          <main>
+            <div class="page-header">
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Formularios 2</li>
+                              </ol>
+                            </nav>
+              <section class="page-action">
+                <h2>Formularios 2</h2>
+                <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
+              </section>
+            </div>
+            <section class="row">
+              <div class="col-sm-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Registro de Beneficiarios</h4>
+                                  <form>
+                                    <fieldset>
+                                      <legend>Sobre el Proyecto</legend>
+                                      <div class="row">
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" id="txtDNI" type="text" required="">
+                                          <label for="txtDNI">Buscar por SNIP</label>
+                                        </div>
+                                        <div class="form-group input-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04" required="">
+                                            <option value="0" selected="">Seleccionar...</option>
+                                            <option value="1">APROVECHAMIENTO DE LOS RECURSOS HIDRICOS PARA USO AGRARIO</option>
+                                            <option value="2">REDUCCION DE VULNERABILIDAD Y ATENCION DE EMERGENCIAS POR DESASTRES</option>
+                                            <option value="3">REDUCCION DE LA DEGRADACION DE LOS SUELOS AGRARIOS </option>
+                                          </select>
+                                          <label>Buscar por descripción de SNIP</label>
+                                          <div class="input-group-append">
+                                            <button class="btn btn-light" type="button">Buscar</button>
+                                          </div>
+                                        </div>
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" id="date-end" type="date">
+                                          <label class="date-end">Fecha de entrega</label>
+                                        </div>
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" type="text" value="2018" disabled="disabled">
+                                          <label>Periodo</label>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04" required="">
+                                            <option value="" selected="">Seleccionar...</option>
+                                            <option value="1">PRODUCTORES AGRARIOS CON COMPETENCIAS PARA EL APROVECHAMIENTO DEL RECURSO HIDRICO PARA USO AGRARIO</option>
+                                          </select>
+                                          <label for="">Componente</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                            <option value="1">DESARROLLO DE CAPACIDADES A PRODUCTORES AGRARIOS</option>
+                                            <option value="2">ASISTENCIA TECNICA A PRODUCTORES AGRARIOS EN PRACTICAS DE RIEGO</option>
+                                          </select>
+                                          <label for="">Actividad</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                            <option value="1">NOMBRE DE SUB ACTIVIDAD</option>
+                                          </select>
+                                          <label for="">Sub Actividad</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                            <option value="1">TALLER</option>
+                                          </select>
+                                          <label for="">Bien, servicio o activo</label>
+                                        </div>
+                                      </div>
+                                    </fieldset>
+                                    <fieldset>
+                                      <legend>Sobre el Beneficiario</legend>
+                                      <div class="row">
+                                        <div class="form-group input-group col-lg-3 input-field">
+                                          <input class="form-control" id="txtDNISearch" type="text">
+                                          <label for="txtDNISearch">Consultar DNI</label>
+                                          <div class="input-group-append">
+                                            <button class="btn btn-light" type="button">Buscar</button>
+                                          </div>
+                                        </div>
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" id="txtApePat" type="text">
+                                          <label for="txtApePat">Apellido Paterno</label>
+                                        </div>
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" id="txtApeMat" type="text">
+                                          <label for="txtApeMat">Apellido Materno</label>
+                                        </div>
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" id="txtNombre" type="text">
+                                          <label for="txtNombre">Nombre(s)</label>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-lg-9">
+                                          <div class="row">
+                                            <div class="form-group col-lg-4">
+                                              <select class="custom-select" id="inputGroupSelect04">
+                                                <option selected="">Seleccionar...</option>
+                                                <option value="1">Masculino</option>
+                                                <option value="2">Femenino</option>
+                                              </select>
+                                              <label for="">Sexo</label>
+                                            </div>
+                                            <div class="form-group col-lg-4 input-field">
+                                              <input class="form-control" type="date">
+                                              <label for="">Fecha de Nacimiento</label>
+                                            </div>
+                                            <div class="form-group col-lg-4 input-field">
+                                              <input class="form-control" type="text" disabled="disabled">
+                                              <label for="">Edad</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                          <div class="row">
+                                            <div class="col-lg-12 form-group input-field">
+                                              <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                                              <label for="exampleFormControlFile1">Foto</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                            <option value="1">Sí</option>
+                                            <option value="2">No</option>
+                                          </select>
+                                          <label for="">Jefe de Familia</label>
+                                        </div>
+                                        <div class="form-group input-field col-lg-3">
+                                          <input class="form-control" type="text">
+                                          <label>Número de personas a su cargo</label>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                            <option value="1">Amazonas</option>
+                                            <option value="2">Apurímac</option>
+                                          </select>
+                                          <label for="">Departamento</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Provincia</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Distrito</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Centro Poblado</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Categoría Centro Poblado</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Quintil de Pobreza</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Organización Campesina</label>
+                                        </div>
+                                        <div class="form-group col-lg-3">
+                                          <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected="">Seleccionar...</option>
+                                          </select>
+                                          <label for="">Microcuenca</label>
+                                        </div>
+                                      </div>
+                                    </fieldset>
+                                    <button class="btn btn-light" type="submit">Botón secundario        </button>
+                                    <button class="btn btn-primary" type="submit">Botón de accción       </button>
+                                  </form>
+                                </div>
+                              </div>
+              </div>
+            </section>
+          </main>
+        </section>
+      </div>
+      <script src="dist/scripts/vendor.js"></script>
+    </body>
+  </head>
+</html>

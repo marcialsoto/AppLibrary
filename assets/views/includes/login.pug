@@ -1,0 +1,19 @@
+block variables
+doctype html
+html(lang="en")
+  head
+    title #{title}
+    // Required meta tags
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Favicons
+    link(rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180")
+    link(rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png")
+    link(rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png")
+    link(rel="icon" href="dist/images/favicon.ico")
+    block styles
+        link(rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css")
+    body(id=(body_id || 'login'), class=(body_class || 'theme-default'))
+        block content
+        block scripts
+            script(src='dist/scripts/vendor.js')

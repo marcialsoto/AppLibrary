@@ -1,0 +1,142 @@
+block globals
+
+doctype html
+html(lang="en")
+  head
+    title #{title}
+    // Required meta tags
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Favicons
+    link(rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180")
+    link(rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png")
+    link(rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png")
+    link(rel="icon" href="dist/images/favicon.ico")
+    block styles
+        link(rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css")
+
+    body(id=(body_id || 'default-page'), class=(body_class || 'theme-default'))
+        div#wrapper
+            nav.header
+                .navbar-header
+                    h1#brand
+                        a(href="./dashboard.html") SAITT
+                button#sidebartoggler.btn.btn-link.sidebartoggler.hamburger.hamburger--spin(type="button")
+                    span.hamburger-box
+                        span.hamburger-inner
+                ul.nav.ml-auto
+                    li.nav-item.dropdown.notifications.new
+                        a.nav-link(href="" data-toggle="dropdown" aria-expanded="false")
+                            i.far.fa-bell
+                            sup
+                                span.badge.badge-secondary 8
+                        .dropdown-menu
+                            a.dropdown-item.active(href="#") Link
+                            a.dropdown-item(href="#") Link
+                            a.dropdown-item(href="#") Link
+                    li.nav-item.dropdown
+                        a.nav-link.dropdown-toggle(href="" data-toggle="dropdown" aria-expanded="false")
+                            picture 
+                              i.fas.fa-user-circle
+                            
+                            span.name  Eistein Dolores 
+                        .dropdown-menu(x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;")
+                            a.dropdown-item.active(href="#") Link
+                            a.dropdown-item(href="#") Link
+                            a.dropdown-item(href="#") Link
+                            a.dropdown-item(href="#") Salir
+                    li.nav-item
+                      a.nav-link(href="#")
+                        i.fas.fa-cogs
+            section#content
+                nav#sidebar.main-nav
+                    .user-profile
+                        .profile-img
+                            picture 
+                              i.fas.fa-user-circle
+                        .profile-menu
+                            h5 Eistein Dolores
+                            small Administrador
+
+                    mixin mainmenu(activeItem, activeItemChild)
+                        -var menuItems = [{name: 'Inicio', href: './dashboard.html', icon: 'fas fa-home', isActive: false, child: null}, {name: 'Contenido', href :'contenido', icon: 'fas fa-edit', isActive: false, child: [{name: 'Botones', href: './buttons.html', isActive: false, child: null}, {name: 'Formularios', href: './forms.html', isActive: false, child: null}, {name: 'Formularios 2', href: './forms-2.html', isActive: false, child: null}, {name: 'Íconos', href: './icons.html', isActive: false, child: null}, {name: 'Iframe', href: './iframe.html', isActive: false, child: null}, {name: 'Login', href: './index.html', isActive: false, child: null}, {name: 'Modales', href: './modals.html', isActive: false, child: null}, {name: 'Tablas', href: './tables.html', isActive: false, child: null}, {name: 'Tipografía', href: './typo.html', isActive: false, child: null}]}]
+
+                        ul.nav.flex-column.components    
+                            each val, index in menuItems
+                                li.nav-item
+                                    if menuItems[index].name === activeItem
+                                        if val.child == null
+                                            a.nav-link.active(href=val.href, title=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
+                                        else
+                                            a.nav-link.active.dropdown-toggle(href='#' + val.href, title=val.name, data-toggle='collapse', aria-expanded='true', aria-controls=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
+                                            ul(class='collapse list-unstyled show' id=val.href)
+                                                each value, index in val.child
+                                                    li
+                                                        if value.name === activeItemChild
+                                                            a.active(href=value.href, title=value.name)= value.name
+                                                        else
+                                                            a(href=value.href, title=value.name)= value.name
+                                    else
+                                        if val.child == null
+                                            a.nav-link(href=val.href, title=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
+                                        else
+                                            a.nav-link.dropdown-toggle(href='#' + val.href, title=val.name, data-toggle='collapse', aria-expanded='false', aria-controls=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
+                                            ul(class='collapse list-unstyled' id=val.href)
+                                                each value in val.child
+                                                    li
+                                                        a(href=value.href, title=value.name)= value.name
+                                
+                    block mainmenu
+                        +mainmenu('Inicio','')
+                block main
+                    main
+                        .page-header
+                            mixin breadcrumb(params)
+                                nav(aria-label='breadcrumb')
+                                    ol(class='breadcrumb')
+                                        each param in params
+                                            if param.href != ''
+                                                li(class='breadcrumb-item')
+                                                    a.breadcrumb-item(href=param.href)= param.name
+                                            else
+                                                li(class='breadcrumb-item active', aria-current='page')= param.name
+                            block breadcrumb
+                                -var items = [{name : "Inicio", href : './dashboard.html'}]
+                                +breadcrumb(items)
+                            section.page-action
+                                h2 #{title}
+                                block action
+                                    button(type="button", class="btn btn-sm btn-secondary") Llamada +
+                        
+                        section.row
+                            mixin card(card_title, card_subtitle, href)
+                                .card.mb-5
+                                    .card-block.card-body
+                                        if card_title
+                                            h4.card-title= card_title
+                                        if href
+                                            .dropdown.card-config
+                                                a.btn.btn-light.btn-sm(href= href)
+                                                    em.fa.fa-list-ul
+                                                    |  Ver todo
+                                        if card_subtitle
+                                            h6.card-subtitle.mb-2.text-muted= card_subtitle
+                                        if block
+                                            block
+                                        else
+                                            p Ingrese contenido del card.
+                            block content
+                                .col-md-12.col-lg-8
+                                    +card('Título del card')
+                                
+        block scripts
+            script(src='dist/scripts/vendor.js')
+            

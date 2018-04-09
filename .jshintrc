@@ -1,0 +1,10 @@
+{
+    "undef": true,
+    "unused": true,
+    "strict": false,
+    "devel": true,
+    "globals": {
+        "$": false
+    },
+    "predef": ["MY_GLOBAL"]
+}

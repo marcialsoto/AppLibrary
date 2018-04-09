@@ -1,0 +1,19 @@
+extends includes/base
+block globals
+    - var title= 'Íconos'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Íconos')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Íconos", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('FontAwesome', 'Versión 5', 'https://fontawesome.com/icons')
+            p
+                | Se utiliza la quinta versión de FontAwesome. Para ver los íconos posibles a utilizar, 
+                a(href='https://fontawesome.com/icons') clic aquí 
+                |.

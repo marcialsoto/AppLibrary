@@ -1,0 +1,129 @@
+extends includes/base
+block globals
+    - var title= 'Botones'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Botones')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Botones", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-md-12
+        +card('Pequeños', '', '')
+            
+            button.btn.btn-primary.btn-sm(type="button") Primary
+            button.btn.btn-secondary.btn-sm(type="button") Secondary
+            button.btn.btn-success.btn-sm(type="button") Success
+            button.btn.btn-danger.btn-sm(type="button") Danger
+            button.btn.btn-warning.btn-sm(type="button") Warning
+            button.btn.btn-info.btn-sm(type="button") Info
+            button.btn.btn-light.btn-sm(type="button") Light
+            button.btn.btn-dark.btn-sm(type="button") Dark
+            button.btn.btn-link.btn-sm(type="button") Link
+            pre
+                code
+                    = '<button type="button" class="btn btn-primary btn-sm">Primary</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-secondary btn-sm">Secondary</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-success btn-sm">Success</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-danger btn-sm">Danger</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-warning btn-sm">Warning</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-info btn-sm">Info</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-light btn-sm">Light</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-dark btn-sm">Dark</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-link btn-sm">Link</button>'
+        +card('Medianos (por defecto)', '', '')
+            
+            button.btn.btn-primary(type="button") Primary
+            button.btn.btn-secondary(type="button") Secondary
+            button.btn.btn-success(type="button") Success
+            button.btn.btn-danger(type="button") Danger
+            button.btn.btn-warning(type="button") Warning
+            button.btn.btn-info(type="button") Info
+            button.btn.btn-light(type="button") Light
+            button.btn.btn-dark(type="button") Dark
+            button.btn.btn-link(type="button") Link
+            pre
+                code
+                    = '<button type="button" class="btn btn-primary">Primary</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-secondary">Secondary</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-success">Success</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-danger">Danger</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-warning">Warning</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-info">Info</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-light">Light</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-dark">Dark</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-link">Link</button>'
+
+        +card('Largos', '', '')
+            
+            button.btn.btn-primary.btn-lg(type="button") Primary
+            button.btn.btn-secondary.btn-lg(type="button") Secondary
+            button.btn.btn-success.btn-lg(type="button") Success
+            button.btn.btn-danger.btn-lg(type="button") Danger
+            button.btn.btn-warning.btn-lg(type="button") Warning
+            button.btn.btn-info.btn-lg(type="button") Info
+            button.btn.btn-light.btn-lg(type="button") Light
+            button.btn.btn-dark.btn-lg(type="button") Dark
+            button.btn.btn-link.btn-lg(type="button") Link
+            pre
+                code
+                    = '<button type="button" class="btn btn-primary btn-lg">Primary</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-secondary btn-lg">Secondary</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-success btn-lg">Success</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-danger btn-lg">Danger</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-warning btn-lg">Warning</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-info btn-lg">Info</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-light btn-lg">Light</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-dark btn-lg">Dark</button>'
+                    |
+                    |
+                    = '<button type="button" class="btn btn-link btn-lg">Link</button>'

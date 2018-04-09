@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Modales</title>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="dist/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <body class="theme-default" id="page">
+      <div id="wrapper">
+        <nav class="header">
+          <div class="navbar-header">
+            <h1 id="brand"><a href="./dashboard.html">SAITT</a></h1>
+          </div>
+          <button class="btn btn-link sidebartoggler hamburger hamburger--spin" id="sidebartoggler" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                <picture> <i class="fas fa-user-circle"></i></picture><span class="name"> Eistein Dolores </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
+          </ul>
+        </nav>
+        <section id="content">
+          <nav class="main-nav" id="sidebar">
+            <div class="user-profile">
+              <div class="profile-img">
+                <picture> <i class="fas fa-user-circle"></i></picture>
+              </div>
+              <div class="profile-menu">
+                <h5>Eistein Dolores</h5><small>Administrador</small>
+              </div>
+            </div>
+                        <ul class="nav flex-column components">   
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled show" id="contenido">
+                              <li><a href="./buttons.html" title="Botones">Botones</a>
+                              </li>
+                              <li><a href="./forms.html" title="Formularios">Formularios</a>
+                              </li>
+                              <li><a href="./forms-2.html" title="Formularios 2">Formularios 2</a>
+                              </li>
+                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              </li>
+                              <li><a href="./iframe.html" title="Iframe">Iframe</a>
+                              </li>
+                              <li><a href="./index.html" title="Login">Login</a>
+                              </li>
+                              <li><a class="active" href="./modals.html" title="Modales">Modales</a>
+                              </li>
+                              <li><a href="./tables.html" title="Tablas">Tablas</a>
+                              </li>
+                              <li><a href="./typo.html" title="Tipografía">Tipografía</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+          </nav>
+          <main>
+            <div class="page-header">
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Modales</li>
+                              </ol>
+                            </nav>
+              <section class="page-action">
+                <h2>Modales</h2>
+                <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
+              </section>
+            </div>
+            <section class="row">
+              <div class="col-sm-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Modal por defecto</h4>
+                                  <pre><code>&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModal&quot;&gt;
+Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;exampleModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+&lt;div class=&quot;modal-content&quot;&gt;
+&lt;div class=&quot;modal-header&quot;&gt;
+&lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalLabel&quot;&gt;Modal title&lt;/h5&gt;
+&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;modal-body&quot;&gt;
+...
+&lt;/div&gt;
+&lt;div class=&quot;modal-footer&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                  <!-- Button trigger modal-->
+                                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
+                                  <!-- Modal-->
+                                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content modal-lg">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button><span aria-hidden="true">×</span>
+                                        </div>
+                                        <div class="modal-body">
+                                          <form>
+                                            <fieldset>
+                                              <legend>Esta es la leyenda</legend>
+                                              <div class="row">
+                                                <div class="form-group input-field col-lg-6">
+                                                  <input class="form-control" type="text">
+                                                  <label>Buscar por SNIP</label>
+                                                </div>
+                                                <div class="form-group input-group col-lg-6">
+                                                  <select class="custom-select" id="inputGroupSelect04">
+                                                    <option selected="">Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                  </select>
+                                                  <label>Buscar por descripción de SNIP</label>
+                                                  <div class="input-group-append">
+                                                    <button class="btn btn-light" type="button">Buscar</button>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group input-field col-lg-3">
+                                                  <input class="form-control" type="date">
+                                                  <label>Fecha de entrega</label>
+                                                </div>
+                                              </div>
+                                            </fieldset>
+                                          </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                          <button class="btn btn-primary" type="button">Save changes</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Modal centrado verticalmente</h4>
+                                  <pre><code>&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModalCenter&quot;&gt;
+Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;exampleModalCenter&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+&lt;div class=&quot;modal-content&quot;&gt;
+&lt;div class=&quot;modal-header&quot;&gt;
+&lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalCenterLabel&quot;&gt;Modal title&lt;/h5&gt;
+&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;modal-body&quot;&gt;
+...
+&lt;/div&gt;
+&lt;div class=&quot;modal-footer&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                  <!-- Button trigger modal-->
+                                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
+                                  <!-- Modal-->
+                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalCenterLabel">Modal title</h5>
+                                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button><span aria-hidden="true">×</span>
+                                        </div>
+                                        <div class="modal-body">...</div>
+                                        <div class="modal-footer">
+                                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                          <button class="btn btn-primary" type="button">Save changes</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+              </div>
+            </section>
+          </main>
+        </section>
+      </div>
+      <script src="dist/scripts/vendor.js"></script>
+    </body>
+  </head>
+</html>

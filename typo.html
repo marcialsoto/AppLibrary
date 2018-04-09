@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tipografía</title>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="dist/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <body class="theme-default" id="page">
+      <div id="wrapper">
+        <nav class="header">
+          <div class="navbar-header">
+            <h1 id="brand"><a href="./dashboard.html">SAITT</a></h1>
+          </div>
+          <button class="btn btn-link sidebartoggler hamburger hamburger--spin" id="sidebartoggler" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                <picture> <i class="fas fa-user-circle"></i></picture><span class="name"> Eistein Dolores </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
+          </ul>
+        </nav>
+        <section id="content">
+          <nav class="main-nav" id="sidebar">
+            <div class="user-profile">
+              <div class="profile-img">
+                <picture> <i class="fas fa-user-circle"></i></picture>
+              </div>
+              <div class="profile-menu">
+                <h5>Eistein Dolores</h5><small>Administrador</small>
+              </div>
+            </div>
+                        <ul class="nav flex-column components">   
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled show" id="contenido">
+                              <li><a href="./buttons.html" title="Botones">Botones</a>
+                              </li>
+                              <li><a href="./forms.html" title="Formularios">Formularios</a>
+                              </li>
+                              <li><a href="./forms-2.html" title="Formularios 2">Formularios 2</a>
+                              </li>
+                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              </li>
+                              <li><a href="./iframe.html" title="Iframe">Iframe</a>
+                              </li>
+                              <li><a href="./index.html" title="Login">Login</a>
+                              </li>
+                              <li><a href="./modals.html" title="Modales">Modales</a>
+                              </li>
+                              <li><a href="./tables.html" title="Tablas">Tablas</a>
+                              </li>
+                              <li><a class="active" href="./typo.html" title="Tipografía">Tipografía</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+          </nav>
+          <main>
+            <div class="page-header">
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Tipografía</li>
+                              </ol>
+                            </nav>
+              <section class="page-action">
+                <h2>Tipografía</h2>
+                <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
+              </section>
+            </div>
+            <section class="row">
+              <div class="col-sm-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Cabeceras</h4>
+                                  <pre><code>&lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;
+&lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;
+&lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;
+&lt;h4&gt;h4. Bootstrap heading&lt;/h4&gt;
+&lt;h5&gt;h5. Bootstrap heading&lt;/h5&gt;
+&lt;h6&gt;h6. Bootstrap heading&lt;/h6&gt;</code></pre>
+                                  <h1>h1. Bootstrap heading</h1>
+                                  <h2>h2. Bootstrap heading</h2>
+                                  <h3>h3. Bootstrap heading</h3>
+                                  <h4>h4. Bootstrap heading</h4>
+                                  <h5>h5. Bootstrap heading</h5>
+                                  <h6>h6. Bootstrap heading</h6>
+                                </div>
+                              </div>
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Cabeceras Display</h4>
+                                  <pre><code>&lt;h1 class=&quot;display-1&quot;&gt;Display 1&lt;/h1&gt;
+&lt;h1 class=&quot;display-2&quot;&gt;Display 2&lt;/h1&gt;
+&lt;h1 class=&quot;display-3&quot;&gt;Display 3&lt;/h1&gt;
+&lt;h1 class=&quot;display-4&quot;&gt;Display 4&lt;/h1&gt;</code></pre>
+                                  <h1 class="display-1">Display 1</h1>
+                                  <h1 class="display-2">Display 2</h1>
+                                  <h1 class="display-3">Display 3</h1>
+                                  <h1 class="display-4">Display 4</h1>
+                                </div>
+                              </div>
+              </div>
+            </section>
+          </main>
+        </section>
+      </div>
+      <script src="dist/scripts/vendor.js"></script>
+    </body>
+  </head>
+</html>

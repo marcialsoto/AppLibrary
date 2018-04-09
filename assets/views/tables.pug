@@ -1,0 +1,237 @@
+extends includes/base
+block globals
+    - var title= 'Tablas'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Tablas')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Tablas", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Tablas por defecto', '', '')
+            p 
+                | Usa la etiqueta 
+                code table 
+                | por defecto
+            pre
+                code
+                    = '<table class="table">'
+                    |
+                    |
+                    = '<table>'
+                    |
+                    |
+                    = '<thead>'
+                    |
+                    |
+                    = '<tr>'
+                    |
+                    |
+                    = '<th scope="col">...</th>'
+                    |
+                    |
+                    = '...'
+                    |
+                    |
+                    = '</tr>'
+                    |
+                    |
+                    = '</thead>'
+                    |
+                    |
+                    = '<tbody>'
+                    |
+                    |
+                    = '<tr>'
+                    |
+                    |
+                    = '<th scope="col">...</th>'
+                    |
+                    |
+                    = '<td>...</td>'
+                    |
+                    |
+                    = '</tr>'
+                    |
+                    |
+                    = '</tbody>'
+                    |
+                    |
+                    = '</table>'
+
+            body
+                table
+                    thead
+                        tr
+                            th(scope="col") #
+                            th(scope="col") First
+                            th(scope="col") Last
+                            th(scope="col") Handle
+                    tbody
+                        tr
+                            th(scope="row") 1
+                            td Mark
+                            td Otto
+                            td @mdo
+                        tr
+                            th(scope="row") 2
+                            td Jacob
+                            td Thornton
+                            td @fat
+                        tr
+                            th(scope="row") 3
+                            td Larry
+                            td the Bird
+                            td @twitter
+        +card('Tablas con jQuery DataTables', '', '')
+            p 
+                | Usa la etiqueta 
+                code table 
+                | por defecto además de la clase 
+                code datadrig
+                |.
+            pre
+                code
+                    = '<table class="dataagrid">'
+                    |
+                    |
+                    = '<table>'
+                    |
+                    |
+                    = '<thead>'
+                    |
+                    |
+                    = '<tr>'
+                    |
+                    |
+                    = '<th scope="col">...</th>'
+                    |
+                    |
+                    = '...'
+                    |
+                    |
+                    = '</tr>'
+                    |
+                    |
+                    = '</thead>'
+                    |
+                    |
+                    = '<tbody>'
+                    |
+                    |
+                    = '<tr>'
+                    |
+                    |
+                    = '<th scope="col">...</th>'
+                    |
+                    |
+                    = '<td>...</td>'
+                    |
+                    |
+                    = '</tr>'
+                    |
+                    |
+                    = '</tbody>'
+                    |
+                    |
+                    = '</table>'
+  
+            table(id='datagrid')
+                thead
+                    tr
+                        th(scope="col") #
+                        th(scope="col") First
+                        th(scope="col") Last
+                        th(scope="col") Acciones
+                tbody
+                    tr
+                        th(scope="row") 1
+                        td Mark
+                        td Otto
+                        td
+                            nav.nav-actions
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Ver") 
+                                    i.fas.fa-eye
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Editar")
+                                    i.fas.fa-edit
+                                a.danger(href="#", data-toggle="tooltip", data-placement="top", title="Eliminar")
+                                    i.fas.fa-trash-alt
+                    tr
+                        th(scope="row") 2
+                        td Jacob
+                        td Thornton
+                        td
+                            nav.nav-actions
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Ver") 
+                                    i.fas.fa-eye
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Editar")
+                                    i.fas.fa-edit
+                                a.danger(href="#", data-toggle="tooltip", data-placement="top", title="Eliminar")
+                                    i.fas.fa-trash-alt
+                    tr
+                        th(scope="row") 3
+                        td Larry
+                        td the Bird
+                        td 
+                            nav.nav-actions
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Ver") 
+                                    i.fas.fa-eye
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Editar")
+                                    i.fas.fa-edit
+                                a.danger(href="#", data-toggle="tooltip", data-placement="top", title="Eliminar")
+                                    i.fas.fa-trash-alt
+
+            p 
+                | Para un mayor control, se puede usar DataTables, desde JavaScript.
+
+            pre
+                code
+                    = 'let $ = require("jquery");'
+                    |
+                    |
+                    = 'let DataTable = require("datatables.net-responsive-bs4");'
+                    |
+                    |
+                    |
+                    = '$("table").DataTable();'
+
+block append scripts
+    script.
+      let $ = require('jquery');
+      let DataTable = require('datatables.net-responsive-bs4')();
+  
+      $(document).ready(function() {
+        $('table#datagrid').DataTable({
+            language: {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            },
+            responsive: true
+        });
+      });
+
+

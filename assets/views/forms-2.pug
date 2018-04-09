@@ -1,0 +1,145 @@
+extends includes/base
+block globals
+    - var title= 'Formularios 2'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Formularios 2')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Formularios 2", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Registro de Beneficiarios', '', '')
+            form
+                fieldset
+                    legend Sobre el Proyecto
+                    .row
+                        .form-group.input-field.col-lg-3
+                            input.form-control(id="txtDNI", type="text" required="")
+                            label(for="txtDNI") Buscar por SNIP
+                        .form-group.input-group.col-lg-3
+                            select#inputGroupSelect04.custom-select(required="")
+                                option(value="0", selected="") Seleccionar...
+                                option(value="1") APROVECHAMIENTO DE LOS RECURSOS HIDRICOS PARA USO AGRARIO
+                                option(value="2") REDUCCION DE VULNERABILIDAD Y ATENCION DE EMERGENCIAS POR DESASTRES
+                                option(value="3") REDUCCION DE LA DEGRADACION DE LOS SUELOS AGRARIOS 
+                            label Buscar por descripción de SNIP
+                            .input-group-append
+                                button.btn.btn-light(type="button") Buscar
+                        .form-group.input-field.col-lg-3
+                            input.form-control(id="date-end", type="date")
+                            label(class="date-end") Fecha de entrega
+                        .form-group.input-field.col-lg-3
+                            input.form-control(type="text", value="2018", disabled="disabled")
+                            label Periodo
+                    .row
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select(required="")
+                                option(value="", selected="") Seleccionar...
+                                option(value="1") PRODUCTORES AGRARIOS CON COMPETENCIAS PARA EL APROVECHAMIENTO DEL RECURSO HIDRICO PARA USO AGRARIO
+                            label(for="") Componente
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                                option(value="1") DESARROLLO DE CAPACIDADES A PRODUCTORES AGRARIOS
+                                option(value="2") ASISTENCIA TECNICA A PRODUCTORES AGRARIOS EN PRACTICAS DE RIEGO
+                            label(for="") Actividad
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                                option(value="1") NOMBRE DE SUB ACTIVIDAD
+                            label(for="") Sub Actividad
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                                option(value="1") TALLER
+                            label(for="") Bien, servicio o activo
+                
+                fieldset
+                    legend Sobre el Beneficiario
+                    .row
+                        .form-group.input-group.col-lg-3.input-field
+                            input.form-control(id="txtDNISearch", type="text")
+                            label(for="txtDNISearch") Consultar DNI
+                            .input-group-append
+                                button.btn.btn-light(type="button") Buscar
+                        .form-group.input-field.col-lg-3
+                            input.form-control(id="txtApePat", type="text")
+                            label(for="txtApePat") Apellido Paterno
+                        .form-group.input-field.col-lg-3
+                            input.form-control(id="txtApeMat", type="text")
+                            label(for="txtApeMat") Apellido Materno
+                        .form-group.input-field.col-lg-3
+                            input.form-control(id="txtNombre", type="text")
+                            label(for="txtNombre") Nombre(s)
+                    .row
+                        .col-lg-9
+                            .row
+                                .form-group.col-lg-4
+                                    select#inputGroupSelect04.custom-select
+                                        option(selected="") Seleccionar...
+                                        option(value="1") Masculino
+                                        option(value="2") Femenino
+                                    label(for="") Sexo
+                                .form-group.col-lg-4.input-field
+                                    input.form-control(type="date")
+                                    label(for="") Fecha de Nacimiento
+                                .form-group.col-lg-4.input-field
+                                    input.form-control(type="text", disabled="disabled")
+                                    label(for="") Edad
+                        .col-lg-3
+                            .row
+                                .col-lg-12.form-group.input-field
+                                    input#exampleFormControlFile1.form-control-file(type="file")
+                                    label(for="exampleFormControlFile1") Foto
+                    .row
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                                option(value="1") Sí
+                                option(value="2") No
+                            label(for="") Jefe de Familia
+                        .form-group.input-field.col-lg-3
+                            input.form-control(type="text")
+                            label Número de personas a su cargo
+                    .row
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                                option(value="1") Amazonas
+                                option(value="2") Apurímac
+                            label(for="") Departamento
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Provincia
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Distrito
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Centro Poblado
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Categoría Centro Poblado
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Quintil de Pobreza
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Organización Campesina
+                        .form-group.col-lg-3
+                            select#inputGroupSelect04.custom-select
+                                option(selected="") Seleccionar...
+                            label(for="") Microcuenca
+
+                button(type="submit", class="btn btn-light") Botón secundario        
+                button(type="submit", class="btn btn-primary") Botón de accción       

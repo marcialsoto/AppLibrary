@@ -1,0 +1,46 @@
+extends includes/login
+block variables
+    - var title= 'Accesando a la aplicacion'
+    - var body_id= 'login'
+    - var active= 'blog'
+    - var body_class= 'theme-default'
+    
+block content
+    .container-fluid
+      .content
+        .preview-signin
+          h3 Sistema de Administración de Infracción al Transito y Transporte.
+          a(class="btn btn btn-outline-secondary", href="./dashboard.html") Manual de Usuario
+        .form-signin
+          h1#brand
+            a(href="./dashboard.html")
+              span SAITT
+
+          form
+            h2 Accede
+            p
+              span Necesita una cuenta nueva? 
+                a(href="#" title="Solicitar registro")  Solicite un registro
+            
+            include includes/menu
+            fieldset
+              .form-group.input-field
+                input#txtUser.form-control(type="text" required="" value="")
+                label(for="txtUser") Usuario
+              
+              .form-group.input-field
+                input#txtPassword.form-control(type="password" required="")
+                label(for="txtPassword") Contraseña
+              
+              .form-group
+                a.btn.btn-secondary.btn-lg.btn-block(href="./dashboard.html") Ingresar
+              
+              .form-check
+                input(class="form-check-input" type="checkbox" value="" id="defaultCheck1")
+                label(class="form-check-label" for="defaultCheck1") Mantenerme conectado
+
+              .form-group
+                .recover
+                  nav(class="nav justify-content-center") 
+                    a(class="nav-link", href="#") Olvide mi clave
+                    a(class="nav-link", href="#") Olvide mi usuario

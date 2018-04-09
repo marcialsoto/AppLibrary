@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Formularios</title>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="dist/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <body class="theme-default" id="page">
+      <div id="wrapper">
+        <nav class="header">
+          <div class="navbar-header">
+            <h1 id="brand"><a href="./dashboard.html">SAITT</a></h1>
+          </div>
+          <button class="btn btn-link sidebartoggler hamburger hamburger--spin" id="sidebartoggler" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                <picture> <i class="fas fa-user-circle"></i></picture><span class="name"> Eistein Dolores </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
+          </ul>
+        </nav>
+        <section id="content">
+          <nav class="main-nav" id="sidebar">
+            <div class="user-profile">
+              <div class="profile-img">
+                <picture> <i class="fas fa-user-circle"></i></picture>
+              </div>
+              <div class="profile-menu">
+                <h5>Eistein Dolores</h5><small>Administrador</small>
+              </div>
+            </div>
+                        <ul class="nav flex-column components">   
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled show" id="contenido">
+                              <li><a href="./buttons.html" title="Botones">Botones</a>
+                              </li>
+                              <li><a class="active" href="./forms.html" title="Formularios">Formularios</a>
+                              </li>
+                              <li><a href="./forms-2.html" title="Formularios 2">Formularios 2</a>
+                              </li>
+                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              </li>
+                              <li><a href="./iframe.html" title="Iframe">Iframe</a>
+                              </li>
+                              <li><a href="./index.html" title="Login">Login</a>
+                              </li>
+                              <li><a href="./modals.html" title="Modales">Modales</a>
+                              </li>
+                              <li><a href="./tables.html" title="Tablas">Tablas</a>
+                              </li>
+                              <li><a href="./typo.html" title="Tipografía">Tipografía</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+          </nav>
+          <main>
+            <div class="page-header">
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Formularios</li>
+                              </ol>
+                            </nav>
+              <section class="page-action">
+                <h2>Formularios</h2>
+                <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
+              </section>
+            </div>
+            <section class="row">
+              <div class="col-sm-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Agregar papeleta</h4>
+                                  <form>
+                                    <div class="row">
+                                      <div class="col-sm-3 form-group input-field">
+                                        <input class="form-control" type="text" disabled="">
+                                        <label for="">Nº Papeleta</label>
+                                      </div>
+                                      <div class="col-sm-3 form-group">
+                                        <select class="custom-select" id="exampleFormControlSelect1">
+                                          <option>Categoría 1</option>
+                                          <option>Categoría 2</option>
+                                          <option>Categoría 3</option>
+                                          <option>Categoría 4</option>
+                                          <option>Categoría 5</option>
+                                        </select>
+                                        <label for="exampleFormControlSelect1">Categoría</label>
+                                      </div>
+                                      <div class="col-sm-3 form-group">
+                                        <select class="custom-select" id="cbTipo">
+                                          <option>Tipo 1</option>
+                                          <option>Tipo 2</option>
+                                          <option>Tipo 3</option>
+                                          <option>Tipo 4</option>
+                                          <option>Tipo 5</option>
+                                        </select>
+                                        <label for="cbTipo">Tipo</label>
+                                      </div>
+                                      <div class="col-sm-3 form-group">
+                                        <select class="custom-select" id="cbTipo">
+                                          <option>Detalle 1</option>
+                                          <option>Detalle 2</option>
+                                          <option>Detalle 3</option>
+                                          <option>Detalle 4</option>
+                                          <option>Detalle 5</option>
+                                        </select>
+                                        <label for="cbTipo">Detalle</label>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-6">
+                                        <fieldset>
+                                          <legend>Desde</legend>
+                                          <div class="row">
+                                            <div class="col-sm-4 form-group input-field">
+                                              <input class="form-control" id="desde" type="date">
+                                              <label for="">Fecha de Inicio</label>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                              <select class="custom-select" id="horasDesde">
+                                                <option value="9">08</option>
+                                                <option value="10">09</option>
+                                                <option value="11">10</option>
+                                                <option value="12">11</option>
+                                                <option value="13">12</option>
+                                                <option value="14">13</option>
+                                                <option value="15">14</option>
+                                                <option value="16">15</option>
+                                                <option value="17">16</option>
+                                                <option value="18">17</option>
+                                              </select>
+                                              <label for="">Hora</label>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                              <select class="custom-select" id="minutosDesde">
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                              </select>
+                                              <label for="">Min</label>
+                                            </div>
+                                          </div>
+                                        </fieldset>
+                                      </div>
+                                      <div class="col-sm-6">
+                                        <fieldset>
+                                          <legend>Hasta</legend>
+                                          <div class="row">
+                                            <div class="col-sm-4 form-group input-field">
+                                              <input class="form-control" id="desde" type="date">
+                                              <label for="">Fecha de Fin</label>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                              <select class="custom-select" id="horasDesde">
+                                                <option value="9">08</option>
+                                                <option value="10">09</option>
+                                                <option value="11">10</option>
+                                                <option value="12">11</option>
+                                                <option value="13">12</option>
+                                                <option value="14">13</option>
+                                                <option value="15">14</option>
+                                                <option value="16">15</option>
+                                                <option value="17">16</option>
+                                                <option value="18">17</option>
+                                              </select>
+                                              <label for="">Hora</label>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                              <select class="custom-select" id="minutosDesde">
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                              </select>
+                                              <label for="">Min</label>
+                                            </div>
+                                          </div>
+                                        </fieldset>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-12 form-group">
+                                        <label for="">Motivo</label>
+                                        <textarea class="form-control" id="motivo" rows="2"></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-12 form-group">
+                                        <label for="">Justificación</label>
+                                        <input class="form-control-file" id="archivos" type="file" multiple="">
+                                      </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Agregar papeleta</button>
+                                    <button class="btn btn-light" type="submit">Cancelar</button>
+                                  </form>
+                                </div>
+                              </div>
+              </div>
+            </section>
+          </main>
+        </section>
+      </div>
+      <script src="dist/scripts/vendor.js"></script>
+    </body>
+  </head>
+</html>

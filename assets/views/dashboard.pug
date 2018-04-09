@@ -1,0 +1,83 @@
+extends includes/base
+block globals
+    - var title= 'Bienvenido de nuevo'
+    - var body_id= 'index'
+    - var body_class= 'theme-default'
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Dashboard", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-md-12.col-lg-8
+        +card('Typeahead', 'de Twitter', '')
+            form
+                .row
+                    .form-group.input-field.col-lg-12
+                        input#example.typeahead.form-control(type="text")
+                        label(for="example") Ejemplo de label
+
+        +card('Directorio', 'Del personal', '#')
+            .table-responsive
+                table.datagrid
+                    thead
+                        tr
+                            th Order #
+                            th Product
+                            th Customer
+                            th Status
+                    tbody
+                        tr
+                            td 0001
+                            td Product Name 1
+                            td Customer 1
+                            td Complete
+                        tr
+                            td 0002
+                            td Product Name 2
+                            td Customer 2
+                            td Complete
+                        tr
+                            td 0003
+                            td Product Name 3
+                            td Customer 3
+                            td Processing
+                        tr
+                            td 0004
+                            td Product Name 4
+                            td Customer 4
+                            td Pending
+    
+    .col-md-12.col-lg-4
+        +card('Card en blanco', 'Card', '#')
+        
+        +card('Card en blanco', 'Card', '#')
+
+block append scripts
+    script.
+      let $ = require('jquery');
+
+      var typeahead = require("typeahead.js-browserify");
+      typeahead.loadjQueryPlugin();
+
+      var Bloodhound = require("typeahead.js-browserify").Bloodhound
+      var engine = new Bloodhound({
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: 'https://twitter.github.io/typeahead.js/data/films/post_1960.json',
+        remote: {
+            url: 'https://twitter.github.io/typeahead.js/data/films/queries/%QUERY.json',
+            wildcard: '%QUERY'
+        }
+      });
+
+      $('.typeahead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+        },
+        {
+        name: 'states',
+        display: 'value',
+        source: engine
+      });

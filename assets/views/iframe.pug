@@ -1,0 +1,21 @@
+extends includes/base
+block globals
+    - var title= 'Iframe'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Iframe')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Iframe", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Responsive iframe', '', '')
+            pre
+                code
+                    = '<iframe allowtransparency=true frameborder=0 id=rf sandbox="allow-same-origin allow-forms allow-scripts" scrolling=auto src="http://localhost/" style="width:100%;height:100%"></iframe>'
+            
+            iframe#rf(allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" scrolling="auto" src="http://elcomercio.pe" style="width:100%;height:500px")
+                    

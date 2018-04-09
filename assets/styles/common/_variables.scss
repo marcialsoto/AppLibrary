@@ -1,0 +1,300 @@
+//
+// Color system
+//
+// stylelint-disable
+//Blacks
+$black-100: #969696;
+$black-200: #555555;
+$black-300: #323232;
+//Grays
+$gray-200: #ebebeb;
+$gray-100: #fafafa;
+//Reds
+$red: #cd0500;
+//Oranges
+$orange-100: #f5d269;
+$orange-200: #f0b405;
+$orange-300: #E66905;
+// Greens
+$green-200: #055a02;
+$green-100: #3c960a;
+$green-light-200: #7daf28;
+$green-light-100: #A0D72D;
+$lime: #D7FF00;
+//Browns
+$brown-100: #c8b49b;
+$brown-200: #8c6437;
+$brown-300: #5f3714;
+$brown-400: #41230a;
+//Yellows
+$yellow-100: #faf5b9;
+$yellow-200: #f8c401;
+//Blues
+$blue-100: #173c51;
+$blue-200: #002940;
+$blue-sky-100: #cbd1d4;
+$blue-sky-200: #afebeb;
+$blue-sky-300: #3ccdcd;
+//Lavenders
+$lavender-100: #825f87;
+$lavender-200: #370541;
+//Purples
+$purple-100: #b48caf;
+$purple-200: #690a55;
+//System
+@mixin theme($name, $primary-color: $blue-200, $analog-color: $blue-sky-100, $accent-color: $yellow-200) {
+    // Define colors in your theme
+    $theme-colors: (
+        "primary": $primary-color,
+        "secondary": $accent-color,
+        "analog": $analog-color
+    );
+
+    $primary: map-get($theme-colors, primary);
+    $secondary: map-get($theme-colors, secondary);
+    $analog: map-get($theme-colors, analog);
+
+    $link-color: $primary;
+    $link-hover-color: $analog;
+
+    .#{$name} {
+        a:not(.btn) {
+        color: $link-color;
+            &:hover{
+                color: $link-hover-color;
+            }
+        }
+
+        .page-item.active .page-link {
+            background-color: $primary;
+            border-color: $primary;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-animation: autofill-#{$name} 0s forwards;
+            animation: autofill-#{$name} 0s forwards;
+            border-color: $analog !important;
+        }
+        
+        @keyframes autofill-#{$name} {
+            100% {
+                background: transparent;
+                color: inherit;
+            }
+        }
+        
+        @-webkit-keyframes autofill-#{$name} {
+            100% {
+                background: transparent;
+                color: inherit;
+            }
+        }
+        input:not([type]),
+        input[type=text]:not(.browser-default),
+        input[type=password]:not(.browser-default),
+        input[type=email]:not(.browser-default),
+        input[type=url]:not(.browser-default),
+        input[type=time]:not(.browser-default),
+        input[type=date]:not(.browser-default),
+        input[type=datetime]:not(.browser-default),
+        input[type=datetime-local]:not(.browser-default),
+        input[type=tel]:not(.browser-default),
+        input[type=number]:not(.browser-default),
+        input[type=search]:not(.browser-default),
+        textarea,.custom-select {
+            &:focus:not([readonly]) {
+                border-bottom: 1px solid $analog;
+                box-shadow: 0 1px 0 0 $analog;
+            }
+            // Focused label style
+            &:focus:not([readonly])+label {
+                color: $analog;
+            }
+        }
+        @each $color, $value in $theme-colors {
+            .btn-#{$color} {
+                @include button-variant($value, $value);
+            }
+            .badge-#{$color} {
+                @include badge-variant($value);
+              }
+        }
+        .header{
+            background-color: $analog;
+            border-bottom: 1px solid $analog;
+
+            .navbar-header{
+                background-color: $primary;
+
+                a {
+                  color: color-yiq($primary);
+
+                  &:hover{
+                    opacity: .85;
+                  }
+                }
+            }
+
+            .nav{
+                li{
+                    > a{
+                        color: color-yiq($analog);
+
+                        &:hover{
+                            opacity: .85;
+                        }
+                    }
+                }
+            }
+
+          .sidebartoggler {
+            .hamburger-inner, 
+            .hamburger-inner::before,
+            .hamburger-inner::after{
+                background-color: color-yiq($analog);
+              } 
+
+              &:hover {
+                .hamburger-inner, 
+                .hamburger-inner::before,
+                .hamburger-inner::after{
+                    background-color:$secondary;
+                  } 
+              }
+            }
+        }
+
+        .main-nav{
+          background-color: rgba($primary, 0.95);
+
+          .profile-img {
+            .svg-inline--fa{
+              color: $analog;
+            }
+          }
+
+          .profile-menu {
+            h5,
+            small {
+              color: color-yiq($primary);
+            }
+          }
+
+            ul{
+                li{
+                    a{
+                      span{
+                        color: color-yiq($primary);
+                      }
+
+                      .svg-inline--fa{
+                        color: $analog;
+                      }
+
+                      &.dropdown-toggle {
+                        &::after{
+                          color: $analog;
+                        }
+                      }
+
+                      &.active{
+                        background-color: $primary;
+                        border-left: 1px solid $secondary;
+
+                        .svg-inline--fa,
+                        span {
+                            color: $secondary;
+                        }
+
+                        &.dropdown-toggle {
+                          &::after{
+                            color: $secondary;
+                          }
+                        }
+                      }
+
+                      &[aria-expanded="true"] {
+                        background-color: $primary;
+                      }
+                    }
+
+                    ul.collapse,
+                    ul.collapsing {
+                      background-color: $primary;
+
+                        li {
+                            a {
+                                color: $analog;
+
+                                &.active {
+                                  color: color-yiq($primary);
+                                }
+
+                                &:hover {
+                                    color: color-yiq($primary);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
+$primary: $blue-200;
+$secondary: $yellow-200;
+$success: $green-100;
+$info: $blue-sky-300;
+$warning: $orange-300;
+$danger: $red;
+//Border
+$border-radius: .35rem !default;
+$border-radius-lg: .4rem !default;
+$border-radius-sm: .3rem !default;
+// Links
+//
+// Style anchor elements.
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: lighten($link-color, 5%);
+$link-hover-decoration: none;
+//
+// Forms
+// 
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
+$input-btn-padding-y-sm: .5rem;
+$input-btn-padding-x-sm: 1.25rem;
+$input-btn-padding-y: .75rem;
+$input-btn-padding-x: 1.75rem;
+$input-btn-padding-y-lg: 1rem;
+$input-btn-padding-x-lg: 2.25rem;
+// Allows for customizing button radius independently from global border radius
+// $btn-border-radius: 0.35rem;
+// $btn-border-radius-lg: 0.35rem;
+// $btn-border-radius-sm: 0.35rem;
+// Dropdowns
+//
+// Dropdown menu container and contents.
+$dropdown-padding-y: .75rem;
+$dropdown-item-padding-y: .75rem;
+$dropdown-item-padding-x: 1.75rem;
+// Navs
+$nav-link-padding-y: .75rem;
+
+// Settings for HamburgersJS
+// ==================================================
+$hamburger-padding-x                       : 15px !default;
+$hamburger-padding-y                       : 15px !default;
+$hamburger-layer-width                     : 24px;
+$hamburger-layer-height                    : 3px;
+$hamburger-layer-spacing                   : 4px;
+$hamburger-layer-color                     : $gray-100;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;

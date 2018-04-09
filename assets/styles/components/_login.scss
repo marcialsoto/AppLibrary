@@ -1,0 +1,129 @@
+body#login {
+  background-color: transparent;
+
+  form {
+    padding: 3rem;
+
+    h2,
+    p {
+      @include font-size(24);
+
+      text-align: center;
+    }
+
+    p {
+      @include font-size(12);
+
+      margin-bottom: 3rem;
+    }
+
+    fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+
+      .form-check {
+        @include font-size(13, 18);
+
+        text-align: center;
+        margin: 1.5rem auto;
+        
+        label {
+          padding-left: 0.75rem;
+        }
+      }
+    }
+  }
+
+  .container-fluid {
+    height: 100vh;
+    padding-right: 0;
+    padding-left: 0;
+    
+    .content {
+      @extend .row;
+      @extend .no-gutters;
+
+      display: flex;
+      flex-direction: column-reverse;
+      
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+        flex-direction: row;
+      }
+
+      .preview-signin,
+      .form-signin {
+        @extend .col-12;
+      }
+
+      .preview-signin {
+        @extend .col-lg-8;
+
+        text-align: center;
+        background-color: $primary;
+
+        h3 {
+          @include font-size(16);
+
+          color: $white;
+          width: 60%;
+          margin: 3rem auto;
+
+          @include media-breakpoint-up(lg) {
+            @include font-size(24);
+          }
+        }
+        padding-bottom: 3rem;
+        
+        @include media-breakpoint-up(lg) {
+          padding-bottom: 0;
+        }
+      }
+
+      .form-signin {
+        @extend .col-lg-4;
+
+          a {
+              text-align: center;
+          }
+
+          background-color: $white;
+
+          #brand {
+            margin: 3rem auto 1rem;
+          }
+      }
+    }
+  }
+
+  &.theme-default{
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        border-color: $blue-200 !important;
+        ~label {
+            color: $blue-200;
+            font-size: 11px !important;
+            line-height: 11px !important;
+            left: 0 !important;
+            top: 0 !important;
+        } 
+    }
+
+    @keyframes autofill-theme-default {
+        100% {
+            background: transparent;
+            color: $black-200;
+        }
+    }
+    
+    @-webkit-keyframes autofill-theme-default {
+        100% {
+            background: transparent;
+            color: $black-200;
+        }
+    }
+  }
+}
