@@ -17,40 +17,42 @@ html(lang="en")
 
     body(id=(body_id || 'default-page'), class=(body_class || 'theme-default'))
         div#wrapper
-            header.header
+            header.header.navbar.navbar-expand-md
                 .navbar-header
                     nav.nav
-                        a#sidebartoggler.btn.btn-link.sidebartoggler.hamburger.hamburger--spin.nav-link(href="#")
-                            span.hamburger-box
-                                span.hamburger-inner
+                        a#sidebartoggler.btn.btn-link.sidebartoggler.nav-link.d-block.d-sm-block.d-md-none(href="#")
+                            i.fas.fa-bars
                         a.nav-link(href="./dashboard.html")
-                            h1 SAITT
-                        a.nav-link.btn.btn-link(href="#")
-                            i.fas.fa-ellipsis-h
-                ul.nav.ml-auto
-                    li.nav-item.dropdown.notifications.new
-                        a.nav-link(href="" data-toggle="dropdown" aria-expanded="false")
-                            i.far.fa-bell
-                            sup
-                                span.badge.badge-secondary 8
-                        .dropdown-menu
-                            a.dropdown-item.active(href="#") Link
-                            a.dropdown-item(href="#") Link
-                            a.dropdown-item(href="#") Link
-                    li.nav-item.dropdown
-                        a.nav-link.dropdown-toggle(href="" data-toggle="dropdown" aria-expanded="false")
-                            picture 
-                              i.fas.fa-user-circle
-                            
-                            span.name  Eistein Dolores 
-                        .dropdown-menu(x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;")
-                            a.dropdown-item.active(href="#") Link
-                            a.dropdown-item(href="#") Link
-                            a.dropdown-item(href="#") Link
-                            a.dropdown-item(href="#") Salir
-                    li.nav-item
-                      a.nav-link(href="#")
-                        i.fas.fa-cogs
+                            h1.logo SAITT
+                        a.nav-link.btn.btn-link.open-navbar-container.d-block.d-sm-block.d-md-none(href="#", data-toggle="collapse", data-target="#navbar-mobile")
+                            i.fas.fa-ellipsis-v
+                .navbar-collapse.collapse#navbar-mobile
+                    form.form-inline.mr-auto.float-left
+                        input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
+                    ul.nav.float-right
+                        li.nav-item.dropdown.notifications.new
+                            a.nav-link(href="" data-toggle="dropdown" aria-expanded="false")
+                                i.far.fa-bell
+                                sup
+                                    span.badge.badge-secondary 8
+                            .dropdown-menu
+                                a.dropdown-item.active(href="#") Link
+                                a.dropdown-item(href="#") Link
+                                a.dropdown-item(href="#") Link
+                        li.nav-item.dropdown
+                            a.nav-link.dropdown-toggle(href="" data-toggle="dropdown" aria-expanded="false")
+                                picture 
+                                i.fas.fa-user-circle
+                                
+                                span.name  Eistein Dolores 
+                            .dropdown-menu(x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;")
+                                a.dropdown-item.active(href="#") Link
+                                a.dropdown-item(href="#") Link
+                                a.dropdown-item(href="#") Link
+                                a.dropdown-item(href="#") Salir
+                        li.nav-item
+                        a.nav-link(href="#")
+                            i.fas.fa-cogs
             section#content
                 nav#sidebar.main-nav
                     .user-profile
@@ -80,9 +82,13 @@ html(lang="en")
                                                 each value, index in val.child
                                                     li
                                                         if value.name === activeItemChild
-                                                            a.active(href=value.href, title=value.name)= value.name
+                                                            a.active(href=value.href, title=value.name)
+                                                                i(class="far fa-circle")
+                                                                span= value.name
                                                         else
-                                                            a(href=value.href, title=value.name)= value.name
+                                                            a(href=value.href, title=value.name)
+                                                                i(class="far fa-circle")
+                                                                span= value.name
                                     else
                                         if val.child == null
                                             a.nav-link(href=val.href, title=val.name)
@@ -95,7 +101,9 @@ html(lang="en")
                                             ul(class='collapse list-unstyled' id=val.href)
                                                 each value in val.child
                                                     li
-                                                        a(href=value.href, title=value.name)= value.name
+                                                        a(href=value.href, title=value.name)
+                                                            i(class="far fa-circle")
+                                                            span= value.name
                                 
                     block mainmenu
                         +mainmenu('Inicio','')

@@ -112,6 +112,11 @@
             transition: all 0.1s;
         }
     }
+
+    .logo {
+        @include font-size(24);
+        @include font-family('ubuntu', 'bold');
+    }
     
     //
     // Cards
@@ -164,10 +169,6 @@
     // Breadcrumb & Page Header
     //
     .page-header {
-        @extend .card;
-        @extend .mb-5;
-        position: sticky;
-        top: 5rem;
         z-index: 1;
         .page-action{
             padding: .95rem 3rem;
@@ -176,7 +177,6 @@
             @extend .justify-content-between;
             @extend .align-items-center;
             h2 {
-                @extend .card-title;
                 @include font-size(24);
                 line-height: 1;
                 margin: 0;

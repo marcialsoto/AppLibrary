@@ -4,7 +4,7 @@ body {
         @extend .flex-row;
         @extend .flex-wrap;
         @extend .align-items-center;
-
+        
         position: fixed;
         left: 0;
         right: 0;
@@ -12,6 +12,7 @@ body {
         height: 5rem;
         z-index: 20;
         background-color: $primary;
+        padding: 0;
 
         .navbar-header {
             width: 22.5rem;
@@ -23,7 +24,18 @@ body {
                 height: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
+
+                a {
+                    height: 5rem;
+                    line-height: 5rem;
+                    padding: 0 3rem; 
+                }
+
+                h1 {
+                    margin-bottom: 0;
+                    line-height: 5rem;
+                }
             }
 
             #brand {
@@ -40,12 +52,18 @@ body {
             }
         }
 
-        .sidebartoggler {
-            color: $white;
-            opacity: 0.75;
-            &:hover {
-                color: $white;
-                opacity: 1;
+        #navbar-mobile {
+            form {
+                padding-left: 3rem;
+            }
+
+            .nav {
+                padding-top: 0.5rem;
+            }
+
+            &.show, 
+            &.collapsing {
+                background-color: $white;
             }
         }
 
@@ -147,7 +165,6 @@ body {
         ul.nav {
             li {
                 a {
-                    text-align: left;
                     span {
                         @include font-family('ubuntu', 'medium');
 
@@ -158,7 +175,6 @@ body {
                 ul.collapsing {
                     li {
                         a {
-                            text-align: left;
                             @include font-size(12);
                         }
                     }
@@ -172,49 +188,15 @@ body {
             .header {         
                 .navbar-header {
                     @include media-breakpoint-only(xs) {
-                        width: 6rem;
-                        #brand {
-                            // @include img-replace(40, 40);
-                            // background-image: url('../images/agronet__logo--color--xs.png');
-                            .brand-xs{
-                                display: block;
-                                @include invisible(visible);
-                                opacity: 1;
-                                z-index: 1;
-                            }
-                            .brand-sm{
-                                display: none;
-                                @include invisible(hidden);
-                                opacity: 0;
-                                height: 0;
-                                width: 0;
-                                z-index: -1;
-                            }
-                        }
+                        width: 100%;
                     }
+
                     @include media-breakpoint-up(sm) {
+                        width: 100%;
+                    }
+
+                    @include media-breakpoint-up(md) {
                         width: 22.5rem;
-                        #brand {
-                            .brand-xs{
-                                display: none;
-                                @include invisible(hidden);
-                                opacity: 0;
-                                height: 0;
-                                width: 0;
-                                z-index: -1;
-                            }
-                            .brand-sm{
-                                display: block;
-                                @include invisible(visible);
-                                opacity: 1;
-                                z-index: 1;
-                            }
-                            // @include img-replace(135, 40);
-                            // background-image: url('../images/agronet__logo--color--sm--horizontal.png');
-                            background-position: center;
-                            margin: auto;
-                            
-                        }
                     }
                 }
             }
@@ -232,32 +214,13 @@ body {
         }
 
         #sidebar {
-            /* @include media-breakpoint-only(xs) {
-                min-width: 6rem;
-                max-width: 6rem;
-                margin-left: 0;
-                overflow: visible;
-
-                ul.nav {
-                    li {
-                        position: relative;
-
-                        a {
-                            text-align: center;
-                            span {
-                                display: none !important;
-                            }
-                        }
-                        .show,
-                        .collapsing {
-                            position: absolute;
-                            top: 0;
-                            left: 6rem;
-                            background-color: $gray-100;
-                        }
+            @include media-breakpoint-only(xs) {
+                .user-profile {
+                    .profile-menu {
+                        display: block;
                     }
                 }
-            } */
+            }
 
             @include media-breakpoint-up(sm) {
                 min-width: 22.6rem;
@@ -271,9 +234,6 @@ body {
                     .profile-img {
                         width: 4.8rem;
                         margin-right: 1rem;
-                    }
-                    .profile-menu {
-                        display: block;
                     }
                 }
 
@@ -340,8 +300,6 @@ body {
                             .brand-sm{
                                 display: none;
                             }
-                            // @include img-replace(40, 40);
-                            // background-image: url('../images/agronet__logo--color--xs.png');
                         }
                     }
                 }
@@ -360,8 +318,6 @@ body {
                             .brand-sm{
                                 display: none;
                             }
-                            // @include img-replace(40, 40);
-                            // background-image: url('../images/peruanisima__logo--color--xs.png');
                         }
                     }
                 }
@@ -385,10 +341,26 @@ body {
                 max-width: 6rem;
                 margin-left: -6rem;
                 overflow: hidden;
+
+                a.dropdown-toggle::after {
+                    display: none;
+                }
             }
 
             @include media-breakpoint-up(xs) {
+                a {
+                    text-align: center;
+                }
+
+                .dropdown-toggle::after {
+                    display: none;
+                }
+
                 &:hover {
+                    a {
+                        text-align: left;
+                    }
+
                     min-width: 22.6rem;
                     max-width: 22.6rem;
                     margin-left: 0;
@@ -451,8 +423,6 @@ body {
                 ul.nav {
                     li {
                         a {
-                       /*      text-align: center; */
-
                             span {
                                 display: none;
                             }

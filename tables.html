@@ -13,21 +13,26 @@
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
     <body class="theme-default" id="page">
       <div id="wrapper">
-        <header class="header">
+        <header class="header navbar navbar-expand-md">
           <div class="navbar-header">
-            <nav class="nav"><a class="btn btn-link sidebartoggler hamburger hamburger--spin nav-link" id="sidebartoggler" href="#"><span class="hamburger-box"><span class="hamburger-inner"></span></span></a><a class="nav-link" href="./dashboard.html">
-                <h1>SAITT</h1></a><a class="nav-link btn btn-link" href="#"><i class="fas fa-ellipsis-h"></i></a></nav>
+            <nav class="nav"><a class="btn btn-link sidebartoggler nav-link d-block d-sm-block d-md-none" id="sidebartoggler" href="#"><i class="fas fa-bars"></i></a><a class="nav-link" href="./dashboard.html">
+                <h1 class="logo">SAITT</h1></a><a class="nav-link btn btn-link open-navbar-container d-block d-sm-block d-md-none" href="#" data-toggle="collapse" data-target="#navbar-mobile"><i class="fas fa-ellipsis-v"></i></a></nav>
           </div>
-          <ul class="nav ml-auto">
-            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
-              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
-            </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
-                <picture> <i class="fas fa-user-circle"></i></picture><span class="name"> Eistein Dolores </span></a>
-              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
-          </ul>
+          <div class="navbar-collapse collapse" id="navbar-mobile">
+            <form class="form-inline mr-auto float-left">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+            <ul class="nav float-right">
+              <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
+                <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                  <picture> </picture><i class="fas fa-user-circle"></i><span class="name"> Eistein Dolores </span></a>
+                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+              </li>
+              <li class="nav-item"></li><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a>
+            </ul>
+          </div>
         </header>
         <section id="content">
           <nav class="main-nav" id="sidebar">
@@ -44,23 +49,23 @@
                           </li>
                           <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
                             <ul class="collapse list-unstyled show" id="contenido">
-                              <li><a href="./buttons.html" title="Botones">Botones</a>
+                              <li><a href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a>
                               </li>
-                              <li><a href="./forms.html" title="Formularios">Formularios</a>
+                              <li><a href="./forms.html" title="Formularios"><i class="far fa-circle"></i><span>Formularios</span></a>
                               </li>
-                              <li><a href="./forms-2.html" title="Formularios 2">Formularios 2</a>
+                              <li><a href="./forms-2.html" title="Formularios 2"><i class="far fa-circle"></i><span>Formularios 2</span></a>
                               </li>
-                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              <li><a href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a>
                               </li>
-                              <li><a href="./iframe.html" title="Iframe">Iframe</a>
+                              <li><a href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a>
                               </li>
-                              <li><a href="./index.html" title="Login">Login</a>
+                              <li><a href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a>
                               </li>
-                              <li><a href="./modals.html" title="Modales">Modales</a>
+                              <li><a href="./modals.html" title="Modales"><i class="far fa-circle"></i><span>Modales</span></a>
                               </li>
-                              <li><a class="active" href="./tables.html" title="Tablas">Tablas</a>
+                              <li><a class="active" href="./tables.html" title="Tablas"><i class="far fa-circle"></i><span>Tablas</span></a>
                               </li>
-                              <li><a href="./typo.html" title="Tipografía">Tipografía</a>
+                              <li><a href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a>
                               </li>
                             </ul>
                           </li>
