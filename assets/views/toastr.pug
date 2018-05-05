@@ -1,0 +1,48 @@
+extends includes/base
+block globals
+    - var title= 'Toastr'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Toastr','')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Toastr", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Uso de Toastr', 'https://github.com/CodeSeven/toastr')
+            pre
+                code
+                    = 'toastr.success("¡Todo salio como se esperaba!");'
+            
+            button(id="success-toastr", type="button", class="btn btn-light") Success Toasrt
+            button(id="info-toastr", type="button", class="btn btn-light") Info Toasrt
+            button(id="warning-toastr", type="button", class="btn btn-light") Warning Toasrt
+            button(id="error-toastr", type="button", class="btn btn-light") Error Toasrt
+
+block append scripts
+    script.
+      FontAwesomeConfig = { searchPseudoElements: true };
+
+      let $ = require('jquery');
+      let toastr = require("toastr");
+
+      //toastr.options.progressBar = true;
+
+      $('#success-toastr').click(function(){
+        toastr.success('¡Todo salio como se esperaba!');
+      });
+
+      $('#info-toastr').click(function(){
+        toastr.info('Quiza debas saber esto...');
+      });
+
+      $('#warning-toastr').click(function(){
+        toastr.warning('Algo podría salir mal...');
+      });
+
+      $('#error-toastr').click(function(){
+        toastr.error('¡Te lo dije! ¡¿Qué hiciste?!');
+      });

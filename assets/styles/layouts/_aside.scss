@@ -1,0 +1,21 @@
+#sidebar-secondary {
+  position: fixed;
+  top: 5rem;
+  bottom: 0;
+  right: 0;
+  z-index: 1100;
+  width: 22.6rem;
+  margin-right: -22.6rem;
+  transition: all 0.3s ease;
+  height: calc(100vh - 5rem);
+  background-color: $secondary;
+
+  .aside-container {
+    padding: 3rem;
+  }
+
+  .sidebar-secondary-expand & {
+    margin-right: 0;
+  }  
+}
+

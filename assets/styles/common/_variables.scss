@@ -65,6 +65,10 @@ $purple-200: #690a55;
             }
         }
 
+        .simplebar-scrollbar::before {
+            background: color-yiq($primary);
+        }
+
         .page-item.active .page-link {
             background-color: $primary;
             border-color: $primary;
@@ -92,28 +96,7 @@ $purple-200: #690a55;
                 color: inherit;
             }
         }
-        input:not([type]),
-        input[type=text]:not(.browser-default),
-        input[type=password]:not(.browser-default),
-        input[type=email]:not(.browser-default),
-        input[type=url]:not(.browser-default),
-        input[type=time]:not(.browser-default),
-        input[type=date]:not(.browser-default),
-        input[type=datetime]:not(.browser-default),
-        input[type=datetime-local]:not(.browser-default),
-        input[type=tel]:not(.browser-default),
-        input[type=number]:not(.browser-default),
-        input[type=search]:not(.browser-default),
-        textarea,.custom-select {
-            &:focus:not([readonly]) {
-                border-bottom: 1px solid $analog;
-                box-shadow: 0 1px 0 0 $analog;
-            }
-            // Focused label style
-            &:focus:not([readonly])+label {
-                color: $analog;
-            }
-        }
+
         @each $color, $value in $theme-colors {
             .btn-#{$color} {
                 @include button-variant($value, $value);
@@ -192,6 +175,13 @@ $purple-200: #690a55;
 
                       .svg-inline--fa{
                         color: $analog;
+                      }
+
+                      &:hover{
+                        .svg-inline--fa,
+                        span {
+                            color: $secondary;
+                        }
                       }
 
                       &.dropdown-toggle {

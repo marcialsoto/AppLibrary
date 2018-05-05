@@ -4,10 +4,10 @@ block globals
     - var body_id= 'page'
 
 block mainmenu
-    +mainmenu('Contenido','Modales')
+    +mainmenu('Modales','Modales Regulares')
 
 block breadcrumb
-    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Modales", href : ''}]
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Modales Regulares", href : ''}]
     +breadcrumb(items)
 
 block content
@@ -118,98 +118,6 @@ block content
                                         .form-group.input-field.col-lg-3
                                             input.form-control(type="date")
                                             label Fecha de entrega
-                        .modal-footer
-                            button.btn.btn-secondary(type="button" data-dismiss="modal") Close
-                            button.btn.btn-primary(type="button") Save changes
-
-        +card('Modal centrado verticalmente', '', '')
-            pre
-                code
-                    = '<!-- Button trigger modal -->'
-                    |
-                    |
-                    = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">'
-                    |
-                    |
-                    = 'Launch demo modal'
-                    |
-                    |
-                    = '</button>'
-                    |
-                    |
-                    |
-                    = '<!-- Modal -->'
-                    |
-                    |
-                    = '<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true">'
-                    |
-                    |
-                    = '<div class="modal-dialog" role="document">'
-                    |
-                    |
-                    = '<div class="modal-content">'
-                    |
-                    |
-                    = '<div class="modal-header">'
-                    |
-                    |
-                    = '<h5 class="modal-title" id="exampleModalCenterLabel">Modal title</h5>'
-                    |
-                    |
-                    = '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
-                    |
-                    |
-                    = '<span aria-hidden="true">&times;</span>'
-                    |
-                    |
-                    = '</button>'
-                    |
-                    |
-                    = '</div>'
-                    |
-                    |
-                    = '<div class="modal-body">'
-                    |
-                    |
-                    = '...'
-                    |
-                    |
-                    = '</div>'
-                    |
-                    |
-                    = '<div class="modal-footer">'
-                    |
-                    |
-                    = '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'
-                    |
-                    |
-                    = '<button type="button" class="btn btn-primary">Save changes</button>'
-                    |
-                    |
-                    = '</div>'
-                    |
-                    |
-                    = '</div>'
-                    |
-                    |
-                    = '</div>'
-                    |
-                    |
-                    = '</div>'
-
-            // Button trigger modal
-            button.btn.btn-primary(type="button" data-toggle="modal" data-target="#exampleModalCenter")
-                | Launch demo modal
-            // Modal
-            #exampleModalCenter.modal.fade(tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true")
-                .modal-dialog.modal-dialog-centered(role="document")
-                    .modal-content
-                        .modal-header
-                            h5#exampleModalCenterLabel.modal-title Modal title
-                            button.close(type="button" data-dismiss="modal" aria-label="Close")
-                            span(aria-hidden="true") ×
-                        .modal-body
-                            | ...
                         .modal-footer
                             button.btn.btn-secondary(type="button" data-dismiss="modal") Close
                             button.btn.btn-primary(type="button") Save changes

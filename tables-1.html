@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Iframe</title>
+    <title>Tablas</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,28 +47,25 @@
                         <ul class="nav flex-column components">   
                           <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
-                            <ul class="collapse list-unstyled show" id="contenido">
-                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a>
-                              </li>
-                              <li><a class="nav-link active" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a>
-                              </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled" id="contenido">
+                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
+                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
+                              <li><a class="nav-link" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
+                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
+                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
                             </ul>
                           </li>
                           <li class="nav-item"><a class="nav-link" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
                           </li>
                           <li class="nav-item"><a class="nav-link" href="forms.html" title="Formularios"><i class="fab fa-wpforms"></i><span>Formularios</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#tables" title="Tablas" data-toggle="collapse" aria-expanded="false" aria-controls="Tablas"><i class="fas fa-table"></i><span>Tablas</span></a>
-                            <ul class="collapse list-unstyled" id="tables">
-                              <li><a class="nav-link" href="./tables-1.html" title="Tablas Regulares"><i class="far fa-circle"></i><span>Tablas Regulares</span></a></li>
-                              <li><a class="nav-link" href="./tables-2.html" title="DataTables"><i class="far fa-circle"></i><span>DataTables</span></a></li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#tables" title="Tablas" data-toggle="collapse" aria-expanded="true" aria-controls="Tablas"><i class="fas fa-table"></i><span>Tablas</span></a>
+                            <ul class="collapse list-unstyled show" id="tables">
+                              <li><a class="nav-link active" href="./tables-1.html" title="Tablas Regulares"><i class="far fa-circle"></i><span>Tablas Regulares</span></a>
+                              </li>
+                              <li><a class="nav-link" href="./tables-2.html" title="DataTables"><i class="far fa-circle"></i><span>DataTables</span></a>
+                              </li>
                             </ul>
                           </li>
                           <li class="nav-item"><a class="nav-link dropdown-toggle" href="#modals" title="Modales" data-toggle="collapse" aria-expanded="false" aria-controls="Modales"><i class="far fa-window-maximize"></i><span>Modales</span></a>
@@ -86,11 +83,11 @@
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Iframe</li>
+                                <li class="breadcrumb-item active" aria-current="page">Tablas</li>
                               </ol>
                             </nav>
               <section class="page-action">
-                <h2>Iframe</h2>
+                <h2>Tablas</h2>
                 <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
               </section>
             </div>
@@ -98,11 +95,58 @@
               <div class="col-sm-12">
                               <div class="card mb-5 ">
                                 <div class="card-header">
-                                  <h4 class="card-title">Responsive iframe</h4>
+                                  <h4 class="card-title">Tablas por defecto</h4>
                                 </div>
                                 <div class="card-block card-body">
-                                  <pre><code>&lt;iframe allowtransparency=true frameborder=0 id=rf sandbox=&quot;allow-same-origin allow-forms allow-scripts&quot; scrolling=auto src=&quot;http://localhost/&quot; style=&quot;width:100%;height:100%&quot;&gt;&lt;/iframe&gt;</code></pre>
-                                  <iframe id="rf" allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" scrolling="auto" src="http://elcomercio.pe" style="width:100%;height:500px;"></iframe>
+                                  <p>
+                                      Usa la etiqueta <code>table </code>por defecto</p>
+                                  <pre><code>&lt;table class=&quot;table&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;
+...
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;col&quot;&gt;...&lt;/th&gt;
+&lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                                  <body>
+                                    <table>
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">First</th>
+                                          <th scope="col">Last</th>
+                                          <th scope="col">Handle</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row">1</th>
+                                          <td>Mark</td>
+                                          <td>Otto</td>
+                                          <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">2</th>
+                                          <td>Jacob</td>
+                                          <td>Thornton</td>
+                                          <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">3</th>
+                                          <td>Larry</td>
+                                          <td>the Bird</td>
+                                          <td>@twitter</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </body>
                                 </div>
                               </div>
               </div>

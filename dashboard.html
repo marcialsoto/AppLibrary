@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bienvenido de nuevo</title>
+    <title>Bienvenido de nuevo, Eistein</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,12 +11,12 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
-    <body class="theme-default" id="index">
+    <body class="theme-default  sidebar-secondary-collapse" id="index">
       <div id="wrapper">
-        <header class="header navbar navbar-expand-md">
+        <header class="header navbar navbar-expand-sm">
           <div class="navbar-header">
-            <nav class="nav"><a class="btn btn-link sidebartoggler nav-link d-block d-sm-block d-md-none" id="sidebartoggler" href="#"><i class="fas fa-bars"></i></a><a class="nav-link" href="./dashboard.html">
-                <h1 class="logo">SAITT</h1></a><a class="nav-link btn btn-link open-navbar-container d-block d-sm-block d-md-none" href="#" data-toggle="collapse" data-target="#navbar-mobile"><i class="fas fa-ellipsis-v"></i></a></nav>
+            <nav class="nav"><a class="btn btn-link sidebartoggler nav-link d-block d-sm-none d-md-none" id="sidebartoggler" href="#"><i class="fas fa-bars"></i></a><a class="brand nav-link" href="./dashboard.html">
+                <h1 class="logo"><span class="float-left">S</span><span class="float-left d-block d-sm-none d-md-block">AITT</span></h1></a><a class="navbarMobileToggler nav-link btn btn-link open-navbar-container d-block d-sm-none d-md-none" href="#" data-toggle="collapse" data-target="#navbar-mobile"><i class="fas fa-ellipsis-v"></i></a></nav>
           </div>
           <div class="navbar-collapse collapse" id="navbar-mobile">
             <form class="form-inline mr-auto float-left">
@@ -27,15 +27,15 @@
                 <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
               </li>
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
-                  <picture> </picture><i class="fas fa-user-circle"></i><span class="name"> Eistein Dolores </span></a>
+                  <picture> </picture><i class="fas fa-user-circle"></i><span class="name d-none d-sm-block"> Eistein Dolores </span></a>
                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
               </li>
-              <li class="nav-item"></li><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a>
+              <li class="nav-item"><a class="sidebarSecondarytoggler btn btn-link nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
             </ul>
           </div>
         </header>
         <section id="content">
-          <nav class="main-nav" id="sidebar">
+          <nav class="main-nav simplebar" id="sidebar">
             <div class="user-profile">
               <div class="profile-img">
                 <picture> <i class="fas fa-user-circle"></i></picture>
@@ -49,16 +49,30 @@
                           </li>
                           <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
                             <ul class="collapse list-unstyled" id="contenido">
-                              <li><a href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
-                              <li><a href="./forms.html" title="Formularios"><i class="far fa-circle"></i><span>Formularios</span></a></li>
-                              <li><a href="./forms-2.html" title="Formularios 2"><i class="far fa-circle"></i><span>Formularios 2</span></a></li>
-                              <li><a href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
-                              <li><a href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
-                              <li><a href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
-                              <li><a href="./modals.html" title="Modales"><i class="far fa-circle"></i><span>Modales</span></a></li>
-                              <li><a href="./tables.html" title="Tablas"><i class="far fa-circle"></i><span>Tablas</span></a></li>
-                              <li><a href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
+                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
+                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
+                              <li><a class="nav-link" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
+                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
+                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
                             </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="forms.html" title="Formularios"><i class="fab fa-wpforms"></i><span>Formularios</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#tables" title="Tablas" data-toggle="collapse" aria-expanded="false" aria-controls="Tablas"><i class="fas fa-table"></i><span>Tablas</span></a>
+                            <ul class="collapse list-unstyled" id="tables">
+                              <li><a class="nav-link" href="./tables-1.html" title="Tablas Regulares"><i class="far fa-circle"></i><span>Tablas Regulares</span></a></li>
+                              <li><a class="nav-link" href="./tables-2.html" title="DataTables"><i class="far fa-circle"></i><span>DataTables</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#modals" title="Modales" data-toggle="collapse" aria-expanded="false" aria-controls="Modales"><i class="far fa-window-maximize"></i><span>Modales</span></a>
+                            <ul class="collapse list-unstyled" id="modals">
+                              <li><a class="nav-link" href="./modals-1.html" title="Modales Regulares"><i class="far fa-circle"></i><span>Modales Regulares</span></a></li>
+                              <li><a class="nav-link" href="./modals-2.html" title="Modales Verticales"><i class="far fa-circle"></i><span>Modales Verticales</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="./simplebar.html" title="SimpleBar"><i class="fas fa-i-cursor"></i><span>SimpleBar</span></a>
                           </li>
                         </ul>
           </nav>
@@ -71,31 +85,18 @@
                               </ol>
                             </nav>
               <section class="page-action">
-                <h2>Bienvenido de nuevo</h2>
+                <h2>Bienvenido de nuevo, Eistein</h2>
                 <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
               </section>
             </div>
             <section class="row">
               <div class="col-md-12 col-lg-8">
-                              <div class="card mb-5">
-                                <div class="card-block card-body">
-                                  <h4 class="card-title">Typeahead</h4>
-                                  <h6 class="card-subtitle mb-2 text-muted">de Twitter</h6>
-                                  <form>
-                                    <div class="row">
-                                      <div class="form-group input-field col-lg-12">
-                                        <input class="typeahead form-control" id="example" type="text">
-                                        <label for="example">Ejemplo de label</label>
-                                      </div>
-                                    </div>
-                                  </form>
-                                </div>
-                              </div>
-                              <div class="card mb-5">
-                                <div class="card-block card-body">
+                              <div class="card mb-5 pull-up">
+                                <div class="card-header">
                                   <h4 class="card-title">Directorio</h4>
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
-                                  <h6 class="card-subtitle mb-2 text-muted">Del personal</h6>
+                                </div>
+                                <div class="card-block card-body">
                                   <div class="table-responsive">
                                     <table class="datagrid">
                                       <thead>
@@ -138,19 +139,21 @@
                               </div>
               </div>
               <div class="col-md-12 col-lg-4">
-                              <div class="card mb-5">
-                                <div class="card-block card-body">
+                              <div class="card mb-5 undefined">
+                                <div class="card-header">
                                   <h4 class="card-title">Card en blanco</h4>
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
-                                  <h6 class="card-subtitle mb-2 text-muted">Card</h6>
+                                </div>
+                                <div class="card-block card-body">
                                   <p>Ingrese contenido del card.</p>
                                 </div>
                               </div>
-                              <div class="card mb-5">
-                                <div class="card-block card-body">
+                              <div class="card mb-5 undefined">
+                                <div class="card-header">
                                   <h4 class="card-title">Card en blanco</h4>
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
-                                  <h6 class="card-subtitle mb-2 text-muted">Card</h6>
+                                </div>
+                                <div class="card-block card-body">
                                   <p>Ingrese contenido del card.</p>
                                 </div>
                               </div>
@@ -158,34 +161,20 @@
             </section>
           </main>
         </section>
+        <aside id="sidebar-secondary">
+          <div class="aside-container">
+            <h4>Sidebar secundario</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias enim ipsam molestiae et adipisci vero dolorum autem natus similique harum id qui odio ad ratione, quod porro ipsum quis.</p>
+          </div>
+        </aside>
+        <div class="sidebartoggler" id="overlay"></div>
       </div>
       <script src="dist/scripts/vendor.js"></script>
       <script>
-        let $ = require('jquery');
+        let SimpleBar = require("SimpleBar");
         
-        var typeahead = require("typeahead.js-browserify");
-        typeahead.loadjQueryPlugin();
-        
-        var Bloodhound = require("typeahead.js-browserify").Bloodhound
-        var engine = new Bloodhound({
-          queryTokenizer: Bloodhound.tokenizers.whitespace,
-          datumTokenizer: Bloodhound.tokenizers.whitespace,
-          prefetch: 'https://twitter.github.io/typeahead.js/data/films/post_1960.json',
-          remote: {
-              url: 'https://twitter.github.io/typeahead.js/data/films/queries/%QUERY.json',
-              wildcard: '%QUERY'
-          }
-        });
-        
-        $('.typeahead').typeahead({
-          hint: true,
-          highlight: true,
-          minLength: 1
-          },
-          {
-          name: 'states',
-          display: 'value',
-          source: engine
+        new SimpleBar(document.getElementById('sidebar'), {
+        scrollbarMinSize: 100,
         });
       </script>
     </body>

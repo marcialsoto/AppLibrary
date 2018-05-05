@@ -1,0 +1,91 @@
+extends includes/base
+block globals
+    - var title= 'Tablas'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Tablas','Tablas Regulares')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Tablas", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Tablas por defecto', '', '')
+            p 
+                | Usa la etiqueta 
+                code table 
+                | por defecto
+            pre
+                code
+                    = '<table class="table">'
+                    |
+                    |
+                    = '<table>'
+                    |
+                    |
+                    = '<thead>'
+                    |
+                    |
+                    = '<tr>'
+                    |
+                    |
+                    = '<th scope="col">...</th>'
+                    |
+                    |
+                    = '...'
+                    |
+                    |
+                    = '</tr>'
+                    |
+                    |
+                    = '</thead>'
+                    |
+                    |
+                    = '<tbody>'
+                    |
+                    |
+                    = '<tr>'
+                    |
+                    |
+                    = '<th scope="col">...</th>'
+                    |
+                    |
+                    = '<td>...</td>'
+                    |
+                    |
+                    = '</tr>'
+                    |
+                    |
+                    = '</tbody>'
+                    |
+                    |
+                    = '</table>'
+
+            body
+                table
+                    thead
+                        tr
+                            th(scope="col") #
+                            th(scope="col") First
+                            th(scope="col") Last
+                            th(scope="col") Handle
+                    tbody
+                        tr
+                            th(scope="row") 1
+                            td Mark
+                            td Otto
+                            td @mdo
+                        tr
+                            th(scope="row") 2
+                            td Jacob
+                            td Thornton
+                            td @fat
+                        tr
+                            th(scope="row") 3
+                            td Larry
+                            td the Bird
+                            td @twitter
+
+

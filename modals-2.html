@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Iframe</title>
+    <title>Modales</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,18 +47,13 @@
                         <ul class="nav flex-column components">   
                           <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
-                            <ul class="collapse list-unstyled show" id="contenido">
-                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a>
-                              </li>
-                              <li><a class="nav-link active" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a>
-                              </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled" id="contenido">
+                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
+                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
+                              <li><a class="nav-link" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
+                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
+                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
                             </ul>
                           </li>
                           <li class="nav-item"><a class="nav-link" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
@@ -71,10 +66,12 @@
                               <li><a class="nav-link" href="./tables-2.html" title="DataTables"><i class="far fa-circle"></i><span>DataTables</span></a></li>
                             </ul>
                           </li>
-                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#modals" title="Modales" data-toggle="collapse" aria-expanded="false" aria-controls="Modales"><i class="far fa-window-maximize"></i><span>Modales</span></a>
-                            <ul class="collapse list-unstyled" id="modals">
-                              <li><a class="nav-link" href="./modals-1.html" title="Modales Regulares"><i class="far fa-circle"></i><span>Modales Regulares</span></a></li>
-                              <li><a class="nav-link" href="./modals-2.html" title="Modales Verticales"><i class="far fa-circle"></i><span>Modales Verticales</span></a></li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#modals" title="Modales" data-toggle="collapse" aria-expanded="true" aria-controls="Modales"><i class="far fa-window-maximize"></i><span>Modales</span></a>
+                            <ul class="collapse list-unstyled show" id="modals">
+                              <li><a class="nav-link" href="./modals-1.html" title="Modales Regulares"><i class="far fa-circle"></i><span>Modales Regulares</span></a>
+                              </li>
+                              <li><a class="nav-link active" href="./modals-2.html" title="Modales Verticales"><i class="far fa-circle"></i><span>Modales Verticales</span></a>
+                              </li>
                             </ul>
                           </li>
                           <li class="nav-item"><a class="nav-link" href="./simplebar.html" title="SimpleBar"><i class="fas fa-i-cursor"></i><span>SimpleBar</span></a>
@@ -86,11 +83,11 @@
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Iframe</li>
+                                <li class="breadcrumb-item active" aria-current="page">Modales Verticales</li>
                               </ol>
                             </nav>
               <section class="page-action">
-                <h2>Iframe</h2>
+                <h2>Modales</h2>
                 <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
               </section>
             </div>
@@ -98,11 +95,52 @@
               <div class="col-sm-12">
                               <div class="card mb-5 ">
                                 <div class="card-header">
-                                  <h4 class="card-title">Responsive iframe</h4>
+                                  <h4 class="card-title">Modal centrado verticalmente</h4>
                                 </div>
                                 <div class="card-block card-body">
-                                  <pre><code>&lt;iframe allowtransparency=true frameborder=0 id=rf sandbox=&quot;allow-same-origin allow-forms allow-scripts&quot; scrolling=auto src=&quot;http://localhost/&quot; style=&quot;width:100%;height:100%&quot;&gt;&lt;/iframe&gt;</code></pre>
-                                  <iframe id="rf" allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" scrolling="auto" src="http://elcomercio.pe" style="width:100%;height:500px;"></iframe>
+                                  <pre><code>&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModalCenter&quot;&gt;
+Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;exampleModalCenter&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterLabel&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
+&lt;div class=&quot;modal-content&quot;&gt;
+&lt;div class=&quot;modal-header&quot;&gt;
+&lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalCenterLabel&quot;&gt;Modal title&lt;/h5&gt;
+&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;modal-body&quot;&gt;
+...
+&lt;/div&gt;
+&lt;div class=&quot;modal-footer&quot;&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                  <!-- Button trigger modal-->
+                                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
+                                  <!-- Modal-->
+                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalCenterLabel">Modal title</h5>
+                                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button><span aria-hidden="true">×</span>
+                                        </div>
+                                        <div class="modal-body">...</div>
+                                        <div class="modal-footer">
+                                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                                          <button class="btn btn-primary" type="button">Save changes</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
               </div>

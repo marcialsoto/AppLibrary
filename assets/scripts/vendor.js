@@ -6,14 +6,11 @@ const Chart = require('chart.js');
 const Chartkick = require('chartkick');
 let Swiper = require('swiper');
 
-let Bloodhound = require("typeahead.js-browserify").Bloodhound
-let engine = new Bloodhound({
-    local: ['dog', 'pig', 'moose'],
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    datumTokenizer: Bloodhound.tokenizers.whitespace
-});
-
 let jQuery = require("jquery");
+
+let toastr = require("toastr");
+
+let SimpleBar = require('SimpleBar');
 
 import fontawesome from '@fortawesome/fontawesome'
 
@@ -22,10 +19,6 @@ import solid from '@fortawesome/fontawesome-free-solid'
 import regular from '@fortawesome/fontawesome-free-regular'
 
 fontawesome.library.add(brands, solid, regular)
-
-
-let typeahead = require("typeahead.js-browserify");
-typeahead.loadjQueryPlugin();
 
 Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
@@ -60,6 +53,11 @@ jQuery(function() {
     jQuery('.sidebartoggler').click(function() {
         jQuery('body').toggleClass('sidebar-expand sidebar-collapse');
         jQuery('.sidebartoggler').toggleClass('is-active');
+    });
+
+    jQuery('.sidebarSecondarytoggler').click(function() {
+        jQuery('body').toggleClass('sidebar-secondary-expand sidebar-secondary-collapse');
+        jQuery('.sidebarSecondarytoggler').toggleClass('is-active');
     });
 
     jQuery('input.form-control').focus(function() {
@@ -135,4 +133,14 @@ jQuery(function() {
         },
         responsive: true
     });
+});
+
+jQuery(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+        if(jQuery('.sidebartoggler').hasClass('is-active')){
+            jQuery('body').removeClass('sidebar-expand');
+            jQuery('body').addClass('sidebar-collapse');
+            jQuery('.sidebartoggler').removeClass('is-active');
+        }
+   }
 });

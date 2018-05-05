@@ -11,12 +11,12 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
-    <body class="theme-default" id="page">
+    <body class="theme-default  sidebar-secondary-collapse" id="page">
       <div id="wrapper">
-        <header class="header navbar navbar-expand-md">
+        <header class="header navbar navbar-expand-sm">
           <div class="navbar-header">
-            <nav class="nav"><a class="btn btn-link sidebartoggler nav-link d-block d-sm-block d-md-none" id="sidebartoggler" href="#"><i class="fas fa-bars"></i></a><a class="nav-link" href="./dashboard.html">
-                <h1 class="logo">SAITT</h1></a><a class="nav-link btn btn-link open-navbar-container d-block d-sm-block d-md-none" href="#" data-toggle="collapse" data-target="#navbar-mobile"><i class="fas fa-ellipsis-v"></i></a></nav>
+            <nav class="nav"><a class="btn btn-link sidebartoggler nav-link d-block d-sm-none d-md-none" id="sidebartoggler" href="#"><i class="fas fa-bars"></i></a><a class="brand nav-link" href="./dashboard.html">
+                <h1 class="logo"><span class="float-left">S</span><span class="float-left d-block d-sm-none d-md-block">AITT</span></h1></a><a class="navbarMobileToggler nav-link btn btn-link open-navbar-container d-block d-sm-none d-md-none" href="#" data-toggle="collapse" data-target="#navbar-mobile"><i class="fas fa-ellipsis-v"></i></a></nav>
           </div>
           <div class="navbar-collapse collapse" id="navbar-mobile">
             <form class="form-inline mr-auto float-left">
@@ -27,15 +27,15 @@
                 <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
               </li>
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
-                  <picture> </picture><i class="fas fa-user-circle"></i><span class="name"> Eistein Dolores </span></a>
+                  <picture> </picture><i class="fas fa-user-circle"></i><span class="name d-none d-sm-block"> Eistein Dolores </span></a>
                 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
               </li>
-              <li class="nav-item"></li><a class="nav-link" href="#"><i class="fas fa-cogs"></i></a>
+              <li class="nav-item"><a class="sidebarSecondarytoggler btn btn-link nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
             </ul>
           </div>
         </header>
         <section id="content">
-          <nav class="main-nav" id="sidebar">
+          <nav class="main-nav simplebar" id="sidebar">
             <div class="user-profile">
               <div class="profile-img">
                 <picture> <i class="fas fa-user-circle"></i></picture>
@@ -47,27 +47,34 @@
                         <ul class="nav flex-column components">   
                           <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
-                            <ul class="collapse list-unstyled show" id="contenido">
-                              <li><a href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled" id="contenido">
+                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
+                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
+                              <li><a class="nav-link" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
+                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
+                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="forms.html" title="Formularios"><i class="fab fa-wpforms"></i><span>Formularios</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#tables" title="Tablas" data-toggle="collapse" aria-expanded="false" aria-controls="Tablas"><i class="fas fa-table"></i><span>Tablas</span></a>
+                            <ul class="collapse list-unstyled" id="tables">
+                              <li><a class="nav-link" href="./tables-1.html" title="Tablas Regulares"><i class="far fa-circle"></i><span>Tablas Regulares</span></a></li>
+                              <li><a class="nav-link" href="./tables-2.html" title="DataTables"><i class="far fa-circle"></i><span>DataTables</span></a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#modals" title="Modales" data-toggle="collapse" aria-expanded="true" aria-controls="Modales"><i class="far fa-window-maximize"></i><span>Modales</span></a>
+                            <ul class="collapse list-unstyled show" id="modals">
+                              <li><a class="nav-link active" href="./modals-1.html" title="Modales Regulares"><i class="far fa-circle"></i><span>Modales Regulares</span></a>
                               </li>
-                              <li><a href="./forms.html" title="Formularios"><i class="far fa-circle"></i><span>Formularios</span></a>
-                              </li>
-                              <li><a href="./forms-2.html" title="Formularios 2"><i class="far fa-circle"></i><span>Formularios 2</span></a>
-                              </li>
-                              <li><a href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a>
-                              </li>
-                              <li><a href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a>
-                              </li>
-                              <li><a href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a>
-                              </li>
-                              <li><a class="active" href="./modals.html" title="Modales"><i class="far fa-circle"></i><span>Modales</span></a>
-                              </li>
-                              <li><a href="./tables.html" title="Tablas"><i class="far fa-circle"></i><span>Tablas</span></a>
-                              </li>
-                              <li><a href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a>
+                              <li><a class="nav-link" href="./modals-2.html" title="Modales Verticales"><i class="far fa-circle"></i><span>Modales Verticales</span></a>
                               </li>
                             </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="./simplebar.html" title="SimpleBar"><i class="fas fa-i-cursor"></i><span>SimpleBar</span></a>
                           </li>
                         </ul>
           </nav>
@@ -76,7 +83,7 @@
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Modales</li>
+                                <li class="breadcrumb-item active" aria-current="page">Modales Regulares</li>
                               </ol>
                             </nav>
               <section class="page-action">
@@ -86,9 +93,11 @@
             </div>
             <section class="row">
               <div class="col-sm-12">
-                              <div class="card mb-5">
-                                <div class="card-block card-body">
+                              <div class="card mb-5 ">
+                                <div class="card-header">
                                   <h4 class="card-title">Modal por defecto</h4>
+                                </div>
+                                <div class="card-block card-body">
                                   <pre><code>&lt;!-- Button trigger modal --&gt;
 &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModal&quot;&gt;
 Launch demo modal
@@ -162,60 +171,26 @@ Launch demo modal
                                   </div>
                                 </div>
                               </div>
-                              <div class="card mb-5">
-                                <div class="card-block card-body">
-                                  <h4 class="card-title">Modal centrado verticalmente</h4>
-                                  <pre><code>&lt;!-- Button trigger modal --&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModalCenter&quot;&gt;
-Launch demo modal
-&lt;/button&gt;
-
-&lt;!-- Modal --&gt;
-&lt;div class=&quot;modal fade&quot; id=&quot;exampleModalCenter&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterLabel&quot; aria-hidden=&quot;true&quot;&gt;
-&lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
-&lt;div class=&quot;modal-content&quot;&gt;
-&lt;div class=&quot;modal-header&quot;&gt;
-&lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalCenterLabel&quot;&gt;Modal title&lt;/h5&gt;
-&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
-&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-&lt;/button&gt;
-&lt;/div&gt;
-&lt;div class=&quot;modal-body&quot;&gt;
-...
-&lt;/div&gt;
-&lt;div class=&quot;modal-footer&quot;&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                                  <!-- Button trigger modal-->
-                                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">Launch demo modal</button>
-                                  <!-- Modal-->
-                                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalCenterLabel">Modal title</h5>
-                                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button><span aria-hidden="true">×</span>
-                                        </div>
-                                        <div class="modal-body">...</div>
-                                        <div class="modal-footer">
-                                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                                          <button class="btn btn-primary" type="button">Save changes</button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
               </div>
             </section>
           </main>
         </section>
+        <aside id="sidebar-secondary">
+          <div class="aside-container">
+            <h4>Sidebar secundario</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias enim ipsam molestiae et adipisci vero dolorum autem natus similique harum id qui odio ad ratione, quod porro ipsum quis.</p>
+          </div>
+        </aside>
+        <div class="sidebartoggler" id="overlay"></div>
       </div>
       <script src="dist/scripts/vendor.js"></script>
+      <script>
+        let SimpleBar = require("SimpleBar");
+        
+        new SimpleBar(document.getElementById('sidebar'), {
+        scrollbarMinSize: 100,
+        });
+      </script>
     </body>
   </head>
 </html>

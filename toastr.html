@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Iframe</title>
+    <title>Toastr</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,21 +47,16 @@
                         <ul class="nav flex-column components">   
                           <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
-                            <ul class="collapse list-unstyled show" id="contenido">
-                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a>
-                              </li>
-                              <li><a class="nav-link active" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a>
-                              </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled" id="contenido">
+                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
+                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
+                              <li><a class="nav-link" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
+                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
+                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
                             </ul>
                           </li>
-                          <li class="nav-item"><a class="nav-link" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
+                          <li class="nav-item"><a class="nav-link active" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
                           </li>
                           <li class="nav-item"><a class="nav-link" href="forms.html" title="Formularios"><i class="fab fa-wpforms"></i><span>Formularios</span></a>
                           </li>
@@ -86,23 +81,27 @@
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Iframe</li>
+                                <li class="breadcrumb-item active" aria-current="page">Toastr</li>
                               </ol>
                             </nav>
               <section class="page-action">
-                <h2>Iframe</h2>
+                <h2>Toastr</h2>
                 <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
               </section>
             </div>
             <section class="row">
               <div class="col-sm-12">
-                              <div class="card mb-5 ">
+                              <div class="card mb-5 undefined">
                                 <div class="card-header">
-                                  <h4 class="card-title">Responsive iframe</h4>
+                                  <h4 class="card-title">Uso de Toastr</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://github.com/CodeSeven/toastr"><em class="fa fa-list-ul"></em> Ver todo</a></div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <pre><code>&lt;iframe allowtransparency=true frameborder=0 id=rf sandbox=&quot;allow-same-origin allow-forms allow-scripts&quot; scrolling=auto src=&quot;http://localhost/&quot; style=&quot;width:100%;height:100%&quot;&gt;&lt;/iframe&gt;</code></pre>
-                                  <iframe id="rf" allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" scrolling="auto" src="http://elcomercio.pe" style="width:100%;height:500px;"></iframe>
+                                  <pre><code>toastr.success(&quot;¡Todo salio como se esperaba!&quot;);</code></pre>
+                                  <button class="btn btn-light" id="success-toastr" type="button">Success Toasrt</button>
+                                  <button class="btn btn-light" id="info-toastr" type="button">Info Toasrt</button>
+                                  <button class="btn btn-light" id="warning-toastr" type="button">Warning Toasrt</button>
+                                  <button class="btn btn-light" id="error-toastr" type="button">Error Toasrt</button>
                                 </div>
                               </div>
               </div>
@@ -123,6 +122,30 @@
         
         new SimpleBar(document.getElementById('sidebar'), {
         scrollbarMinSize: 100,
+        });
+      </script>
+      <script>
+        FontAwesomeConfig = { searchPseudoElements: true };
+        
+        let $ = require('jquery');
+        let toastr = require("toastr");
+        
+        //toastr.options.progressBar = true;
+        
+        $('#success-toastr').click(function(){
+          toastr.success('¡Todo salio como se esperaba!');
+        });
+        
+        $('#info-toastr').click(function(){
+          toastr.info('Quiza debas saber esto...');
+        });
+        
+        $('#warning-toastr').click(function(){
+          toastr.warning('Algo podría salir mal...');
+        });
+        
+        $('#error-toastr').click(function(){
+          toastr.error('¡Te lo dije! ¡¿Qué hiciste?!');
         });
       </script>
     </body>

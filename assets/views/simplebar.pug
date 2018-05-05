@@ -1,0 +1,32 @@
+extends includes/base
+block globals
+    - var title= 'Toastr'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('SimpleBar','')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "SimpleBar", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Uso de SimpleBar', 'https://github.com/Grsmto/simplebar')
+            pre
+                code
+                    = '<div data-simplebar style="height:50rem">'
+            
+            div(data-simplebar="simplebar", scrollbarMinSize="", class="simplebar", style="height:50rem")
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.

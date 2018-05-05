@@ -1,0 +1,27 @@
+// Shapes
+#toast-container > div {
+  border-radius: $border-radius;
+  box-shadow: none;
+  color: $white;
+}
+
+// Colors
+.toast {
+  background-color: $black-300;
+}
+
+.toast-success {
+  background-color: $success;
+}
+
+.toast-error {
+  background-color: $danger;
+}
+
+.toast-info {
+  background-color: $info;
+}
+
+.toast-warning {
+  background-color: $warning;
+}

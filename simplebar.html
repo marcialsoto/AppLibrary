@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Iframe</title>
+    <title>Toastr</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,18 +47,13 @@
                         <ul class="nav flex-column components">   
                           <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link active dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
-                            <ul class="collapse list-unstyled show" id="contenido">
-                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a>
-                              </li>
-                              <li><a class="nav-link active" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a>
-                              </li>
-                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a>
-                              </li>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled" id="contenido">
+                              <li><a class="nav-link" href="./buttons.html" title="Botones"><i class="far fa-circle"></i><span>Botones</span></a></li>
+                              <li><a class="nav-link" href="./icons.html" title="Íconos"><i class="far fa-circle"></i><span>Íconos</span></a></li>
+                              <li><a class="nav-link" href="./iframe.html" title="Iframe"><i class="far fa-circle"></i><span>Iframe</span></a></li>
+                              <li><a class="nav-link" href="./index.html" title="Login"><i class="far fa-circle"></i><span>Login</span></a></li>
+                              <li><a class="nav-link" href="./typo.html" title="Tipografía"><i class="far fa-circle"></i><span>Tipografía</span></a></li>
                             </ul>
                           </li>
                           <li class="nav-item"><a class="nav-link" href="./toastr.html" title="Toastr"><i class="fas fa-bullhorn"></i><span>Toastr</span></a>
@@ -77,7 +72,7 @@
                               <li><a class="nav-link" href="./modals-2.html" title="Modales Verticales"><i class="far fa-circle"></i><span>Modales Verticales</span></a></li>
                             </ul>
                           </li>
-                          <li class="nav-item"><a class="nav-link" href="./simplebar.html" title="SimpleBar"><i class="fas fa-i-cursor"></i><span>SimpleBar</span></a>
+                          <li class="nav-item"><a class="nav-link active" href="./simplebar.html" title="SimpleBar"><i class="fas fa-i-cursor"></i><span>SimpleBar</span></a>
                           </li>
                         </ul>
           </nav>
@@ -86,23 +81,37 @@
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Iframe</li>
+                                <li class="breadcrumb-item active" aria-current="page">SimpleBar</li>
                               </ol>
                             </nav>
               <section class="page-action">
-                <h2>Iframe</h2>
+                <h2>Toastr</h2>
                 <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
               </section>
             </div>
             <section class="row">
               <div class="col-sm-12">
-                              <div class="card mb-5 ">
+                              <div class="card mb-5 undefined">
                                 <div class="card-header">
-                                  <h4 class="card-title">Responsive iframe</h4>
+                                  <h4 class="card-title">Uso de SimpleBar</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://github.com/Grsmto/simplebar"><em class="fa fa-list-ul"></em> Ver todo</a></div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <pre><code>&lt;iframe allowtransparency=true frameborder=0 id=rf sandbox=&quot;allow-same-origin allow-forms allow-scripts&quot; scrolling=auto src=&quot;http://localhost/&quot; style=&quot;width:100%;height:100%&quot;&gt;&lt;/iframe&gt;</code></pre>
-                                  <iframe id="rf" allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" scrolling="auto" src="http://elcomercio.pe" style="width:100%;height:500px;"></iframe>
+                                  <pre><code>&lt;div data-simplebar style=&quot;height:50rem&quot;&gt;</code></pre>
+                                  <div class="simplebar" data-simplebar="simplebar" scrollbarMinSize="" style="height:50rem;">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur qui veniam deserunt esse, sed, autem nostrum pariatur dignissimos ipsam cumque alias provident consectetur vel! Doloribus quos deserunt est rem.</p>
+                                  </div>
                                 </div>
                               </div>
               </div>

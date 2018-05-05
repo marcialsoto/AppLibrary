@@ -15,16 +15,18 @@ html(lang="en")
     block styles
         link(rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css")
 
-    body(id=(body_id || 'default-page'), class=(body_class || 'theme-default'))
+    body(id=(body_id || 'default-page'), class=(body_class || 'theme-default  sidebar-secondary-collapse'))
         div#wrapper
-            header.header.navbar.navbar-expand-md
+            header.header.navbar.navbar-expand-sm
                 .navbar-header
                     nav.nav
-                        a#sidebartoggler.btn.btn-link.sidebartoggler.nav-link.d-block.d-sm-block.d-md-none(href="#")
+                        a#sidebartoggler.btn.btn-link.sidebartoggler.nav-link.d-block.d-sm-none.d-md-none(href="#")
                             i.fas.fa-bars
-                        a.nav-link(href="./dashboard.html")
-                            h1.logo SAITT
-                        a.nav-link.btn.btn-link.open-navbar-container.d-block.d-sm-block.d-md-none(href="#", data-toggle="collapse", data-target="#navbar-mobile")
+                        a.brand.nav-link(href="./dashboard.html")
+                            h1.logo
+                                span.float-left S
+                                span.float-left.d-block.d-sm-none.d-md-block AITT
+                        a.navbarMobileToggler.nav-link.btn.btn-link.open-navbar-container.d-block.d-sm-none.d-md-none(href="#", data-toggle="collapse", data-target="#navbar-mobile")
                             i.fas.fa-ellipsis-v
                 .navbar-collapse.collapse#navbar-mobile
                     form.form-inline.mr-auto.float-left
@@ -44,17 +46,17 @@ html(lang="en")
                                 picture 
                                 i.fas.fa-user-circle
                                 
-                                span.name  Eistein Dolores 
+                                span.name.d-none.d-sm-block  Eistein Dolores 
                             .dropdown-menu(x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;")
                                 a.dropdown-item.active(href="#") Link
                                 a.dropdown-item(href="#") Link
                                 a.dropdown-item(href="#") Link
                                 a.dropdown-item(href="#") Salir
                         li.nav-item
-                        a.nav-link(href="#")
-                            i.fas.fa-cogs
+                            a.sidebarSecondarytoggler.btn.btn-link.nav-link(href="#")
+                                i.fas.fa-cogs
             section#content
-                nav#sidebar.main-nav
+                nav#sidebar.main-nav.simplebar
                     .user-profile
                         .profile-img
                             picture 
@@ -64,7 +66,7 @@ html(lang="en")
                             small Administrador
 
                     mixin mainmenu(activeItem, activeItemChild)
-                        -var menuItems = [{name: 'Inicio', href: './dashboard.html', icon: 'fas fa-home', isActive: false, child: null}, {name: 'Contenido', href :'contenido', icon: 'fas fa-edit', isActive: false, child: [{name: 'Botones', href: './buttons.html', isActive: false, child: null}, {name: 'Formularios', href: './forms.html', isActive: false, child: null}, {name: 'Formularios 2', href: './forms-2.html', isActive: false, child: null}, {name: 'Íconos', href: './icons.html', isActive: false, child: null}, {name: 'Iframe', href: './iframe.html', isActive: false, child: null}, {name: 'Login', href: './index.html', isActive: false, child: null}, {name: 'Modales', href: './modals.html', isActive: false, child: null}, {name: 'Tablas', href: './tables.html', isActive: false, child: null}, {name: 'Tipografía', href: './typo.html', isActive: false, child: null}]}]
+                        -var menuItems = [{name: 'Inicio', href: './dashboard.html', icon: 'fas fa-home', isActive: false, child: null}, {name: 'Contenido', href :'contenido', icon: 'fas fa-edit', isActive: false, child: [{name: 'Botones', href: './buttons.html', isActive: false, child: null}, {name: 'Íconos', href: './icons.html', isActive: false, child: null}, {name: 'Iframe', href: './iframe.html', isActive: false, child: null}, {name: 'Login', href: './index.html', isActive: false, child: null}, {name: 'Tipografía', href: './typo.html', isActive: false, child: null}]}, {name: 'Toastr', href: './toastr.html', icon: 'fas fa-bullhorn', isActive: false, child: null}, {name: 'Formularios', href :'forms.html', icon: 'fab fa-wpforms', isActive: false, child: null}, {name: 'Tablas', href :'tables', icon: 'fas fa-table', isActive: false, child: [{name: 'Tablas Regulares', href: './tables-1.html', isActive: false, child: null}, {name: 'DataTables', href: './tables-2.html', isActive: false, child: null}]}, {name: 'Modales', href :'modals', icon: 'far fa-window-maximize', isActive: false, child: [{name: 'Modales Regulares', href: './modals-1.html', isActive: false, child: null}, {name: 'Modales Verticales', href: './modals-2.html', isActive: false, child: null}]}, {name: 'SimpleBar', href: './simplebar.html', icon: 'fas fa-i-cursor', isActive: false, child: null}]
 
                         ul.nav.flex-column.components    
                             each val, index in menuItems
@@ -82,11 +84,11 @@ html(lang="en")
                                                 each value, index in val.child
                                                     li
                                                         if value.name === activeItemChild
-                                                            a.active(href=value.href, title=value.name)
+                                                            a.nav-link.active(href=value.href, title=value.name)
                                                                 i(class="far fa-circle")
                                                                 span= value.name
                                                         else
-                                                            a(href=value.href, title=value.name)
+                                                            a.nav-link(href=value.href, title=value.name)
                                                                 i(class="far fa-circle")
                                                                 span= value.name
                                     else
@@ -101,7 +103,7 @@ html(lang="en")
                                             ul(class='collapse list-unstyled' id=val.href)
                                                 each value in val.child
                                                     li
-                                                        a(href=value.href, title=value.name)
+                                                        a.nav-link(href=value.href, title=value.name)
                                                             i(class="far fa-circle")
                                                             span= value.name
                                 
@@ -128,9 +130,9 @@ html(lang="en")
                                     button(type="button", class="btn btn-sm btn-secondary") Llamada +
                         
                         section.row
-                            mixin card(card_title, card_subtitle, href)
-                                .card.mb-5
-                                    .card-block.card-body
+                            mixin card(card_title, href, card_class)
+                                div(class="card mb-5 " + card_class)
+                                    .card-header
                                         if card_title
                                             h4.card-title= card_title
                                         if href
@@ -138,8 +140,7 @@ html(lang="en")
                                                 a.btn.btn-light.btn-sm(href= href)
                                                     em.fa.fa-list-ul
                                                     |  Ver todo
-                                        if card_subtitle
-                                            h6.card-subtitle.mb-2.text-muted= card_subtitle
+                                    .card-block.card-body
                                         if block
                                             block
                                         else
@@ -147,7 +148,20 @@ html(lang="en")
                             block content
                                 .col-md-12.col-lg-8
                                     +card('Título del card')
-                                
+
+            block aside
+                aside#sidebar-secondary
+                    .aside-container
+                        h4 Sidebar secundario
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis molestias enim ipsam molestiae et adipisci vero dolorum autem natus similique harum id qui odio ad ratione, quod porro ipsum quis.
+            block overlay
+                #overlay.sidebartoggler
+
         block scripts
-            script(src='dist/scripts/vendor.js')
-            
+            script(src="dist/scripts/vendor.js")
+            script.
+                let SimpleBar = require("SimpleBar");
+                
+                new SimpleBar(document.getElementById('sidebar'), {
+                scrollbarMinSize: 100,
+                });

@@ -4,7 +4,7 @@ block globals
     - var body_id= 'page'
 
 block mainmenu
-    +mainmenu('Contenido','Formularios')
+    +mainmenu('Formularios','')
 
 block breadcrumb
     -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Formularios", href : ''}]
@@ -16,41 +16,42 @@ block content
             form
                 .row
                     .col-sm-3.form-group.input-field
-                        input.form-control(type="text" disabled="")
                         label(for="") Nº Papeleta
+                        input.form-control(type="text" disabled="")
                     .col-sm-3.form-group
+                        label(for="exampleFormControlSelect1") Categoría
                         select#exampleFormControlSelect1.custom-select
                             option Categoría 1
                             option Categoría 2
                             option Categoría 3
                             option Categoría 4
                             option Categoría 5
-                        label(for="exampleFormControlSelect1") Categoría
                     .col-sm-3.form-group
+                        label(for="cbTipo") Tipo
                         select#cbTipo.custom-select
                             option Tipo 1
                             option Tipo 2
                             option Tipo 3
                             option Tipo 4
                             option Tipo 5
-                        label(for="cbTipo") Tipo
                     .col-sm-3.form-group
+                        label(for="cbTipo") Detalle
                         select#cbTipo.custom-select
                             option Detalle 1
                             option Detalle 2
                             option Detalle 3
                             option Detalle 4
                             option Detalle 5
-                        label(for="cbTipo") Detalle
                 .row
                     .col-sm-6
                         fieldset
                             legend Desde
                             .row
                                 .col-sm-4.form-group.input-field
-                                    input#desde.form-control(type="date")
                                     label(for="") Fecha de Inicio
+                                    input#desde.form-control(type="date")
                                 .col-sm-4.form-group
+                                    label(for="") Hora
                                     select#horasDesde.custom-select
                                         option(value="9") 08
                                         option(value="10") 09
@@ -62,8 +63,8 @@ block content
                                         option(value="16") 15
                                         option(value="17") 16
                                         option(value="18") 17
-                                    label(for="") Hora
                                 .col-sm-4.form-group
+                                    label(for="") Min
                                     select#minutosDesde.custom-select
                                         option(value="00") 00
                                         option(value="01") 01
@@ -125,15 +126,15 @@ block content
                                         option(value="57") 57
                                         option(value="58") 58
                                         option(value="59") 59
-                                    label(for="") Min
                     .col-sm-6
                         fieldset
                             legend Hasta
                             .row
                                 .col-sm-4.form-group.input-field
-                                    input#desde.form-control(type="date")
                                     label(for="") Fecha de Fin
+                                    input#desde.form-control(type="date")
                                 .col-sm-4.form-group
+                                    label(for="") Hora
                                     select#horasDesde.custom-select
                                         option(value="9") 08
                                         option(value="10") 09
@@ -145,8 +146,8 @@ block content
                                         option(value="16") 15
                                         option(value="17") 16
                                         option(value="18") 17
-                                    label(for="") Hora
                                 .col-sm-4.form-group
+                                    label(for="") Min
                                     select#minutosDesde.custom-select
                                         option(value="00") 00
                                         option(value="01") 01
@@ -208,7 +209,6 @@ block content
                                         option(value="57") 57
                                         option(value="58") 58
                                         option(value="59") 59
-                                    label(for="") Min
                 .row
                     .col-sm-12.form-group
                         label(for="") Motivo

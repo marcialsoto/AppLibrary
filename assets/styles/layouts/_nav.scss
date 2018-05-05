@@ -8,17 +8,16 @@ body {
         position: fixed;
         left: 0;
         right: 0;
-        transition: all 0.3s;
         height: 5rem;
-        z-index: 20;
+        z-index: 1100;
         background-color: $primary;
-        padding: 0;
-
+        padding: 0;        
+        
         .navbar-header {
             width: 22.5rem;
             height: 5rem;
             background-color: $white;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
 
             nav {
                 height: 100%;
@@ -26,10 +25,17 @@ body {
                 align-items: center;
                 justify-content: space-between;
 
-                a {
-                    height: 5rem;
-                    line-height: 5rem;
-                    padding: 0 3rem; 
+                .sidebartoggler  {
+                    padding-left:3rem;
+                }
+
+                .navbarMobileToggler {
+                    padding-right:3rem;
+                }
+
+                .brand {
+                    padding: 0;
+                    margin: 0 auto;
                 }
 
                 h1 {
@@ -40,6 +46,7 @@ body {
 
             #brand {
                 margin: auto;
+
                 a{
                     display: flex;
                     align-items: center;
@@ -54,6 +61,7 @@ body {
 
         #navbar-mobile {
             form {
+                padding-top: 0.5rem;
                 padding-left: 3rem;
             }
 
@@ -95,6 +103,7 @@ body {
                     left: auto;
                     right: 0;
                     @include font-size(12);
+                    
                     .dropdown-item {
                         &.active {
                             color: $black-200;
@@ -111,9 +120,9 @@ body {
         top: 5rem;
         bottom: 0;
         left: 0;
-        z-index: 15;
+        z-index: 1100;
         width: 22.6rem;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         height: calc(100vh - 5rem);
 
         .user-profile {
@@ -201,32 +210,16 @@ body {
                 }
             }
         }
-
-        #content {
-            @include media-breakpoint-only(xs) {
-                margin-left: 6rem;
-                width: calc(100% - 6rem);
-            }
-            @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
+            #content {
                 margin-left: 22.5rem;
                 width: calc(100% - 22.5rem);
             }
         }
 
         #sidebar {
-            @include media-breakpoint-only(xs) {
-                .user-profile {
-                    .profile-menu {
-                        display: block;
-                    }
-                }
-            }
-
-            @include media-breakpoint-up(sm) {
-                min-width: 22.6rem;
-                max-width: 22.6rem;
-                margin-left: 0;
-                overflow: auto;
+            width: 22.6rem;
+            margin-left: 0;
 
                 .user-profile {
                   margin: 0 2rem;
@@ -234,6 +227,10 @@ body {
                     .profile-img {
                         width: 4.8rem;
                         margin-right: 1rem;
+                    }
+
+                    .profile-menu {
+                        display: block;
                     }
                 }
 
@@ -255,7 +252,7 @@ body {
                                     top: 1.8rem;
                                     right: 2rem;
                                     line-height: inherit !important;
-                                    transition: transform .3s ease;
+                                    transition: transform 0.3s ease;
                                 }
                             }
                             &[aria-expanded="true"] {
@@ -277,7 +274,6 @@ body {
                         }
                     }
                 }
-            }
         }
     }
 
@@ -285,36 +281,40 @@ body {
         &.theme-purple, &.theme-default{
             .header {
                 height: 5rem;
+
                 .navbar-header {
                     @include media-breakpoint-up(xs) {
                         width: 100%;
+
                         nav {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
                         }
-                        #brand {
-                            .brand-xs{
-                                display: block;
-                            }
-                            .brand-sm{
-                                display: none;
-                            }
-                        }
+                        
+                    }
+
+                    @include media-breakpoint-up(sm) {
+                        min-width: 6rem;
+                        max-width: 6rem;
                     }
                 }
             }
         }
+
         &.theme-purple, &.theme-default{
             .header {
                 height: 5rem;
+
                 .navbar-header {
                     @include media-breakpoint-up(xs) {
-                        //width: 6rem;
+                        width: 100%;
+                        
                         #brand {
                             .brand-xs{
                                 display: block;
                             }
+
                             .brand-sm{
                                 display: none;
                             }
@@ -337,10 +337,8 @@ body {
 
         #sidebar {
             @include media-breakpoint-only(xs) {
-                min-width: 6rem;
-                max-width: 6rem;
+                width: 6rem;
                 margin-left: -6rem;
-                overflow: hidden;
 
                 a.dropdown-toggle::after {
                     display: none;
@@ -361,18 +359,21 @@ body {
                         text-align: left;
                     }
 
-                    min-width: 22.6rem;
-                    max-width: 22.6rem;
+                    .dropdown-toggle::after {
+                        display: inline-block;
+                    }
+
+                    width: 22.6rem;
                     margin-left: 0;
-                    overflow: auto;
 
                     .user-profile {
-                    margin: 0 2rem;
+                        margin: 0 2rem;
 
                         .profile-img {
                             width: 4.8rem;
                             margin-right: 1rem;
                         }
+                        
                         .profile-menu {
                             display: block;
                         }
@@ -380,7 +381,7 @@ body {
                     
                     ul.nav {
                         li {
-                            >a {
+                            > a {
                                 padding-left: 2rem;
                                 padding-right: 2rem;
                             }
@@ -388,6 +389,7 @@ body {
                                 &[data-toggle="collapse"] {
                                     position: relative;
                                 }
+
                                 &[aria-expanded="false"],
                                 &[aria-expanded="true"] {
                                     &::after {
@@ -396,14 +398,16 @@ body {
                                         top: 1.8rem;
                                         right: 2rem;
                                         line-height: inherit !important;
-                                        transition: transform .3s ease;
+                                        transition: transform 0.3s ease;
                                     }
                                 }
+
                                 &[aria-expanded="true"] {
                                     &::after {
                                         transform: rotate(180deg);
                                     }
                                 }
+
                                 span {
                                     display: inline-block;
                                 }
@@ -432,23 +436,28 @@ body {
             }
             
             @include media-breakpoint-up(sm) {
-                min-width: 6rem;
-                max-width: 6rem;
+                width: 6rem;
                 margin-left: 0;
-                overflow: visible;
                 
-/*                 ul.nav {
+                ul.nav {
                     li {
-                        position: relative;
                         .show,
                         .collapsing {
-                            position: absolute;
-                            top: 0;
-                            left: 6rem;
-                            background-color: $gray-100;
+                            text-align: center;
                         }
                     }
-                } */
+                }
+
+                &:hover {
+                    ul.nav {
+                        li {
+                            .show,
+                            .collapsing {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

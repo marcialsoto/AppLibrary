@@ -2,12 +2,16 @@
 @import "common/_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../../node_modules/toastr/toastr";
 @import "common/_mixins";
 @include theme(theme-default);
 @import "common/_global";
 @import "components/datatables/datatables.net-bs4";
 @import "components/datatables/datatables.net-bs4-responsive";
 @import "components/swiper/_swiper";
+@import "components/toastr/_toastr";
+@import "components/simplebar/_simplebar";
 @import "layouts/_nav";
+@import "layouts/_aside";
 @import "components/_login";
 @import "components/_article";
