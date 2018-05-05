@@ -17,13 +17,16 @@ html(lang="en")
 
     body(id=(body_id || 'default-page'), class=(body_class || 'theme-default'))
         div#wrapper
-            nav.header
+            header.header
                 .navbar-header
-                    h1#brand
-                        a(href="./dashboard.html") SAITT
-                button#sidebartoggler.btn.btn-link.sidebartoggler.hamburger.hamburger--spin(type="button")
-                    span.hamburger-box
-                        span.hamburger-inner
+                    nav.nav
+                        a#sidebartoggler.btn.btn-link.sidebartoggler.hamburger.hamburger--spin.nav-link(href="#")
+                            span.hamburger-box
+                                span.hamburger-inner
+                        a.nav-link(href="./dashboard.html")
+                            h1 SAITT
+                        a.nav-link.btn.btn-link(href="#")
+                            i.fas.fa-ellipsis-h
                 ul.nav.ml-auto
                     li.nav-item.dropdown.notifications.new
                         a.nav-link(href="" data-toggle="dropdown" aria-expanded="false")

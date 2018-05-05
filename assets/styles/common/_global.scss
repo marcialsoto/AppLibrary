@@ -65,7 +65,6 @@
         @include font-family('libre_franklin',
         'light');
         @include font-size(14);
-        background-color: $gray-200;
     }
     
     h1,
@@ -119,29 +118,38 @@
     //
     .card {
         position: relative;
-        border: 0 none;
-        @extend .rounded-0;
+        box-shadow: 0 1px 15px 1px rgba(62,57,107,.07);
+        transition: all 0.25s ease;
+
         .card-body {
             padding: 2rem;
             >.list-group {
                 margin: 0 -2rem -2rem;
             }
         }
+
         .card-config {
             position: absolute;
             top: 2rem;
             right: 2rem;
             list-style: none;
         }
+
         .card-title {
             @include font-size(18);
             line-height: 1;
         }
+
         .card-subtitle {
             @extend .mb-2;
             @extend .text-muted;
             margin-top: -.75rem;
             padding-bottom: .5rem;
+        }
+
+        &:hover {
+            transform: translateY(-0.2rem) scale(1);
+            box-shadow: 0 14px 24px rgba(62,57,107,.2);
         }
     }
     
@@ -160,7 +168,7 @@
         @extend .mb-5;
         position: sticky;
         top: 5rem;
-        z-index: 15;
+        z-index: 1;
         .page-action{
             padding: .95rem 3rem;
             @extend .d-flex;

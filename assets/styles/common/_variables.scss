@@ -154,7 +154,7 @@ $purple-200: #690a55;
             .hamburger-inner, 
             .hamburger-inner::before,
             .hamburger-inner::after{
-                background-color: color-yiq($analog);
+                background-color: color-yiq($primary);
               } 
 
               &:hover {
@@ -243,17 +243,25 @@ $purple-200: #690a55;
             }
         }
     }
-  }
+}
+
 $primary: $blue-200;
 $secondary: $yellow-200;
 $success: $green-100;
 $info: $blue-sky-300;
 $warning: $orange-300;
 $danger: $red;
+
+// Body
+//
+// Body colors
+$body-bg: #f4f6f9;
+
 //Border
 $border-radius: .35rem !default;
 $border-radius-lg: .4rem !default;
 $border-radius-sm: .3rem !default;
+
 // Links
 //
 // Style anchor elements.
@@ -273,10 +281,14 @@ $input-btn-padding-y: .75rem;
 $input-btn-padding-x: 1.75rem;
 $input-btn-padding-y-lg: 1rem;
 $input-btn-padding-x-lg: 2.25rem;
-// Allows for customizing button radius independently from global border radius
-// $btn-border-radius: 0.35rem;
-// $btn-border-radius-lg: 0.35rem;
-// $btn-border-radius-sm: 0.35rem;
+
+// Cards
+$card-border-width:                 0;
+$card-border-radius:                0.25rem;
+$card-border-color:                 transparent;
+$card-inner-border-radius:          0.25rem;
+
+
 // Dropdowns
 //
 // Dropdown menu container and contents.

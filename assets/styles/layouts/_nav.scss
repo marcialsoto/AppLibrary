@@ -19,6 +19,13 @@ body {
             background-color: $white;
             transition: all 0.3s;
 
+            nav {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             #brand {
                 margin: auto;
                 a{
@@ -34,7 +41,6 @@ body {
         }
 
         .sidebartoggler {
-            margin-left: 1.3rem;
             color: $white;
             opacity: 0.75;
             &:hover {
@@ -87,7 +93,7 @@ body {
         top: 5rem;
         bottom: 0;
         left: 0;
-        z-index: 10;
+        z-index: 15;
         width: 22.6rem;
         transition: all 0.3s;
         height: calc(100vh - 5rem);
@@ -137,6 +143,7 @@ body {
               }
           }
         }
+
         ul.nav {
             li {
                 a {
@@ -145,7 +152,6 @@ body {
                         @include font-family('ubuntu', 'medium');
 
                         margin-left: .5rem;
-                        display: none;
                     }
                 }
                 ul.collapse,
@@ -160,6 +166,7 @@ body {
             }
         }
     }
+
     &.sidebar-expand {
         &.theme-default{
             .header {         
@@ -223,8 +230,9 @@ body {
                 width: calc(100% - 22.5rem);
             }
         }
+
         #sidebar {
-            @include media-breakpoint-only(xs) {
+            /* @include media-breakpoint-only(xs) {
                 min-width: 6rem;
                 max-width: 6rem;
                 margin-left: 0;
@@ -249,7 +257,8 @@ body {
                         }
                     }
                 }
-            }
+            } */
+
             @include media-breakpoint-up(sm) {
                 min-width: 22.6rem;
                 max-width: 22.6rem;
@@ -267,6 +276,7 @@ body {
                         display: block;
                     }
                 }
+
                 ul.nav {
                     li {
                         >a {
@@ -310,13 +320,19 @@ body {
             }
         }
     }
+
     &.sidebar-collapse {
         &.theme-purple, &.theme-default{
             .header {
                 height: 5rem;
                 .navbar-header {
                     @include media-breakpoint-up(xs) {
-                        width: 6rem;
+                        width: 100%;
+                        nav {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
                         #brand {
                             .brand-xs{
                                 display: block;
@@ -336,7 +352,7 @@ body {
                 height: 5rem;
                 .navbar-header {
                     @include media-breakpoint-up(xs) {
-                        width: 6rem;
+                        //width: 6rem;
                         #brand {
                             .brand-xs{
                                 display: block;
@@ -372,10 +388,74 @@ body {
             }
 
             @include media-breakpoint-up(xs) {
+                &:hover {
+                    min-width: 22.6rem;
+                    max-width: 22.6rem;
+                    margin-left: 0;
+                    overflow: auto;
+
+                    .user-profile {
+                    margin: 0 2rem;
+
+                        .profile-img {
+                            width: 4.8rem;
+                            margin-right: 1rem;
+                        }
+                        .profile-menu {
+                            display: block;
+                        }
+                    }
+                    
+                    ul.nav {
+                        li {
+                            >a {
+                                padding-left: 2rem;
+                                padding-right: 2rem;
+                            }
+                            a {
+                                &[data-toggle="collapse"] {
+                                    position: relative;
+                                }
+                                &[aria-expanded="false"],
+                                &[aria-expanded="true"] {
+                                    &::after {
+                                    @include font-size(14);
+                                        position: absolute;
+                                        top: 1.8rem;
+                                        right: 2rem;
+                                        line-height: inherit !important;
+                                        transition: transform .3s ease;
+                                    }
+                                }
+                                &[aria-expanded="true"] {
+                                    &::after {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                                span {
+                                    display: inline-block;
+                                }
+                            }
+                            .show,
+                            .collapsing {
+                                li {
+                                    a {
+                                        text-indent: 2rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 ul.nav {
                     li {
                         a {
-                            text-align: center;
+                       /*      text-align: center; */
+
+                            span {
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -387,7 +467,7 @@ body {
                 margin-left: 0;
                 overflow: visible;
                 
-                ul.nav {
+/*                 ul.nav {
                     li {
                         position: relative;
                         .show,
@@ -398,27 +478,7 @@ body {
                             background-color: $gray-100;
                         }
                     }
-                }
-            }
-        }
-    }
-}
-
-nav{
-    &.nav-actions{
-        @extend .nav;
-        a{
-            @extend .nav-link;
-            padding: 0 .75rem;
-            color: $black-100 !important;
-            &:hover{
-                color: $black-200 !important;
-            }
-            &.danger{
-                color: $danger !important;
-                &:hover{
-                    color: darken($danger, 15%) !important;
-                }
+                } */
             }
         }
     }

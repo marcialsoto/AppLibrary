@@ -107,10 +107,6 @@ jQuery(function() {
             console.log(value);
          }
        });
-    
-    jQuery('#sidebarCollapse').click(function() {
-        jQuery('nav#sidebar').toggleClass('active');
-    });
 
     jQuery('table.datagrid').DataTable({
         language: {
