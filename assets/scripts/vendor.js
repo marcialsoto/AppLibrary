@@ -2,15 +2,15 @@ window.jQuery = require('jquery')
 window.Popper = require('popper.js')
 require('bootstrap')
 
-const Chart = require('chart.js');
-const Chartkick = require('chartkick');
+/* const Chart = require('chart.js'); */
+/* const Chartkick = require('chartkick'); */
 let Swiper = require('swiper');
 
 let jQuery = require("jquery");
 
 let toastr = require("toastr");
 
-let SimpleBar = require('SimpleBar');
+let SimpleBar = require('simplebar');
 
 import fontawesome from '@fortawesome/fontawesome'
 
@@ -20,9 +20,9 @@ import regular from '@fortawesome/fontawesome-free-regular'
 
 fontawesome.library.add(brands, solid, regular)
 
-Chartkick.options = {
+/* Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
-}
+} */
 
 const dt = require('datatables.net-responsive-bs4')();
 

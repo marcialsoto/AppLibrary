@@ -1,547 +1,550 @@
-    //
-    // Fonts
-    //
-    @font-face {
-        font-family: 'ubuntulight';
-        src: url('../fonts/Ubuntu-Light.woff2') format('woff2'), url('../fonts/Ubuntu-Light.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    @font-face {
-        font-family: 'ubunturegular';
-        src: url('../fonts/Ubuntu-Regular.woff2') format('woff2'), url('../fonts/Ubuntu-Regular.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    @font-face {
-        font-family: 'ubuntumedium';
-        src: url('../fonts/Ubuntu-Medium.woff2') format('woff2'), url('../fonts/Ubuntu-Medium.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    @font-face {
-        font-family: 'ubuntubold';
-        src: url('../fonts/Ubuntu-Bold.woff2') format('woff2'), url('../fonts/Ubuntu-Bold.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    @font-face {
-        font-family: 'ubuntumono';
-        src: url('../fonts/Ubuntu-Mono.woff2') format('woff2'), url('../fonts/Ubuntu-Mono.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    @font-face {
-        font-family: 'libre_franklinlight';
-        src: url('../fonts/Libre_Franklin-Light.woff2') format('woff2'), url('../fonts/Libre_Franklin-Light.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    /* Mozilla based browsers */
-    
-     ::-moz-selection {
-        background-color: $secondary;
-        color: $primary;
-    }
-    /* Works in Safari */
-    
-     ::selection {
-        background-color: $secondary;
-        color: $primary;
-    }
-    /* Change Autocomplete styles in Chrome*/
-    
-    html {
-        font-size: 62.5%;
-    }
-    
-    body {
-        @include font-family('libre_franklin',
-        'light');
-        @include font-size(14);
-    }
-    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @include font-family('ubuntu',
-        'light');
-    }
-    
-    h1 {
-        @include font-size(40);
-    }
-    
-    h2 {
-        @include font-size(32);
-    }
-    
-    h3 {
-        @include font-size(28);
-    }
-    
-    h4 {
-        @include font-size(24);
-    }
-    
-    h5 {
-        @include font-size(20);
-    }
-    
-    h6 {
-        @include font-size(16);
-    }
-    
-    a {
-        color: $link-color;
+//
+// Fonts
+//
+@font-face {
+    font-family: 'ubuntulight';
+    src: url('../fonts/Ubuntu-Light.woff2') format('woff2'), url('../fonts/Ubuntu-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('../fonts/Ubuntu-Regular.woff2') format('woff2'), url('../fonts/Ubuntu-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntumedium';
+    src: url('../fonts/Ubuntu-Medium.woff2') format('woff2'), url('../fonts/Ubuntu-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('../fonts/Ubuntu-Bold.woff2') format('woff2'), url('../fonts/Ubuntu-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntumono';
+    src: url('../fonts/Ubuntu-Mono.woff2') format('woff2'), url('../fonts/Ubuntu-Mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'libre_franklinlight';
+    src: url('../fonts/Libre_Franklin-Light.woff2') format('woff2'), url('../fonts/Libre_Franklin-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Mozilla based browsers */
+
+    ::-moz-selection {
+    background-color: $secondary;
+    color: $primary;
+}
+/* Works in Safari */
+
+    ::selection {
+    background-color: $secondary;
+    color: $primary;
+}
+/* Change Autocomplete styles in Chrome*/
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @include font-family('libre_franklin',
+    'light');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include font-family('ubuntu',
+    'light');
+}
+
+h1 {
+    @include font-size(40);
+}
+
+h2 {
+    @include font-size(32);
+}
+
+h3 {
+    @include font-size(28);
+}
+
+h4 {
+    @include font-size(24);
+}
+
+h5 {
+    @include font-size(20);
+}
+
+h6 {
+    @include font-size(16);
+}
+
+a {
+    color: $link-color;
+    text-decoration: $link-hover-decoration;
+    &:hover,
+    &:focus {
+        outline: none;
+        color: $link-hover-color;
         text-decoration: $link-hover-decoration;
-        &:hover,
-        &:focus {
-            outline: none;
-            color: $link-hover-color;
-            text-decoration: $link-hover-decoration;
-            transition: all 0.1s;
+        transition: all 0.1s;
+    }
+}
+
+.logo {
+    @include font-size(24);
+    @include font-family('ubuntu', 'bold');
+}
+
+//
+// Cards
+//
+.card {
+    position: relative;
+    box-shadow: 0 1px 15px 1px rgba(62,57,107,.07);
+
+    .card-header,
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-body {
+        >.list-group {
+            margin: 0 -2rem -2rem;
         }
     }
 
-    .logo {
-        @include font-size(24);
-        @include font-family('ubuntu', 'bold');
-    }
-    
-    //
-    // Cards
-    //
-    .card {
-        position: relative;
-        box-shadow: 0 1px 15px 1px rgba(62,57,107,.07);
-
-        .card-header,
-        .card-body {
-            padding: 1.5rem;
-        }
-
-        .card-header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .card-body {
-            >.list-group {
-                margin: 0 -2rem -2rem;
-            }
-        }
-
-        .card-config {
-            list-style: none;
-        }
-
-        .card-title {
-            @include font-size(18);
-            
-            line-height: 1;
-            margin-bottom: 0;
-        }
+    .card-config {
+        list-style: none;
     }
 
-    .pull-up {
-        transition: all 0.25s ease;
-
-        &:hover {
-            transform: translateY(-0.2rem) scale(1);
-            box-shadow: 0 14px 24px rgba(62,57,107,.2);
-        }
-    }
-    
-    //
-    // Charts
-    //
-    .chart {
-        min-height: 22.5rem;
-    }
-    
-    //
-    // Breadcrumb & Page Header
-    //
-    .page-header {
-        z-index: 1;
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-
-        .page-action{
-            padding: 0 3rem 0.95rem;
-            @extend .d-flex;
-            @extend .flex-row;
-            @extend .justify-content-between;
-            @extend .align-items-center;
-            h2 {
-                @include font-size(24);
-                line-height: 1;
-                margin: 0;
-                padding: 0;
-            }
-        }
-    }
-
-nav[aria-label="breadcrumb"]{
-    .breadcrumb {
-        padding: 0 3rem 0;
-        background-color: transparent;
-        @extend .rounded-0;
-        font-size: 75%;
+    .card-title {
+        @include font-size(18);
+        
+        line-height: 1;
         margin-bottom: 0;
     }
 }
- 
-    
-    //
-    // Forms
-    //   
-    .btn,
-    .popover,
-    .popover-header,
-    .tooltip {
-        font-size: 100%;
+
+.pull-up {
+    transition: all 0.25s ease;
+
+    &:hover {
+        transform: translateY(-0.2rem) scale(1);
+        box-shadow: 0 14px 24px rgba(62,57,107,.2);
     }
-    
-    .btn {
-        @include font-family('ubuntu',
-        'medium');
-        @include font-size(13);
-        text-transform: uppercase;
-        letter-spacing: .075rem;
-        cursor: pointer;
-    }
-    
-    .btn-sm {
-        @include font-size(11);
-    }
-    
-    .btn-lg {
-        @include font-size(16);
-    }
-    
-    //
-    // Tipografia
-    //    
-    .lead {
-        @include font-size(20);
-    }
-    
-    //
-    // Code
-    //
-    pre {
-        background-color: $gray-100;
-        border: 1px solid $gray-300;
-        padding: 2rem;
-        color: $gray-700;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        &:hover {
-            background-color: $white;
-            color: $gray-900;
-        }
-        code {
-            @include font-size(13);
-            line-height: inherit;
-        }
-    }
-    
-    code {
-        @include font-family('ubuntu',
-        'mono');
-        @include font-size(14);
-    }
-    
-    //
-    // Tables
-    //
-    table {
-        @extend .table;
-        @extend .table-striped;
-        //@extend .table-bordered;
-        @extend .table-hover;
-        thead {
-            tr {
-                th {
-                    @include font-size(12);
-                }
-            }
-        }
-        tbody {
-            tr {
-                &:nth-of-type(odd) {
-                    background-color: rgba($gray-300, 0.25);
-                }
-                &:hover {
-                    background-color: rgba($brown-100, 0.25);
-                }
-                td {
-                    @include font-size(12);
-                    ul {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-    }
-    
-    //
-    // Brand
-    //
-    #brand {
-        // @include img-replace(185,
-        // 125);
-        // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
-        margin: 0 auto;
-        a {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-    
-    // JS
-    // 
-    // Popover
-    .popover {
-        .popover-header {
-            @include font-size(16,
-            16);
-            color: $primary;
-            background-color: transparent;
-            border-bottom: 1px solid transparent;
-        }
-        .popover-body {
-            @include font-size(13,
-            18);
-            color: $gray-600;
-        }
-    }
-    
-    //
-    // Wrapper
-    //
-    #wrapper {
+}
+
+//
+// Charts
+//
+.chart {
+    min-height: 22.5rem;
+}
+
+//
+// Breadcrumb & Page Header
+//
+.page-header {
+    z-index: 1;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    .page-action{
+        padding: 0 3rem 0.95rem;
         @extend .d-flex;
         @extend .flex-row;
-        min-height: 100vh;
-        max-width: 100%;
-        margin: auto;
-        overflow: hidden;
-        
-        #content {
-            @extend .d-flex;
-            @extend .flex-column;
-            @extend .flex-wrap;
-            flex: 1 1 100%;
-            transition: margin-left .5s;
-            nav.header {
-                height: 70px;
-                background-color: $primary;
-                border-bottom: 1px solid $primary;
-                .navbar-header {
-                    max-height: 70px;
-                    margin-left: 1rem;
-                }
-                #sidebarCollapse {
-                    @extend .rounded-circle;
-                    cursor: pointer;
-                    text-align: center;
-                    color: $white;
-                    width: 32px;
-                    height: 32px;
-                    background-color: darken($primary, 2%);
-                    @include media-breakpoint-down(sm) {
-                        transform: rotate(180deg);
-                    }
-                    i {
-                        @include font-size(12,
-                        32);
-                    }
-                }
+        @extend .justify-content-between;
+        @extend .align-items-center;
+        h2 {
+            @include font-size(24);
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+nav[aria-label="breadcrumb"]{
+.breadcrumb {
+    padding: 0 3rem 0;
+    background-color: transparent;
+    @extend .rounded-0;
+    font-size: 75%;
+    margin-bottom: 0;
+}
+}
+
+
+//
+// Forms
+//   
+.btn,
+.popover,
+.popover-header,
+.tooltip {
+    font-size: 100%;
+}
+
+.btn {
+    @include font-family('ubuntu',
+    'medium');
+    @include font-size(13);
+    text-transform: uppercase;
+    letter-spacing: .075rem;
+    cursor: pointer;
+}
+
+.btn-sm {
+    @include font-size(11);
+}
+
+.btn-lg {
+    @include font-size(16);
+}
+
+//
+// Tipografia
+//    
+.lead {
+    @include font-size(20);
+}
+
+//
+// Code
+//
+pre {
+    background-color: $gray-100;
+    border: 1px solid $gray-300;
+    padding: 2rem;
+    color: $gray-700;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    &:hover {
+        background-color: $white;
+        color: $gray-900;
+    }
+    code {
+        @include font-size(13);
+        line-height: inherit;
+    }
+}
+
+code {
+    @include font-family('ubuntu',
+    'mono');
+    @include font-size(14);
+}
+
+//
+// Tables
+//
+table {
+    @extend .table;
+    @extend .table-striped;
+    //@extend .table-bordered;
+    @extend .table-hover;
+    thead {
+        tr {
+            th {
+                @include font-size(12);
             }
-            main {
-                @extend .container-fluid;
-                background-color: transparent;
-                padding-left: 0;
-                padding-right: 0;
-                width: calc(100% - 6rem);
-                flex: 1;
-                margin-top: 5rem;
-                .page-header {
-                    margin-left: -3rem;
-                    margin-right: -3rem;
+        }
+    }
+    tbody {
+        tr {
+            &:nth-of-type(odd) {
+                background-color: rgba($gray-300, 0.25);
+            }
+            &:hover {
+                background-color: rgba($brown-100, 0.25);
+            }
+            td {
+                @include font-size(12);
+                ul {
+                    width: 100%;
                 }
             }
         }
     }
+}
+
+//
+// Brand
+//
+#brand {
+    // @include img-replace(185,
+    // 125);
+    // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
+    margin: 0 auto;
+    a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// JS
+// 
+// Popover
+.popover {
+    .popover-header {
+        @include font-size(16,
+        16);
+        color: $primary;
+        background-color: transparent;
+        border-bottom: 1px solid transparent;
+    }
+    .popover-body {
+        @include font-size(13,
+        18);
+        color: $gray-600;
+    }
+}
+
+//
+// Wrapper
+//
+#wrapper {
+    @extend .d-flex;
+    @extend .flex-row;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
     
-    //
-    // Brand
-    //
-    h1#brand {
-        // @include img-replace(135,
+    #content {
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .flex-wrap;
+        flex: 1 1 100%;
+        transition: margin-left .5s;
+        nav.header {
+            height: 70px;
+            background-color: $primary;
+            border-bottom: 1px solid $primary;
+            .navbar-header {
+                max-height: 70px;
+                margin-left: 1rem;
+            }
+            #sidebarCollapse {
+                @extend .rounded-circle;
+                cursor: pointer;
+                text-align: center;
+                color: $white;
+                width: 32px;
+                height: 32px;
+                background-color: darken($primary, 2%);
+                @include media-breakpoint-down(sm) {
+                    transform: rotate(180deg);
+                }
+                i {
+                    @include font-size(12,
+                    32);
+                }
+            }
+        }
+        main {
+            @extend .container-fluid;
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            width: calc(100% - 6rem);
+            flex: 1;
+            margin-top: 5rem;
+            .page-header {
+                margin-left: -3rem;
+                margin-right: -3rem;
+            }
+        }
+    }
+}
+
+//
+// Brand
+//
+h1#brand {
+    // @include img-replace(135,
+    // 40);
+    // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
+    // background-position: left center;
+    margin: 0;
+    // width: 135px;
+    // height: 40px;
+    @include media-breakpoint-down(sm) {
+        // @include img-replace(40,
         // 40);
-        // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
-        // background-position: left center;
-        margin: 0;
-        // width: 135px;
+        // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
+        // width: 40px;
         // height: 40px;
-        @include media-breakpoint-down(sm) {
-            // @include img-replace(40,
-            // 40);
-            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
-            // width: 40px;
-            // height: 40px;
-        }
     }
-    
-    //
-    // Buttons
-    //
-    .btn-success,
-    .btn-success:hover,
-    .btn-info,
-    .btn-info:hover,
-    .btn-warning,
-    .btn-warning:hover {
+}
+
+//
+// Buttons
+//
+.btn-success,
+.btn-success:hover,
+.btn-info,
+.btn-info:hover,
+.btn-warning,
+.btn-warning:hover {
+    color: $white;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-outline-secondary:hover {
+    color: $brown-300 !important;
+}
+
+.btn-light {
+    background-color: $gray-200;
+    &:hover {
+        background-color: $gray-300;
+    }
+}
+
+.btn-outline-success,
+.btn-outline-info {
+    &:hover {
         color: $white;
     }
-    
-    .btn-secondary,
-    .btn-secondary:hover,
-    .btn-outline-secondary:hover {
-        color: $brown-300 !important;
-    }
-    
-    .btn-light {
-        background-color: $gray-200;
-        &:hover {
-            background-color: $gray-300;
-        }
-    }
-    
-    .btn-outline-success,
-    .btn-outline-info {
-        &:hover {
-            color: $white;
-        }
-    }
-    
-    .btn-outline-light {
-        color: $gray-300;
+}
+
+.btn-outline-light {
+    color: $gray-300;
+    border-color: $gray-300;
+    &:hover {
+        color: $gray-700;
         border-color: $gray-300;
-        &:hover {
-            color: $gray-700;
-            border-color: $gray-300;
-            background-color: $gray-200;
+        background-color: $gray-200;
+    }
+}
+
+//
+// Dropdowns
+//
+// .dropdown-menu {
+//     .dropdown-header {
+//         text-transform: uppercase;
+//     }
+//     @include font-size(12);
+// }
+//
+//User pic
+//
+//
+// Navs
+//
+nav {
+    &#sidebar {
+        ul {
+            @extend .flex-column;
         }
     }
-    
-    //
-    // Dropdowns
-    //
-    // .dropdown-menu {
-    //     .dropdown-header {
-    //         text-transform: uppercase;
-    //     }
-    //     @include font-size(12);
-    // }
-    //
-    //User pic
-    //
-    //
-    // Navs
-    //
-    nav {
-        &#sidebar {
-            ul {
-                @extend .flex-column;
+    >ul {
+        @extend .nav;
+        li {
+            @extend .nav-item;
+            a {
+                @extend .nav-link;
+                display: block;
             }
-        }
-        >ul {
-            @extend .nav;
-            li {
-                @extend .nav-item;
-                a {
-                    @extend .nav-link;
-                    display: block;
-                }
-                &.dropdown {
-                    a.dropdown-toggle {
-                        transition: all 0.3s;
-                        &[aria-expanded="true"] {
-                            &::after {
-                                transform: rotate(180deg);
-                            }
+            &.dropdown {
+                a.dropdown-toggle {
+                    transition: all 0.3s;
+                    &[aria-expanded="true"] {
+                        &::after {
+                            transform: rotate(180deg);
                         }
                     }
                 }
             }
         }
     }
+}
+
+//
+// Sup
+//
+sup {
+    top: -0.75rem;
+
+    .badge {
+    @include font-size(9,9);
     
-    //
-    // Sup
-    //
-    sup {
-      top: -0.75rem;
-
-      .badge {
-        @include font-size(9,9);
-        
-        padding: 0.15rem 0.25rem;
-      }
+    padding: 0.15rem 0.25rem;
     }
+}
 
-    //
-    // Hamburgers
-    //
-    .hamburger{
-        line-height: 0;
-    }
+//
+// Hamburgers
+//
+.hamburger{
+    line-height: 0;
+}
 
-    //
-    // Overlay
-    //
+//
+// Overlay
+//
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: $modal-backdrop-bg;
+    opacity: $modal-backdrop-opacity;
+    z-index: $zindex-sticky;
+}
+
+@include media-breakpoint-down(sm) {
     #overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: none;
-        background-color: rgba(255, 255, 255,0.75);
-        z-index: 1099;
-    }
-
-    @include media-breakpoint-down(sm) {
-        main {
-            .sidebar-expand & {
-                filter: blur(0.15rem);
-            }
-        }
-
-        #overlay {
-            .sidebar-expand & {
-                display: block;
-            }
+        .sidebar-expand & {
+            display: block;
         }
     }
-    
+}
+
+//
+// Cards
+//
+@each $color, $value in $theme-colors {
+    .card-#{$color} {
+        @include card-variant($value);
+    }
+}

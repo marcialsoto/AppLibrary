@@ -2,6 +2,8 @@
 // Color system
 //
 // stylelint-disable
+//Whites
+$white: #ffffff;
 //Blacks
 $black-100: #969696;
 $black-200: #555555;
@@ -103,8 +105,9 @@ $purple-200: #690a55;
             }
             .badge-#{$color} {
                 @include badge-variant($value);
-              }
+            }
         }
+
         .header{
             background-color: $analog;
             border-bottom: 1px solid $analog;
@@ -259,6 +262,13 @@ $link-color: $primary;
 $link-decoration: none;
 $link-hover-color: lighten($link-color, 5%);
 $link-hover-decoration: none;
+
+//
+// Modals
+//
+$modal-backdrop-bg:                 $white;
+$modal-backdrop-opacity:            0.75;
+
 //
 // Forms
 // 
@@ -271,6 +281,8 @@ $input-btn-padding-y: .75rem;
 $input-btn-padding-x: 1.75rem;
 $input-btn-padding-y-lg: 1rem;
 $input-btn-padding-x-lg: 2.25rem;
+
+$font-size-base:              1.4rem;
 
 // Cards
 $card-border-width:                 0;

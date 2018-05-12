@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bienvenido de nuevo, Eistein</title>
+    <title>Cards</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,7 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
-    <body class="theme-default  sidebar-secondary-collapse" id="index">
+    <body class="theme-default  sidebar-secondary-collapse" id="page">
       <div id="wrapper">
         <header class="header navbar navbar-expand-sm">
           <div class="navbar-header">
@@ -45,7 +45,7 @@
               </div>
             </div>
                         <ul class="nav flex-column components">   
-                          <li class="nav-item"><a class="nav-link active" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
                           <li class="nav-item"><a class="nav-link dropdown-toggle" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
                             <ul class="collapse list-unstyled" id="contenido">
@@ -74,7 +74,7 @@
                           </li>
                           <li class="nav-item"><a class="nav-link" href="./simplebar.html" title="SimpleBar"><i class="fas fa-i-cursor"></i><span>SimpleBar</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link" href="./cards.html" title="Cards"><i class="fas fa-chalkboard"></i><span>Cards</span></a>
+                          <li class="nav-item"><a class="nav-link active" href="./cards.html" title="Cards"><i class="fas fa-chalkboard"></i><span>Cards</span></a>
                           </li>
                         </ul>
           </nav>
@@ -83,80 +83,79 @@
                             <nav aria-label="breadcrumb">
                               <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Cards</li>
                               </ol>
                             </nav>
               <section class="page-action">
-                <h2>Bienvenido de nuevo, Eistein</h2>
+                <h2>Cards</h2>
                 <button class="btn btn-sm btn-secondary" type="button">Llamada +</button>
               </section>
             </div>
             <section class="row">
-              <div class="col-md-12 col-lg-8">
-                              <div class="card mb-5 pull-up">
+              <div class="col-sm-6">
+                              <div class="card mb-5 ">
                                 <div class="card-header">
-                                  <h4 class="card-title">Directorio</h4>
+                                  <h4 class="card-title">Card Desault</h4>
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <div class="table-responsive">
-                                    <table class="datagrid">
-                                      <thead>
-                                        <tr>
-                                          <th>Order #</th>
-                                          <th>Product</th>
-                                          <th>Customer</th>
-                                          <th>Status</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                        <tr>
-                                          <td>0001</td>
-                                          <td>Product Name 1</td>
-                                          <td>Customer 1</td>
-                                          <td>Complete</td>
-                                        </tr>
-                                        <tr>
-                                          <td>0002</td>
-                                          <td>Product Name 2</td>
-                                          <td>Customer 2</td>
-                                          <td>Complete</td>
-                                        </tr>
-                                        <tr>
-                                          <td>0003</td>
-                                          <td>Product Name 3</td>
-                                          <td>Customer 3</td>
-                                          <td>Processing</td>
-                                        </tr>
-                                        <tr>
-                                          <td>0004</td>
-                                          <td>Product Name 4</td>
-                                          <td>Customer 4</td>
-                                          <td>Pending</td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </div>
+                                  <pre><code>&lt;div class=&quot;card&quot;&gt;&lt;/div&gt;</code></pre>
+                                </div>
+                              </div>
+                              <div class="card mb-5 card-primary">
+                                <div class="card-header">
+                                  <h4 class="card-title">Card Primary</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <pre><code>&lt;div class=&quot;card card-primary&quot;&gt;&lt;/div&gt;</code></pre>
+                                </div>
+                              </div>
+                              <div class="card mb-5 card-secondary">
+                                <div class="card-header">
+                                  <h4 class="card-title">Card Secondary</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <pre><code>&lt;div class=&quot;card card-secondary&quot;&gt;&lt;/div&gt;</code></pre>
                                 </div>
                               </div>
               </div>
-              <div class="col-md-12 col-lg-4">
-                              <div class="card mb-5 undefined">
+              <div class="col-sm-6">
+                              <div class="card mb-5 card-success">
                                 <div class="card-header">
-                                  <h4 class="card-title">Card en blanco</h4>
+                                  <h4 class="card-title">Card Success</h4>
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <p>Ingrese contenido del card.</p>
+                                  <pre><code>&lt;div class=&quot;card card-success&quot;&gt;&lt;/div&gt;</code></pre>
                                 </div>
                               </div>
-                              <div class="card mb-5 undefined">
+                              <div class="card mb-5 card-info">
                                 <div class="card-header">
-                                  <h4 class="card-title">Card en blanco</h4>
+                                  <h4 class="card-title">Card Info</h4>
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <p>Ingrese contenido del card.</p>
+                                  <pre><code>&lt;div class=&quot;card card-info&quot;&gt;&lt;/div&gt;</code></pre>
+                                </div>
+                              </div>
+                              <div class="card mb-5 card-warning">
+                                <div class="card-header">
+                                  <h4 class="card-title">Card Warning</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <pre><code>&lt;div class=&quot;card card-warning&quot;&gt;&lt;/div&gt;</code></pre>
+                                </div>
+                              </div>
+                              <div class="card mb-5 card-danger">
+                                <div class="card-header">
+                                  <h4 class="card-title">Card Danger</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <pre><code>&lt;div class=&quot;card card-danger&quot;&gt;&lt;/div&gt;</code></pre>
                                 </div>
                               </div>
               </div>

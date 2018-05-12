@@ -33,3 +33,23 @@
         height: 0;
     }
 }
+
+@mixin card-variant($bg) {
+    .card-header {
+        color: color-yiq($bg);
+        background-color: $bg;
+        
+        .btn {
+            background-color: transparent;
+            color: color-yiq($bg);
+            border-color: color-yiq($bg);
+
+            @include hover-focus {
+                color: $bg;
+                text-decoration: none;
+                background-color: color-yiq($bg);
+                border-color: color-yiq($bg);
+            }
+        }
+    }
+}

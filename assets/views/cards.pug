@@ -1,0 +1,50 @@
+extends includes/base
+block globals
+    - var title= 'Cards'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Cards','')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Cards", href : ''}]
+    +breadcrumb(items)
+
+block content
+        .col-sm-6
+            +card('Card Desault', '#', '')
+                pre
+                    code
+                        = '<div class="card"></div>'
+
+            +card('Card Primary', '#', 'card-primary')
+                pre
+                    code
+                        = '<div class="card card-primary"></div>'
+
+            +card('Card Secondary', '#', 'card-secondary')
+                pre
+                    code
+                        = '<div class="card card-secondary"></div>'
+
+        .col-sm-6
+            +card('Card Success', '#', 'card-success')
+                    pre
+                        code
+                            = '<div class="card card-success"></div>'
+
+            +card('Card Info', '#', 'card-info')
+                pre
+                    code
+                        = '<div class="card card-info"></div>'
+
+            +card('Card Warning', '#', 'card-warning')
+                pre
+                    code
+                        = '<div class="card card-warning"></div>'
+
+            +card('Card Danger', '#', 'card-danger')
+                pre
+                    code
+                        = '<div class="card card-danger"></div>'
+        
