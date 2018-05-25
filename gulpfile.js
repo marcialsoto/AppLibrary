@@ -41,7 +41,7 @@ let config = {
         watch: './assets/views/'
     },
     js: {
-        require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'swiper', 'toastr', 'simplebar'],
+        require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'swiper', 'toastr', 'simplebar', 'flatpickr', 'inputmask'],
         source: './assets/scripts/vendor.js',
         dist: './dist/scripts',
         fileName: 'vendor.js',

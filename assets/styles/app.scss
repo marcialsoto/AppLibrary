@@ -3,6 +3,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "../../node_modules/toastr/toastr";
+@import "../../node_modules/flatpickr/dist/flatpickr.css";
 @import "common/_mixins";
 @include theme(theme-default);
 @import "common/_global";

@@ -76,6 +76,8 @@
                           </li>
                           <li class="nav-item"><a class="nav-link" href="./cards.html" title="Cards"><i class="fas fa-chalkboard"></i><span>Cards</span></a>
                           </li>
+                          <li class="nav-item"><a class="nav-link" href="./cdn.html" title="CDN"><i class="fas fa-chalkboard"></i><span>CDN</span></a>
+                          </li>
                         </ul>
           </nav>
           <main>
@@ -92,29 +94,53 @@
               </section>
             </div>
             <section class="row">
-              <div class="col-sm-12">
+              <div class="col-sm-6">
                               <div class="card mb-5 ">
                                 <div class="card-header">
-                                  <h4 class="card-title">Agregar papeleta</h4>
+                                  <h4 class="card-title">Tipos de inputs</h4>
                                 </div>
                                 <div class="card-block card-body">
                                   <form>
                                     <div class="row">
-                                      <div class="col-sm-12 form-group">
+                                      <div class="col-sm-12 form-group mb-3">
                                         <label for="lg">Large</label>
                                         <input class="form-control form-control-lg" id="lg" placeholder=".form-control-lg">
                                       </div>
-                                      <div class="col-sm-12 form-group">
+                                      <div class="col-sm-12 form-group mb-3">
                                         <label for="default">Default</label>
                                         <input class="form-control" id="default" placeholder="Default input size">
                                       </div>
-                                      <div class="col-sm-12 form-group">
+                                      <div class="col-sm-12 form-group mb-3">
                                         <label for="sm">Small</label>
                                         <input class="form-control form-control-sm" id="sm" placeholder=".form-control-sm">
                                       </div>
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Enviar</button>
-                                    <button class="btn btn-light" type="submit">Cancelar</button>
+                                  </form>
+                                </div>
+                              </div>
+              </div>
+              <div class="col-sm-6">           
+                              <div class="card mb-5 card-success">
+                                <div class="card-header">
+                                  <h4 class="card-title">Datepicker</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://flatpickr.js.org/examples/"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <form>
+                                    <div class="row">
+                                      <div class="col-sm-6 form-group input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span></div>
+                                        <input class="form-control datepicker" placeholder="Seleccione fecha">
+                                      </div>
+                                      <div class="col-sm-6 form-group input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="far fa-clock"></i></span></div>
+                                        <input class="form-control timepicker" placeholder="Seleccione hora">
+                                      </div>
+                                      <div class="col-sm-6 form-group input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span></div>
+                                        <input class="form-control celMask">
+                                      </div>
+                                    </div>
                                   </form>
                                 </div>
                               </div>
@@ -137,6 +163,23 @@
         new SimpleBar(document.getElementById('sidebar'), {
         scrollbarMinSize: 100,
         });
+      </script>
+      <script>
+        let $ = require('jquery');
+        let inputmask = require('inputmask');
+        let flatpickr = require("flatpickr");
+        
+        $('.datepicker').flatpickr();
+        $('.timepicker').flatpickr(
+              {
+              enableTime: true,
+              noCalendar: true,
+              dateFormat: "H:i",
+              time_24hr: true
+              }
+          );
+        
+        $(".celMask").inputmask({"mask": "(999) 999-9999"}); 
       </script>
     </body>
   </head>

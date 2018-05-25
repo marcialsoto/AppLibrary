@@ -16,6 +16,8 @@
         "@fortawesome/fontawesome-free-regular": "^5.0.13",
         "@fortawesome/fontawesome-free-solid": "^5.0.13",
         "bootstrap": "^4.0.1",
+        "flatpickr": "^4.5.0",
+        "inputmask": "^3.3.11",
         "jquery": "^3.3.1",
         "popper.js": "~1.14.0",
         "simplebar": "^2.6.1",

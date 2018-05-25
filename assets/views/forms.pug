@@ -11,21 +11,61 @@ block breadcrumb
     +breadcrumb(items)
 
 block content
-    .col-sm-12
-        +card('Agregar papeleta', '', '')
+    .col-sm-6
+        +card('Tipos de inputs', '', '')
             form
                 .row
-                    .col-sm-12.form-group
+                    .col-sm-12.form-group.mb-3
                         label(for="lg") Large
                         input#lg.form-control.form-control-lg(placeholder=".form-control-lg")
                     
-                    .col-sm-12.form-group
+                    .col-sm-12.form-group.mb-3
                         label(for="default") Default
                         input#default.form-control(placeholder="Default input size")
 
-                    .col-sm-12.form-group
+                    .col-sm-12.form-group.mb-3
                         label(for="sm") Small
                         input#sm.form-control.form-control-sm(placeholder=".form-control-sm")
+                    
+                   
+    .col-sm-6            
+        +card('Datepicker', 'https://flatpickr.js.org/examples/', 'card-success')
+            form
+                .row
+                    .col-sm-6.form-group.input-group.mb-3
+                        .input-group-prepend
+                            span(class="input-group-text", id="basic-addon1")
+                                i(class="far fa-calendar-alt")
+                        input.form-control.datepicker(placeholder="Seleccione fecha")
 
-                button.btn.btn-primary(type="submit") Enviar
-                button.btn.btn-light(type="submit") Cancelar
+                    .col-sm-6.form-group.input-group.mb-3
+                        .input-group-prepend
+                            span(class="input-group-text", id="basic-addon1")
+                                i(class="far fa-clock")
+                        input.form-control.timepicker(placeholder="Seleccione hora")
+                    
+                    .col-sm-6.form-group.input-group.mb-3
+                        .input-group-prepend
+                            span(class="input-group-text", id="basic-addon1")
+                                i(class="fas fa-phone")
+                        input.form-control.celMask
+
+block append scripts
+    script.
+
+      let $ = require('jquery');
+      let inputmask = require('inputmask');
+      let flatpickr = require("flatpickr");
+
+      $('.datepicker').flatpickr();
+      $('.timepicker').flatpickr(
+            {
+            enableTime: true,
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: true
+            }
+        );
+    
+      $(".celMask").inputmask({"mask": "(999) 999-9999"}); 
+    

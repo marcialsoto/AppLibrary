@@ -1,0 +1,24 @@
+extends includes/base
+block globals
+    - var title= 'CDN'
+    - var body_id= 'page'
+
+block styles
+  link(rel="stylesheet" type="text/css" media="screen" href="http://www.marcialsoto.com/cdn/?u=http://www.marcialsoto.com/cdn/library/dist/styles/app.css")
+
+block mainmenu
+    +mainmenu('CDN','')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "CDN", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('CDN', '', '')
+            pre
+                code
+                    = '<iframe allowtransparency=true frameborder=0 id=rf sandbox="allow-same-origin allow-forms allow-scripts" scrolling=auto src="http://localhost/" style="width:100%;height:100%"></iframe>'
+            
+block scripts
+  script(src="http://www.marcialsoto.com/cdn/?u=http://www.marcialsoto.com/cdn/library/dist/scripts/vendor.js")

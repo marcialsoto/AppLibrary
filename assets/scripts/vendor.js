@@ -12,17 +12,18 @@ let toastr = require("toastr");
 
 let SimpleBar = require('simplebar');
 
-import fontawesome from '@fortawesome/fontawesome'
+const flatpickr = require("flatpickr");
 
-import brands from '@fortawesome/fontawesome-free-brands'
-import solid from '@fortawesome/fontawesome-free-solid'
-import regular from '@fortawesome/fontawesome-free-regular'
+import "inputmask/dist/inputmask/jquery.inputmask";
+
+const inputmask = require('inputmask');
+
+import fontawesome from '@fortawesome/fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
 
 fontawesome.library.add(brands, solid, regular)
-
-/* Chartkick.options = {
-    colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
-} */
 
 const dt = require('datatables.net-responsive-bs4')();
 
@@ -133,6 +134,8 @@ jQuery(function() {
         },
         responsive: true
     });
+
+    jQuery(".flatpickr").flatpickr();
 });
 
 jQuery(document).keyup(function(e) {
