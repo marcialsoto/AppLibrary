@@ -3,7 +3,6 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "../../node_modules/toastr/toastr";
-@import "../../node_modules/flatpickr/dist/flatpickr.css";
 @import "common/_mixins";
 @include theme(theme-default);
 @import "common/_global";
@@ -12,6 +11,7 @@
 @import "components/swiper/_swiper";
 @import "components/toastr/_toastr";
 @import "components/simplebar/_simplebar";
+@import "components/flatpickr/_flatpickr";
 @import "layouts/_nav";
 @import "layouts/_aside";
 @import "components/_login";
