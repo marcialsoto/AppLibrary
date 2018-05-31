@@ -44,7 +44,7 @@ $lavender-200: #370541;
 $purple-100: #b48caf;
 $purple-200: #690a55;
 //System
-@mixin theme($name, $primary-color: $blue-200, $analog-color: $blue-sky-100, $accent-color: $yellow-200) {
+@mixin theme($name, $primary-color: $blue-200, $analog-color: $blue-sky-100, $accent-color: $green-light-100) {
     // Define colors in your theme
     $theme-colors: (
         "primary": $primary-color,
@@ -57,13 +57,12 @@ $purple-200: #690a55;
     $analog: map-get($theme-colors, analog);
 
     $link-color: $primary;
-    $link-hover-color: $analog;
 
     .#{$name} {
         a:not(.btn) {
         color: $link-color;
             &:hover{
-                color: $link-hover-color;
+                opacity: 0.85;
             }
         }
 
@@ -121,18 +120,6 @@ $purple-200: #690a55;
                   &:hover{
                     opacity: .85;
                   }
-                }
-            }
-
-            .nav{
-                li{
-                    > a{
-                        color: color-yiq($analog);
-
-                        &:hover{
-                            opacity: .85;
-                        }
-                    }
                 }
             }
 
@@ -276,11 +263,11 @@ $modal-backdrop-opacity:            0.75;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 $input-btn-padding-y-sm: .5rem;
-$input-btn-padding-x-sm: 1.25rem;
+$input-btn-padding-x-sm: 1.05rem;
 $input-btn-padding-y: .75rem;
-$input-btn-padding-x: 1.75rem;
+$input-btn-padding-x: 1.10rem;
 $input-btn-padding-y-lg: 1rem;
-$input-btn-padding-x-lg: 2.25rem;
+$input-btn-padding-x-lg: 1.20rem;
 
 $font-size-base:              1.4rem;
 

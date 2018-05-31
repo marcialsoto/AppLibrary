@@ -68,11 +68,11 @@ jQuery(function() {
         jQuery(this).parents('.form-group').removeClass('in-focus');
         if (tmpval == '') {
             jQuery(this).parents('.form-group').addClass('empty');
-            jQuery(this).parents('.form-group').removeClass('not-empty');
+            jQuery(this).parents('.form-group').removeClass('active');
             console.log(tmpval);
            
         } else {
-            jQuery(this).parents('.form-group').addClass('not-empty');
+            jQuery(this).parents('.form-group').addClass('active');
             jQuery(this).parents('.form-group').removeClass('empty');
             console.log(tmpval);
         }
@@ -81,12 +81,12 @@ jQuery(function() {
     jQuery('input:required').blur(function() {
         let tmpval = jQuery(this).val();
         if (tmpval == '') {
-            jQuery(this).addClass('is-invalid');
-            jQuery(this).removeClass('is-valid');
+            jQuery(this).parents('.form-group').addClass('is-invalid');
+            jQuery(this).parents('.form-group').removeClass('is-valid');
             console.log(tmpval);
         }else{
-            jQuery(this).addClass('is-valid');
-            jQuery(this).removeClass('is-invalid');
+            jQuery(this).parents('.form-group').addClass('is-valid');
+            jQuery(this).parents('.form-group').removeClass('is-invalid');
             console.log(tmpval);
         }
     });
@@ -147,3 +147,10 @@ jQuery(document).keyup(function(e) {
         }
    }
 });
+
+jQuery('a[data-toggle="collapse"]').on('click', function () {
+    $(this)
+      .find('[data-fa-i2svg]')
+      .toggleClass('fa-angle-up')
+      .toggleClass('fa-angle-down');
+  });

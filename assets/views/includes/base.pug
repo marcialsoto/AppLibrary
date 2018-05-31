@@ -28,10 +28,12 @@ html(lang="en")
                                 span.float-left.d-block.d-sm-none.d-md-block AITT
                         a.navbarMobileToggler.nav-link.btn.btn-link.open-navbar-container.d-block.d-sm-none.d-md-none(href="#", data-toggle="collapse", data-target="#navbar-mobile")
                             i.fas.fa-ellipsis-v
+                
                 .navbar-collapse.collapse#navbar-mobile
                     form.form-inline.mr-auto.float-left
                         input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
-                    ul.nav.float-right
+                
+                ul.nav.float-right
                         li.nav-item.dropdown.notifications.new
                             a.nav-link(href="" data-toggle="dropdown" aria-expanded="false")
                                 i.far.fa-bell
@@ -44,7 +46,7 @@ html(lang="en")
                         li.nav-item.dropdown
                             a.nav-link.dropdown-toggle(href="" data-toggle="dropdown" aria-expanded="false")
                                 picture 
-                                i.fas.fa-user-circle
+                                    i.fas.fa-user-circle
                                 
                                 span.name.d-none.d-sm-block  Eistein Dolores 
                             .dropdown-menu(x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;")
@@ -130,21 +132,33 @@ html(lang="en")
                                     button(type="button", class="btn btn-sm btn-secondary") Llamada +
                         
                         section.row
-                            mixin card(card_title, href, card_class)
+                            mixin card(card_title, href, card_class, is_collapse = false)
                                 div(class="card mb-5 " + card_class)
                                     .card-header
                                         if card_title
                                             h4.card-title= card_title
+                                        
                                         if href
                                             .dropdown.card-config
-                                                a.btn.btn-light.btn-sm(href= href)
-                                                    em.fa.fa-list-ul
-                                                    |  Ver todo
-                                    .card-block.card-body
-                                        if block
-                                            block
-                                        else
-                                            p Ingrese contenido del card.
+                                                if is_collapse === true
+                                                    a(class="btn btn-light btn-sm", data-toggle="collapse",  role="button", aria-expanded="true", aria-controls= href, href= "#"+href)
+                                                        i.fas.fa-angle-up
+                                                else
+                                                    a.btn.btn-light.btn-sm(href= href)
+                                                        i.fas.fa-list-ul
+                                                        |  Ver todo
+                                    if is_collapse === true
+                                        div(id= href, class="card-block card-body collapse show")
+                                            if block
+                                                block
+                                            else
+                                                p Ingrese contenido del card.
+                                    else
+                                        .card-block.card-body
+                                            if block
+                                                block
+                                            else
+                                                p Ingrese contenido del card.
                             block content
                                 .col-md-12.col-lg-8
                                     +card('Título del card')

@@ -1,0 +1,101 @@
+$input-padding-y: 1.2rem;
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+
+  input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    width: 100%;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: box-shadow .3s, border .3s;
+  }
+
+  > input,
+  > label {
+    padding: $input-padding-y 0;
+  }
+
+  > label {
+    position: absolute;
+    top: 0;
+    left: auto;
+    display: block;
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+    cursor: text;
+    margin-bottom: 0;
+  }
+
+  > .custom-select {
+    height: 100% !important;
+    cursor: pointer;
+  }
+
+  > .custom-select,
+  > .custom-input {
+    padding-top: $input-padding-y + $input-padding-y * (2 / 3);
+    padding-bottom: $input-padding-y / 3;
+
+    ~ label {
+      @include font-size(12,
+      12);
+
+      cursor: default;
+      padding-top: $input-padding-y / 2;
+      padding-bottom: $input-padding-y / 2;
+    }
+  }
+
+  > input {
+    &:focus {
+      ~ label {
+        @include font-size(12,
+        12);
+
+        padding-top: $input-padding-y / 2;
+        padding-bottom: $input-padding-y / 2;
+      }
+
+      padding-top: $input-padding-y + $input-padding-y * (2 / 3);
+      padding-bottom: $input-padding-y / 3;
+    }
+  }
+
+  &.active {
+    > input {
+      ~ label {
+        @include font-size(12,
+        12);
+
+        padding-top: $input-padding-y / 2;
+        padding-bottom: $input-padding-y / 2;
+      }
+
+      padding-top: $input-padding-y + $input-padding-y * (2 / 3);
+      padding-bottom: $input-padding-y / 3;
+    }
+  }
+
+  &.is-invalid {
+    > input {
+      border-bottom: 1px solid $danger !important;
+    }
+  }
+
+  &.is-valid {
+    > input {
+      border-bottom: 1px solid $success !important;
+    }
+  }
+
+  > .btn {
+    padding-top: $input-padding-y;
+    padding-bottom: $input-padding-y;
+  }
+}

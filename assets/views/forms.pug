@@ -50,6 +50,47 @@ block content
                                 i(class="fas fa-phone")
                         input.form-control.celMask
 
+                    .col-sm-6.form-group.input-group.mb-3
+                        .input-group-prepend
+                             label(class="input-group-text", for="inputGroupSelect01") Options
+        
+    .col-sm-12
+        +card('Formulario', 'form', 'card-info', true)
+            form
+                .row
+                    .col-sm-12.form-group.input-group.mb-3
+                        .input-group-prepend
+                             label(class="input-group-text", for="inputGroupSelect01") Options
+                        select#inputGroupSelect01.custom-select
+                            option(selected='') Choose...
+                            option(value='1') One
+                            option(value='2') Two
+                            option(value='3') Three
+    .col-sm-12
+        +card('Floating Labels', 'floating', 'card-danger', true)
+            form
+                .row
+                    .col-sm-6.mb-3
+                        .form-group.form-label-group
+                            input(type="email", class="form-control", id="exampleInputEmail1")
+                            label(for="exampleInputEmail1") Email address
+                    .col-sm-6.mb-3
+                        .form-group.form-label-group
+                            input(type="text", class="form-control", id="inputText", required)
+                            label(for="inputText") Name
+                    .col-sm-6.mb-3
+                        .form-group.form-label-group
+                            input(type="text", class="form-control", id="phoneNumber")
+                            label(for="phoneNumber") Phone Number
+                    .col-sm-6.mb-3
+                        .form-group.form-label-group
+                            input(type="text", class="form-control", id="withIcon")
+                            label(for="withIcon") 
+                                i.far.fa-calendar
+                                |  Label con icono
+                        
+                         
+
 block append scripts
     script.
 
@@ -68,4 +109,5 @@ block append scripts
         );
     
       $(".celMask").inputmask({"mask": "(999) 999-9999"}); 
+      $("#phoneNumber").inputmask({"mask": "(999) 999-9999"}); 
     

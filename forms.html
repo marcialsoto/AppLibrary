@@ -22,17 +22,17 @@
             <form class="form-inline mr-auto float-left">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             </form>
-            <ul class="nav float-right">
-              <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
-                <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
-              </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
-                  <picture> </picture><i class="fas fa-user-circle"></i><span class="name d-none d-sm-block"> Eistein Dolores </span></a>
-                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
-              </li>
-              <li class="nav-item"><a class="sidebarSecondarytoggler btn btn-link nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
-            </ul>
           </div>
+          <ul class="nav float-right">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="badge badge-secondary">8</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                <picture> <i class="fas fa-user-circle"></i></picture><span class="name d-none d-sm-block"> Eistein Dolores </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+            <li class="nav-item"><a class="sidebarSecondarytoggler btn btn-link nav-link" href="#"><i class="fas fa-cogs"></i></a></li>
+          </ul>
         </header>
         <section id="content">
           <nav class="main-nav simplebar" id="sidebar">
@@ -123,7 +123,8 @@
                               <div class="card mb-5 card-success">
                                 <div class="card-header">
                                   <h4 class="card-title">Datepicker</h4>
-                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://flatpickr.js.org/examples/"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://flatpickr.js.org/examples/"><i class="fas fa-list-ul"></i> Ver todo</a>
+                                  </div>
                                 </div>
                                 <div class="card-block card-body">
                                   <form>
@@ -139,6 +140,76 @@
                                       <div class="col-sm-6 form-group input-group mb-3">
                                         <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span></div>
                                         <input class="form-control celMask">
+                                      </div>
+                                      <div class="col-sm-6 form-group input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+              </div>
+              <div class="col-sm-12">
+                              <div class="card mb-5 card-info">
+                                <div class="card-header">
+                                  <h4 class="card-title">Formulario</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="form" href="#form"><i class="fas fa-angle-up"></i></a>
+                                  </div>
+                                </div>
+                                <div class="card-block card-body collapse show" id="form">
+                                  <form>
+                                    <div class="row">
+                                      <div class="col-sm-12 form-group input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                        </div>
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                          <option selected="">Choose...</option>
+                                          <option value="1">One</option>
+                                          <option value="2">Two</option>
+                                          <option value="3">Three</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+              </div>
+              <div class="col-sm-12">
+                              <div class="card mb-5 card-danger">
+                                <div class="card-header">
+                                  <h4 class="card-title">Floating Labels</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="floating" href="#floating"><i class="fas fa-angle-up"></i></a>
+                                  </div>
+                                </div>
+                                <div class="card-block card-body collapse show" id="floating">
+                                  <form>
+                                    <div class="row">
+                                      <div class="col-sm-6 mb-3">
+                                        <div class="form-group form-label-group">
+                                          <input class="form-control" type="email" id="exampleInputEmail1">
+                                          <label for="exampleInputEmail1">Email address</label>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-6 mb-3">
+                                        <div class="form-group form-label-group">
+                                          <input class="form-control" type="text" id="inputText" required>
+                                          <label for="inputText">Name</label>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-6 mb-3">
+                                        <div class="form-group form-label-group">
+                                          <input class="form-control" type="text" id="phoneNumber">
+                                          <label for="phoneNumber">Phone Number</label>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-6 mb-3">
+                                        <div class="form-group form-label-group">
+                                          <input class="form-control" type="text" id="withIcon">
+                                          <label for="withIcon"> <i class="far fa-calendar"></i> Label con icono</label>
+                                        </div>
                                       </div>
                                     </div>
                                   </form>
@@ -180,6 +251,7 @@
           );
         
         $(".celMask").inputmask({"mask": "(999) 999-9999"}); 
+        $("#phoneNumber").inputmask({"mask": "(999) 999-9999"}); 
       </script>
     </body>
   </head>

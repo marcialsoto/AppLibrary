@@ -35,7 +35,11 @@ body {
 
                 .brand {
                     padding: 0;
-                    margin: 0 auto;
+                    margin: 0 auto 0 0;
+                    
+                    @include media-breakpoint-up(sm) {
+                        margin: 0 auto;
+                    }
                 }
 
                 h1 {
@@ -61,8 +65,7 @@ body {
 
         #navbar-mobile {
             form {
-                padding-top: 0.5rem;
-                padding-left: 3rem;
+                padding: 1rem 3rem;
             }
 
             .nav {
@@ -76,14 +79,29 @@ body {
         }
 
         ul {
-            margin-right: 3rem;
+            position: fixed;
+            right: 0;
+            margin-right: 5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @include media-breakpoint-up(sm) {
+                position: relative;
+                margin-right: 3rem;
+            }
 
             li {
                 position: relative;
                 a {
                     &.nav-link {
                         color: $white;
+
+                        @include media-breakpoint-up(sm) {
+                            color: $primary;
+                        }
                     }
+
                     &.dropdown-toggle {
                       display: flex;
                       flex-direction: row;
