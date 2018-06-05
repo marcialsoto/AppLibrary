@@ -62,6 +62,10 @@ body#login {
 
         text-align: center;
         background-color: $primary;
+        background-image: url('#{$cdn-prefix}#{$cdn-dist-path}/images/left_content__bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
 
         h3 {
           @include font-size(16);
