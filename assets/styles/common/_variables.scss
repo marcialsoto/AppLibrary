@@ -1,4 +1,12 @@
 //
+// CDN
+//
+$cdn-prefix: "http://marcialsoto.com/cdn/?u=";
+$cdn-dist-path: "http://marcialsoto.com/cdn/library/dist";
+// $cdn-prefix: "";
+// $cdn-dist-path: "..";
+
+//
 // Color system
 //
 // stylelint-disable
@@ -44,6 +52,13 @@ $lavender-200: #370541;
 $purple-100: #b48caf;
 $purple-200: #690a55;
 //System
+$primary: $blue-200;
+$secondary: $green-light-100;
+$success: $green-100;
+$info: $blue-sky-300;
+$warning: $orange-300;
+$danger: $red;
+
 @mixin theme($name, $primary-color: $blue-200, $analog-color: $blue-sky-100, $accent-color: $green-light-100) {
     // Define colors in your theme
     $theme-colors: (
@@ -65,6 +80,17 @@ $purple-200: #690a55;
                 opacity: 0.85;
             }
         }
+
+        #controlpk__logo {
+            .ontrol {
+              fill: color-yiq($primary);
+            }
+
+            .iso,
+            .pk {
+              fill: $accent-color;
+            }
+          }
 
         .simplebar-scrollbar::before {
             background: color-yiq($primary);
@@ -224,13 +250,6 @@ $purple-200: #690a55;
         }
     }
 }
-
-$primary: $blue-200;
-$secondary: $yellow-200;
-$success: $green-100;
-$info: $blue-sky-300;
-$warning: $orange-300;
-$danger: $red;
 
 // Body
 //

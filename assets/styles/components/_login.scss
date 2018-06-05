@@ -92,6 +92,18 @@ body#login {
 
           #brand {
             margin: 3rem auto 1rem;
+            width: 20rem;
+
+            #controlpk__logo {
+              .ontrol {
+                fill: $primary;
+              }
+
+              .iso,
+              .pk {
+                fill: $secondary;
+              }
+            }
           }
       }
     }

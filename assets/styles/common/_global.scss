@@ -3,42 +3,42 @@
 //
 @font-face {
     font-family: 'ubuntulight';
-    src: url('../fonts/Ubuntu-Light.woff2') format('woff2'), url('../fonts/Ubuntu-Light.woff') format('woff');
+    src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Light.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubunturegular';
-    src: url('../fonts/Ubuntu-Regular.woff2') format('woff2'), url('../fonts/Ubuntu-Regular.woff') format('woff');
+    src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Regular.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntumedium';
-    src: url('../fonts/Ubuntu-Medium.woff2') format('woff2'), url('../fonts/Ubuntu-Medium.woff') format('woff');
+    src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Medium.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Medium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntubold';
-    src: url('../fonts/Ubuntu-Bold.woff2') format('woff2'), url('../fonts/Ubuntu-Bold.woff') format('woff');
+    src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Bold.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntumono';
-    src: url('../fonts/Ubuntu-Mono.woff2') format('woff2'), url('../fonts/Ubuntu-Mono.woff') format('woff');
+    src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Mono.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Mono.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'libre_franklinlight';
-    src: url('../fonts/Libre_Franklin-Light.woff2') format('woff2'), url('../fonts/Libre_Franklin-Light.woff') format('woff');
+    src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Libre_Franklin-Light.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Libre_Franklin-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -303,10 +303,14 @@ table {
 // Brand
 //
 #brand {
-    // @include img-replace(185,
-    // 125);
-    // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
     margin: 0 auto;
+    width: 10rem;
+    padding-left: 0;
+
+    @include media-breakpoint-only(sm) {
+        padding-left: 2rem;
+    }
+    
     a {
         position: relative;
         display: block;
@@ -395,19 +399,9 @@ table {
 // Brand
 //
 h1#brand {
-    // @include img-replace(135,
-    // 40);
-    // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
-    // background-position: left center;
     margin: 0;
-    // width: 135px;
-    // height: 40px;
+
     @include media-breakpoint-down(sm) {
-        // @include img-replace(40,
-        // 40);
-        // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
-        // width: 40px;
-        // height: 40px;
     }
 }
 
