@@ -1,3 +1,5 @@
+const $ = require('jquery')
+const jQuery = require("jquery");
 window.jQuery = require('jquery')
 window.Popper = require('popper.js')
 require('bootstrap')
@@ -5,8 +7,6 @@ require('bootstrap')
 /* const Chart = require('chart.js'); */
 /* const Chartkick = require('chartkick'); */
 let Swiper = require('swiper');
-
-let jQuery = require("jquery");
 
 let toastr = require("toastr");
 
@@ -27,9 +27,9 @@ fontawesome.library.add(brands, solid, regular)
 
 const dt = require('datatables.net-responsive-bs4')();
 
-jQuery(function() {
-    jQuery('[data-toggle="popover"]').popover();
-    jQuery('[data-toggle="tooltip"]').tooltip();
+$(function() {
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
 
     // media query event handler
     if (matchMedia) {
@@ -41,73 +41,73 @@ jQuery(function() {
     // media query change
     function WidthChange(mq) {
         if (mq.matches) {
-            jQuery('body').addClass('sidebar-expand');
-            jQuery('body').removeClass('sidebar-collapse');
+            $('body').addClass('sidebar-expand');
+            $('body').removeClass('sidebar-collapse');
             console.log("window width is at least 768px");
         } else {
-            jQuery('body').removeClass('sidebar-expand');
-            jQuery('body').addClass('sidebar-collapse');
+            $('body').removeClass('sidebar-expand');
+            $('body').addClass('sidebar-collapse');
             console.log("window width is less than 768px");
         }
     }
 
-    jQuery('.sidebartoggler').click(function() {
-        jQuery('body').toggleClass('sidebar-expand sidebar-collapse');
-        jQuery('.sidebartoggler').toggleClass('is-active');
+    $('.sidebartoggler').click(function() {
+        $('body').toggleClass('sidebar-expand sidebar-collapse');
+        $('.sidebartoggler').toggleClass('is-active');
     });
 
-    jQuery('.sidebarSecondarytoggler').click(function() {
-        jQuery('body').toggleClass('sidebar-secondary-expand sidebar-secondary-collapse');
-        jQuery('.sidebarSecondarytoggler').toggleClass('is-active');
+    $('.sidebarSecondarytoggler').click(function() {
+        $('body').toggleClass('sidebar-secondary-expand sidebar-secondary-collapse');
+        $('.sidebarSecondarytoggler').toggleClass('is-active');
     });
 
-    jQuery('input.form-control').focus(function() {
-        jQuery(this).parents('.form-group').addClass('in-focus');
+    $('input.form-control').focus(function() {
+        $(this).parents('.form-group').addClass('in-focus');
     }).blur(function(){
-        let tmpval = jQuery(this).val();
-        jQuery(this).parents('.form-group').removeClass('in-focus');
+        let tmpval = $(this).val();
+        $(this).parents('.form-group').removeClass('in-focus');
         if (tmpval == '') {
-            jQuery(this).parents('.form-group').addClass('empty');
-            jQuery(this).parents('.form-group').removeClass('active');
+            $(this).parents('.form-group').addClass('empty');
+            $(this).parents('.form-group').removeClass('active');
             console.log(tmpval);
            
         } else {
-            jQuery(this).parents('.form-group').addClass('active');
-            jQuery(this).parents('.form-group').removeClass('empty');
+            $(this).parents('.form-group').addClass('active');
+            $(this).parents('.form-group').removeClass('empty');
             console.log(tmpval);
         }
     });
 
-    jQuery('input:required').blur(function() {
-        let tmpval = jQuery(this).val();
+    $('input:required').blur(function() {
+        let tmpval = $(this).val();
         if (tmpval == '') {
-            jQuery(this).parents('.form-group').addClass('is-invalid');
-            jQuery(this).parents('.form-group').removeClass('is-valid');
+            $(this).parents('.form-group').addClass('is-invalid');
+            $(this).parents('.form-group').removeClass('is-valid');
             console.log(tmpval);
         }else{
-            jQuery(this).parents('.form-group').addClass('is-valid');
-            jQuery(this).parents('.form-group').removeClass('is-invalid');
+            $(this).parents('.form-group').addClass('is-valid');
+            $(this).parents('.form-group').removeClass('is-invalid');
             console.log(tmpval);
         }
     });
 
-    jQuery(".custom-select:required").change(function(){
-        let value = jQuery(this).val();
+    $(".custom-select:required").change(function(){
+        let value = $(this).val();
         if(value == "0" || value == "")
          {
-            jQuery(this).addClass('is-invalid');
-            jQuery(this).removeClass('is-valid');
+            $(this).addClass('is-invalid');
+            $(this).removeClass('is-valid');
             console.log(value);
          }
          else
          {
-            jQuery(this).addClass('is-valid');
-            jQuery(this).removeClass('is-invalid');
+            $(this).addClass('is-valid');
+            $(this).removeClass('is-invalid');
             console.log(value);
          }
        });
 
-    jQuery('table.datagrid').DataTable({
+    $('table.datagrid').DataTable({
         language: {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",
@@ -135,21 +135,21 @@ jQuery(function() {
         responsive: true
     });
 
-    jQuery(".flatpickr").flatpickr();
+    $(".flatpickr").flatpickr();
 });
 
-jQuery(document).keyup(function(e) {
+$(document).keyup(function(e) {
     if (e.keyCode == 27) {
-        if(jQuery('.sidebartoggler').hasClass('is-active')){
-            jQuery('body').removeClass('sidebar-expand');
-            jQuery('body').addClass('sidebar-collapse');
-            jQuery('.sidebartoggler').removeClass('is-active');
+        if($('.sidebartoggler').hasClass('is-active')){
+            $('body').removeClass('sidebar-expand');
+            $('body').addClass('sidebar-collapse');
+            $('.sidebartoggler').removeClass('is-active');
         }
    }
 });
 
-jQuery('a[data-toggle="collapse"]').on('click', function () {
-    $(this)
+$('a[data-toggle="collapse"]').on('click', function () {
+  $(this)
       .find('[data-fa-i2svg]')
       .toggleClass('fa-angle-up')
       .toggleClass('fa-angle-down');
