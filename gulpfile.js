@@ -1,174 +1,110 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const pug = require('gulp-pug');
-const del = require('del');
-const imagemin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
-const uglify = require('gulp-uglify-es').default;
-const jshint = require('gulp-jshint');
-const concat = require('gulp-concat');
-const rename = require('gulp-rename');
-const cssnano = require('gulp-cssnano');
-const watch = require('gulp-watch');
-const autoprefixer = require('gulp-autoprefixer');
-const babelify = require('babelify');
-const source = require('vinyl-source-stream');
 const browserify = require('browserify');
-const gutil = require('gulp-util');
-const plumber = require('gulp-plumber');
-const plumberNotifier = require('gulp-plumber-notifier');
-const postcss     = require('gulp-postcss');
-const reporter    = require('postcss-reporter');
-const syntax_scss = require('postcss-scss');
-const stylelint   = require('stylelint');
+const sass = require('gulp-sass');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const cleanCSS = require('gulp-clean-css');
+const del = require('del');
 
-let config = {
-    dist: 'dist/',
-    source: 'assets/',
-    sass: {
-        source: './assets/styles/app.scss',
-        dist: './dist/styles',
-        fileName: 'app.css',
-        minifiedFileName: 'app.min.css',
-        watch: './assets/styles/**/*.scss'
-    },
-    pug: {
-        source: './assets/views/*.pug',
-        dist: './',
-        watch: './assets/views/'
-    },
-    js: {
-        require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'swiper', 'toastr', 'simplebar', 'flatpickr', 'inputmask'],
-        source: './assets/scripts/vendor.js',
-        dist: './dist/scripts',
-        fileName: 'vendor.js',
-        minifiedFileName: 'vendor.min.js',
-        watch: './assets/scripts/*.js'
-    },
-    image: {
-        source: './assets/images/*',
-        dist: './dist/images'
-    },
-    font: {
-        source: './assets/fonts/*',
-        dist: './dist/fonts'
-    },
-    misc: {
-        source: ['./*.{ico,png,txt}', './.htaccess'],
-        dist: './dist/'
-    },
-    sync: {
-        server: true
-    }
+let paths = {
+  dest: 'dist/',
+  src: 'assets/',
+  styles: {
+      src: './assets/styles/app.scss',
+      dest: './dist/styles',
+      fileName: 'app.css',
+      minifiedFileName: 'app.min.css',
+      watch: './assets/styles/**/*.scss'
+  },
+  pug: {
+      src: './assets/views/*.pug',
+      dest: './',
+      watch: './assets/views/'
+  },
+  scripts: {
+      require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'swiper', 'toastr', 'simplebar', 'flatpickr', 'inputmask'],
+      src: './assets/scripts/vendor.js',
+      dest: './dist/scripts',
+      fileName: 'vendor.js',
+      minifiedFileName: 'vendor.min.js',
+      watch: './assets/scripts/*.js'
+  },
+  image: {
+      src: './assets/images/*',
+      dest: './dist/images'
+  },
+  font: {
+      src: './assets/fonts/*',
+      dest: './dist/fonts'
+  },
+  misc: {
+      src: ['./*.{ico,png,txt}', './.htaccess'],
+      dest: './dist/'
+  },
+  sync: {
+      server: true
+  }
 };
-// https://www.browsersync.io/docs/options/
 
-// misc
-gulp.task('misc', function() {
-    return gulp.src(config.misc.source)
-        .pipe(gulp.dest(config.dist));
-});
+/* Not all tasks need to use streams, a gulpfile is just another node program
+ * and you can use all packages available on npm, but it must return either a
+ * Promise, a Stream or take a callback and call it
+ */
+function clean() {
+  // You can use multiple globbing patterns as you would with `gulp.src`,
+  // for example if you are using del 2.0 or above, return its promise
+  return del([ 'dist' ]);
+}
 
-// jslint
-gulp.task('lint', function() {
-    return gulp.src(config.js.watch)
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('default'));
-});
+/*
+ * Define our tasks using plain functions
+ */
+function styles() {
+  return gulp.src(paths.styles.src)
+    .pipe(sass())
+    .pipe(cleanCSS())
+    // pass in options to the stream
+    .pipe(gulp.dest(paths.styles.dest));
+}
 
-// clean
-gulp.task('clean', function() {
-    return del([config.dist]);
-});
+function scripts() {
+  return gulp.src(paths.scripts.src, { sourcemaps: true })
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest(paths.scripts.dest));
+}
 
-//fonts
-gulp.task('fonts', function() {
-    return gulp.src(config.font.source)
-        .pipe(gulp.dest(config.font.dist));
-});
+function watch() {
+  browserSync.init(paths.sync);
 
-// image min
-gulp.task('imagemin', function() {
-    return gulp.src(config.image.source)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{ removeViewBox: false }],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(config.image.dist));
-});
+  gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.styles.src, styles);
+}
 
-// pug
-gulp.task('pug', function() {
-    return gulp.src(config.pug.source)
-        .pipe(plumber())
-        .pipe(plumberNotifier())
-        .pipe(pug({
-            pretty: true
-        }))
-        .pipe(gulp.dest(config.pug.dist))
-        .pipe(browserSync.stream());
-});
+/*
+ * You can use CommonJS `exports` module notation to declare tasks
+ */
+exports.clean = clean;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.watch = watch;
 
-// sass to css
-gulp.task('sass', function() {
-   gulp.src(config.sass.source)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.sass.dist))
-    .pipe(browserSync.stream());
-});
+/*
+ * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
+ */
+var build = gulp.series(clean, gulp.parallel(styles, scripts));
 
-// browserify
-gulp.task('js', function() {
-    return browserify({ entries: [config.js.source], require: [config.js.require] })
-        .transform(babelify, { presets: ['es2015'] }) // "es2015", "react"
-        .bundle()
-        .pipe(source(config.js.fileName))
-        .pipe(gulp.dest(config.js.dist))
-        .pipe(browserSync.stream());
-});
+/*
+ * You can still use `gulp.task` to expose tasks
+ */
+gulp.task('build', build);
 
-// default task adn watch
-gulp.task('serve', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
-    browserSync.init(config.sync);
-
-    watch(config.sass.watch, function() {
-        gulp.start('sass');
-    });
-    watch(config.js.watch, function() {
-        gulp.start('js');
-    });
-    watch(config.pug.watch, function() {
-        gulp.start('pug');
-    });
-});
-
-// default task
-gulp.task('default', ['serve']);
-
-// gulp build and minify things
-gulp.task('production', ['sass', 'js', 'imagemin', 'fonts', 'misc', 'pug'], function() {
-    gulp.src(config.js.dist + '/' + config.js.fileName)
-        .pipe(rename(config.js.minifiedFileName))
-        .pipe(uglify())
-        .on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-        .pipe(gulp.dest(config.js.dist));
-
-    gulp.src(config.sass.dist + '/' + config.sass.fileName)
-        .pipe(cssnano())
-        .pipe(rename(config.sass.minifiedFileName))
-        .pipe(gulp.dest(config.sass.dist));
-});
-
-gulp.task('build', ['clean'], function() {
-    gulp.start('production');
-});
+/*
+ * Define default task that can be called by just running `gulp` from cli
+ */
+gulp.task('default', build);
