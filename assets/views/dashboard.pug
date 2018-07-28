@@ -41,6 +41,20 @@ block content
                             td Pending
     
     .col-md-12.col-lg-4
-        +card('Card en blanco', '#')
+        +card('Bootbox', 'http://bootboxjs.com/getting-started.html')
+            p
+                | Content here. 
+                a.alert(href='#') Alert!
         
         +card('Card en blanco', '#')
+
+block append scripts
+    script.
+        let $ = require('jquery');
+        let bootbox = require("bootbox");
+
+        $(document).on("click", ".alert", function(e) {
+            bootbox.alert("Hello world!", function() {
+                console.log("Alert Callback");
+            });
+        });

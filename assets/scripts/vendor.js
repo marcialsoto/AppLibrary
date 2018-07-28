@@ -15,6 +15,8 @@ let SimpleBar = require('simplebar');
 
 const flatpickr = require("flatpickr");
 
+const bootbox = require("bootbox");
+
 import "inputmask/dist/inputmask/jquery.inputmask";
 
 const inputmask = require('inputmask');

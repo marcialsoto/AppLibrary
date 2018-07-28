@@ -15,6 +15,7 @@
         "@fortawesome/fontawesome-free-brands": "^5.0.13",
         "@fortawesome/fontawesome-free-regular": "^5.0.13",
         "@fortawesome/fontawesome-free-solid": "^5.0.13",
+        "bootbox": "^4.4.0",
         "bootstrap": "^4.0.1",
         "flatpickr": "^4.5.0",
         "inputmask": "^3.3.11",

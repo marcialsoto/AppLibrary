@@ -158,12 +158,12 @@
               <div class="col-md-12 col-lg-4">
                               <div class="card mb-5 undefined">
                                 <div class="card-header">
-                                  <h4 class="card-title">Card en blanco</h4>
-                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><i class="fas fa-list-ul"></i> Ver todo</a>
+                                  <h4 class="card-title">Bootbox</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="http://bootboxjs.com/getting-started.html"><i class="fas fa-list-ul"></i> Ver todo</a>
                                   </div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <p>Ingrese contenido del card.</p>
+                                  <p>Content here. <a class="alert" href="#">Alert!</a></p>
                                 </div>
                               </div>
                               <div class="card mb-5 undefined">
@@ -194,6 +194,16 @@
         
         new SimpleBar(document.getElementById('sidebar'), {
         scrollbarMinSize: 100,
+        });
+      </script>
+      <script>
+        let $ = require('jquery');
+        let bootbox = require("bootbox");
+        
+        $(document).on("click", ".alert", function(e) {
+            bootbox.alert("Hello world!", function() {
+                console.log("Alert Callback");
+            });
         });
       </script>
     </body>
