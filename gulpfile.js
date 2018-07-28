@@ -75,12 +75,14 @@ function styles() {
     .pipe(sass())
     .pipe(sourcemaps.write({includeContent: false}))
     .pipe(sourcemaps.init({loadMaps: true}))
+    //.pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
     .pipe(sourcemaps.write('.'))
+    //.pipe(sourcemaps.write())
     // .pipe(cleanCSS())
     // pass in options to the stream
     .pipe(gulp.dest(paths.styles.dest))
