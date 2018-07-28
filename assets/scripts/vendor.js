@@ -1,3 +1,5 @@
+const $ = require('jquery');
+
 window.jQuery = require('jquery')
 window.Popper = require('popper.js')
 require('bootstrap')
@@ -25,7 +27,17 @@ import regular from '@fortawesome/fontawesome-free-regular';
 
 fontawesome.library.add(brands, solid, regular)
 
-const dt = require('datatables.net-responsive-bs4')();
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+require( 'datatables.net-bs4' )( window, $ );
+require( 'datatables.net-buttons-bs4' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.colVis.js' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.flash.js' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.html5.js' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.print.js' )( window, $ );
+require( 'datatables.net-responsive-bs4' )( window, $ );  
 
 jQuery(function() {
     jQuery('[data-toggle="popover"]').popover();

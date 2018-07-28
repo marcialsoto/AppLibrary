@@ -1,14 +1,21 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
 const browserify = require('browserify');
+const source = require('vinyl-source-stream');
 const sass = require('gulp-sass');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const pug = require('gulp-pug');
+const plumber = require('gulp-plumber');
+const plumberNotifier = require('gulp-plumber-notifier');
+const babelify = require('babelify');
+const jshint = require('gulp-jshint');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
 
 let paths = {
   dest: 'dist/',
@@ -20,12 +27,14 @@ let paths = {
       minifiedFileName: 'app.min.css',
       watch: './assets/styles/**/*.scss'
   },
-  pug: {
+  html: {
       src: './assets/views/*.pug',
       dest: './',
-      watch: './assets/views/'
+      remove: './*.html',
+      watch: './assets/views/**/*.pug'
   },
   scripts: {
+      //require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'jquery-confirm', 'jquery.redirect', 'js-cookie', 'typeahead.js-browserify', 'flatpickr', 'swiper', 'toastr', 'simplebar', 'inputmask'],
       require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'swiper', 'toastr', 'simplebar', 'flatpickr', 'inputmask'],
       src: './assets/scripts/vendor.js',
       dest: './dist/scripts',
@@ -33,17 +42,14 @@ let paths = {
       minifiedFileName: 'vendor.min.js',
       watch: './assets/scripts/*.js'
   },
-  image: {
+  images: {
       src: './assets/images/*',
-      dest: './dist/images'
+      dest: './dist/images',
+      watch: './assets/images'
   },
-  font: {
+  fonts: {
       src: './assets/fonts/*',
       dest: './dist/fonts'
-  },
-  misc: {
-      src: ['./*.{ico,png,txt}', './.htaccess'],
-      dest: './dist/'
   },
   sync: {
       server: true
@@ -65,25 +71,77 @@ function clean() {
  */
 function styles() {
   return gulp.src(paths.styles.src)
+    .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(cleanCSS())
+    .pipe(sourcemaps.write({includeContent: false}))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(sourcemaps.write('.'))
+    // .pipe(cleanCSS())
     // pass in options to the stream
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.stream());
 }
 
 function scripts() {
-  return gulp.src(paths.scripts.src, { sourcemaps: true })
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest(paths.scripts.dest));
+  return browserify({ entries: [paths.scripts.src], require: [paths.scripts.require] })
+      .transform(babelify, { presets: ['es2015'] }) // "es2015", "react"
+      .bundle()
+      .pipe(source(paths.scripts.fileName))
+      .pipe(gulp.dest(paths.scripts.dest))
+      .pipe(browserSync.stream());
+}
+
+// Fonts
+function fonts() {
+  return gulp.src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest));
+}
+
+// Image minification
+function images() {
+  return gulp.src(paths.images.src)
+    .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{ removeViewBox: false }],
+        use: [pngquant()]
+    }))
+    .pipe(gulp.dest(paths.images.dest))
+    .pipe(browserSync.stream());
+}
+
+// Pug to HTML
+function html() {
+  del([ paths.html.remove ]);
+
+  return gulp.src(paths.html.src)
+    .pipe(plumber())
+    .pipe(plumberNotifier())
+    .pipe(pug({
+        pretty: true
+    }))
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(browserSync.stream());
+}
+
+// Lint the JS with jslint
+function jslint() {
+  return gulp.src(paths.scripts.watch)
+      .pipe(jshint('.jshintrc'))
+      .pipe(jshint.reporter('default'));
 }
 
 function watch() {
   browserSync.init(paths.sync);
-
-  gulp.watch(paths.scripts.src, scripts);
-  gulp.watch(paths.styles.src, styles);
+  
+  gulp.watch(paths.scripts.watch, scripts);
+  gulp.watch(paths.styles.watch, styles);
+  gulp.watch(paths.html.watch, html);
+  gulp.watch(paths.images.watch, images);
 }
 
 /*
@@ -92,19 +150,45 @@ function watch() {
 exports.clean = clean;
 exports.styles = styles;
 exports.scripts = scripts;
+exports.jslint = jslint;
+exports.fonts = fonts;
+exports.images = images;
+exports.html = html;
 exports.watch = watch;
 
 /*
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
-var build = gulp.series(clean, gulp.parallel(styles, scripts));
+var start = gulp.series(clean, gulp.parallel(styles, scripts, fonts, images, html, watch));
 
 /*
  * You can still use `gulp.task` to expose tasks
  */
-gulp.task('build', build);
+gulp.task('clean', clean);
+gulp.task('styles', styles);
+gulp.task('scripts', scripts);
+gulp.task('start', start);
+gulp.task('fonts', fonts);
+gulp.task('images', images);
+gulp.task('jslint', jslint);
+gulp.task('html', html);
+
+gulp.task('build', gulp.series('clean', 'styles', 'scripts', 'fonts', 'images', 'html', function(done) {
+  gulp.src(paths.styles.dest + '/' + paths.styles.fileName)
+    .pipe(cleanCSS())
+    .pipe(rename(paths.styles.minifiedFileName))
+    .pipe(gulp.dest(paths.styles.dest));
+  
+  gulp.src(paths.scripts.dest + '/' + paths.scripts.fileName)
+    .pipe(rename(paths.scripts.minifiedFileName))
+    .pipe(uglify())
+    .on('error', function(err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(gulp.dest(paths.scripts.dest));
+
+  done();
+}));
 
 /*
  * Define default task that can be called by just running `gulp` from cli
  */
-gulp.task('default', build);
+gulp.task('default', start);

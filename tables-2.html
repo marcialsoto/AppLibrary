@@ -176,6 +176,19 @@ $(&quot;table&quot;).DataTable();</code></pre>
                                 </div>
                               </div>
               </div>
+              <div class="col-sm-12">
+                              <div class="card mb-5 https://fontawesome.com/icons">
+                                <div class="card-header">
+                                  <h4 class="card-title">FontAwesome</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="Usando Ajax"><i class="fas fa-list-ul"></i> Ver todo</a>
+                                  </div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <p>Puede ver un ejemplo de uso de ícono a través de Ajax aquí.</p>
+                                  <div class="chart__table"></div>
+                                </div>
+                              </div>
+              </div>
             </section>
           </main>
         </section>
@@ -226,6 +239,47 @@ $(&quot;table&quot;).DataTable();</code></pre>
                   }
               },
               responsive: true
+          });
+        
+          $(".chart__table").html(`
+            <table id="starwars" class="dt-responsive" cellspacing="0" width="100%">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Planeta</th>
+                  <th>Diametro</th>
+                  <th>Población</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          `);
+          
+          var t = $('#starwars').DataTable(
+             {
+              dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf', 'print'
+              ],
+            } 
+          );
+          
+          $.ajax({
+            url: "https://swapi.co/api/planets/",
+            dataType: "json",
+            success: function( data ) {
+              let arr = data.results;
+          
+              for(var i = 0; i < arr.length; i++ ){
+                t.row.add( [
+                  arr[i].name,
+                  arr[i].diameter,
+                  arr[i].population,
+                  '<nav class="nav-actions"><a href="#"><i class="fas fa-user-check"></i></a></nav>'
+                ] ).draw( false );
+              }
+            }
           });
         });
       </script>
