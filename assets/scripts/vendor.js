@@ -9,6 +9,8 @@ require('bootstrap')
 /* const Chartkick = require('chartkick'); */
 let Swiper = require('swiper');
 
+const confirm = require('jquery-confirm');
+
 let toastr = require("toastr");
 
 let SimpleBar = require('simplebar');

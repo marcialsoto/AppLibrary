@@ -166,14 +166,50 @@
                                   <p>Content here. <a class="alert" href="#">Alert!</a></p>
                                 </div>
                               </div>
+              </div>
+              <div class="col-md-12">
                               <div class="card mb-5 undefined">
                                 <div class="card-header">
-                                  <h4 class="card-title">Card en blanco</h4>
-                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><i class="fas fa-list-ul"></i> Ver todo</a>
+                                  <h4 class="card-title">jQuery Confirm</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://craftpip.github.io/jquery-confirm/"><i class="fas fa-list-ul"></i> Ver todo</a>
                                   </div>
                                 </div>
                                 <div class="card-block card-body">
-                                  <p>Ingrese contenido del card.</p>
+                                  <p>Uso básico de alert</p>
+                                  <pre><code>&lt;script&gt;
+ $('.example1').on('click', function () {
+     console.log(&quot;se ha clickado&quot;);
+       $.alert({
+           title: 'Alert!',
+           content: 'Simple alert!',
+       });
+   });
+&lt;/script&gt;</code></pre>
+                                  <button class="example1 btn btn-primary">Alert</button><br><br>
+                                  <p>Uso confirmación</p>
+                                  <pre><code>&lt;script&gt;
+ $.confirm({
+         title: 'Confirm!',
+         content: 'Simple confirm!',
+         buttons: {
+             confirm: function () {
+                 $.alert('Confirmed!');
+             },
+             cancel: function () {
+                 $.alert('Canceled!');
+             },
+             somethingElse: {
+                 text: 'Something else',
+                 btnClass: 'btn-blue',
+                 keys: ['enter', 'shift'],
+                 action: function(){
+                     $.alert('Something else?');
+                 }
+             }
+         }
+     });
+&lt;/script&gt;</code></pre>
+                                  <button class="example2 btn btn-primary">Confirm</button>
                                 </div>
                               </div>
               </div>
@@ -204,6 +240,37 @@
             bootbox.alert("Hello world!", function() {
                 console.log("Alert Callback");
             });
+        });
+        
+        $('.example1').on('click', function () {
+          console.log("se ha clickado");
+            $.alert({
+                title: 'Alert!',
+                content: 'Simple alert!',
+            });
+        });
+        
+        $('.example2').on('click', function () {
+          $.confirm({
+              title: 'Confirm!',
+              content: 'Simple confirm!',
+              buttons: {
+                  confirm: function () {
+                      $.alert('Confirmed!');
+                  },
+                  cancel: function () {
+                      $.alert('Canceled!');
+                  },
+                  somethingElse: {
+                      text: 'Something else',
+                      btnClass: 'btn-blue',
+                      keys: ['enter', 'shift'],
+                      action: function(){
+                          $.alert('Something else?');
+                      }
+                  }
+              }
+          });
         });
       </script>
     </body>

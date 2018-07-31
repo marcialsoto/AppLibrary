@@ -43,10 +43,52 @@ block content
     .col-md-12.col-lg-4
         +card('Bootbox', 'http://bootboxjs.com/getting-started.html')
             p
-                | Content here. 
-                a.alert(href='#') Alert!
+              | Content here. 
+              a.alert(href='#') Alert!
         
-        +card('Card en blanco', '#')
+    .col-md-12
+      +card('jQuery Confirm', 'https://craftpip.github.io/jquery-confirm/')
+        p Uso básico de alert
+        pre
+          code
+            |&lt;script&gt;
+            |  $('.example1').on('click', function () {
+            |      console.log(&quot;se ha clickado&quot;);
+            |        $.alert({
+            |            title: 'Alert!',
+            |            content: 'Simple alert!',
+            |        });
+            |    });
+            |&lt;/script&gt;
+        button(class="example1 btn btn-primary") Alert
+        br
+        br
+        p Uso confirmación
+        pre
+          code
+            |&lt;script&gt;
+            |  $.confirm({
+            |          title: 'Confirm!',
+            |          content: 'Simple confirm!',
+            |          buttons: {
+            |              confirm: function () {
+            |                  $.alert('Confirmed!');
+            |              },
+            |              cancel: function () {
+            |                  $.alert('Canceled!');
+            |              },
+            |              somethingElse: {
+            |                  text: 'Something else',
+            |                  btnClass: 'btn-blue',
+            |                  keys: ['enter', 'shift'],
+            |                  action: function(){
+            |                      $.alert('Something else?');
+            |                  }
+            |              }
+            |          }
+            |      });
+            |&lt;/script&gt;
+        button(class="example2 btn btn-primary") Confirm
 
 block append scripts
     script.
@@ -57,4 +99,35 @@ block append scripts
             bootbox.alert("Hello world!", function() {
                 console.log("Alert Callback");
             });
+        });
+
+        $('.example1').on('click', function () {
+          console.log("se ha clickado");
+            $.alert({
+                title: 'Alert!',
+                content: 'Simple alert!',
+            });
+        });
+
+        $('.example2').on('click', function () {
+          $.confirm({
+              title: 'Confirm!',
+              content: 'Simple confirm!',
+              buttons: {
+                  confirm: function () {
+                      $.alert('Confirmed!');
+                  },
+                  cancel: function () {
+                      $.alert('Canceled!');
+                  },
+                  somethingElse: {
+                      text: 'Something else',
+                      btnClass: 'btn-blue',
+                      keys: ['enter', 'shift'],
+                      action: function(){
+                          $.alert('Something else?');
+                      }
+                  }
+              }
+          });
         });
