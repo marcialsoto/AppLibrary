@@ -536,3 +536,15 @@ sup {
         @include card-variant($value);
     }
 }
+
+.modal {
+    .modal-header {
+        align-items: center;
+    }
+    
+    &.bootbox {
+        .modal-header {
+            flex-direction: row-reverse;
+        }
+    }
+}

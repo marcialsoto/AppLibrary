@@ -147,41 +147,17 @@ Launch demo modal
                                       <div class="modal-content modal-lg">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button><span aria-hidden="true">×</span>
+                                          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                         </div>
                                         <div class="modal-body">
-                                          <form>
-                                            <fieldset>
-                                              <legend>Esta es la leyenda</legend>
-                                              <div class="row">
-                                                <div class="form-group input-field col-lg-6">
-                                                  <input class="form-control" type="text">
-                                                  <label>Buscar por SNIP</label>
-                                                </div>
-                                                <div class="form-group input-group col-lg-6">
-                                                  <select class="custom-select" id="inputGroupSelect04">
-                                                    <option selected="">Choose...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                  </select>
-                                                  <label>Buscar por descripción de SNIP</label>
-                                                  <div class="input-group-append">
-                                                    <button class="btn btn-light" type="button">Buscar</button>
-                                                  </div>
-                                                </div>
-                                                <div class="form-group input-field col-lg-3">
-                                                  <input class="form-control" type="date">
-                                                  <label>Fecha de entrega</label>
-                                                </div>
-                                              </div>
-                                            </fieldset>
-                                          </form>
+                                          <p>Ejemplo de BootBoxJS en esta página. Usa confirm.</p>
+                                          <div class="chart__table"></div>
                                         </div>
-                                        <div class="modal-footer">
-                                          <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                                          <button class="btn btn-primary" type="button">Save changes</button>
-                                        </div>
+                                        <!--.modal-footer
+                                        button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+                                        button.btn.btn-primary(type="button") Save changes
+                                        
+                                        -->
                                       </div>
                                     </div>
                                   </div>
@@ -206,6 +182,79 @@ Launch demo modal
         new SimpleBar(document.getElementById('sidebar'), {
         scrollbarMinSize: 100,
         });
+      </script>
+      <script>
+        let $ = require('jquery');
+        const bootbox = require("bootbox");
+        let toastr = require("toastr");
+        let DataTable = require("datatables.net-responsive-bs4");
+        //let tableData = [];
+        
+        $(".chart__table").html(`
+        <table id="starwars" class="dt-responsive" cellspacing="0" width="100%">
+            <thead class="thead-dark">
+            <tr>
+                <th>Planeta</th>
+                <th>Diametro</th>
+                <th>Población</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        `);
+        
+        var t = $('#starwars').DataTable(
+        {
+            dom: 'frtip',
+            //buttons: [
+            //    'copy', 'csv', 'excel', 'pdf', 'print'
+            //],
+        } 
+        );
+        
+        $.ajax({
+        url: "https://swapi.co/api/planets/",
+        dataType: "json",
+        success: function( data ) {
+            let arr = data.results;
+        
+            for(var i = 0; i < arr.length; i++ ){
+            t.row.add( [
+                arr[i].name,
+                arr[i].diameter,
+                arr[i].population,
+                '<nav class="nav-actions"><a style="color:red" id="delete" href="#"><i class="fas fa-trash-alt"></i></a></nav>'
+            ] ).draw( false );
+            }
+        }
+        });
+        
+        $("#starwars").on('click', '#delete', function(){
+            console.log("clicked");
+            bootbox.confirm({
+                title: "Mensaje del Sistema",
+                message: "Esta seguro de eliminar esto?",
+                buttons: {
+                    confirm: {
+                        label: '<i class="fas fa-check-circle"></i> Eliminar',
+                        className: 'btn-danger'
+                    },
+                    cancel: {
+                        label: '<i class="fas fa-times"></i> Cancelar',
+                        className: 'btn-default'
+                    }
+                },
+                callback: function(result){
+                    if(result){
+                        toastr.error("¡Eliminado!");
+                    }else{
+                        toastr.success("No se elimino nada");
+                    }
+                }
+            });
+        }); 
       </script>
     </body>
   </head>
