@@ -150,10 +150,10 @@ html(lang="en")
                                         if href
                                             .dropdown.card-config
                                                 if is_collapse === true
-                                                    a(class="btn btn-light btn-sm", data-toggle="collapse",  role="button", aria-expanded="true", aria-controls= href, href= "#"+href)
+                                                    a(class="btn btn-link btn-sm", data-toggle="collapse",  role="button", aria-expanded="true", aria-controls= href, href= "#"+href)
                                                         i.fas.fa-angle-up
                                                 else
-                                                    a.btn.btn-light.btn-sm(href= href)
+                                                    a.btn.btn-link.btn-sm(href= href)
                                                         i.fas.fa-list-ul
                                                         |  Ver todo
                                     if is_collapse === true
