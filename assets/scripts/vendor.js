@@ -9,7 +9,7 @@ require('bootstrap')
 /* const Chartkick = require('chartkick'); */
 let Swiper = require('swiper');
 
-const confirm = require('jquery-confirm');
+//const confirm = require('jquery-confirm');
 
 let toastr = require("toastr");
 
@@ -29,6 +29,9 @@ import solid from '@fortawesome/fontawesome-free-solid';
 import regular from '@fortawesome/fontawesome-free-regular';
 
 fontawesome.library.add(brands, solid, regular)
+
+const JSZip = require('jszip');
+window.JSZip = JSZip;
 
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";

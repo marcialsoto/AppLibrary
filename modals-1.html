@@ -207,10 +207,14 @@ Launch demo modal
         
         var t = $('#starwars').DataTable(
         {
-            dom: 'frtip',
-            //buttons: [
-            //    'copy', 'csv', 'excel', 'pdf', 'print'
-            //],
+            dom: 'Btrlip',
+            buttons: [
+            { extend: 'copy', text: '<i class="fas fa-copy"></i> Copiar' },
+            { extend: 'csv', text: '<i class="fas fa-file-excel"></i> CSV' },
+            { extend: 'excelHtml5', text: '<i class="fas fa-file-excel"></i> Excel' },
+            { extend: 'pdf', text: '<i class="fas fa-file-pdf"></i> PDF' },
+            { extend: 'print', text: '<i class="fas fa-print"></i> Imprimir' }
+            ],
         } 
         );
         
