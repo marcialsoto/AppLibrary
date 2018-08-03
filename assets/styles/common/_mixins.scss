@@ -34,22 +34,22 @@
     }
 }
 
-@mixin card-variant($bg) {
+@mixin card-variant($color) {
+    border-top: 3px solid $color;
+    
     .card-header {
-        color: color-yiq($bg);
-        background-color: $bg;
-        
-        .btn {
-            background-color: transparent;
-            color: color-yiq($bg);
-            border-color: color-yiq($bg);
+        .dropdown .btn-link {
+            color: $color;
+          }
+    } 
+}
 
-            @include hover-focus {
-                color: $bg;
-                text-decoration: none;
-                background-color: color-yiq($bg);
-                border-color: color-yiq($bg);
-            }
+@mixin modal-variant($color) {
+    .modal-header {
+        border-top: 3px solid $color;
+        
+        .close{
+            color: $color;
         }
-    }
+    } 
 }
