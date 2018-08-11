@@ -9,7 +9,12 @@ require('bootstrap')
 /* const Chartkick = require('chartkick'); */
 let Swiper = require('swiper');
 
-//const confirm = require('jquery-confirm');
+//require('select2');
+import select2 from 'select2';
+
+select2($);
+
+//import "select2/dist/js/select2";
 
 let toastr = require("toastr");
 
@@ -49,6 +54,9 @@ $(function() {
     $('[data-toggle="popover"]').popover();
     $('[data-toggle="tooltip"]').tooltip();
 
+    //console.log(select2);
+    //$('.js-example-basic-multiple').select2();
+
     // media query event handler
     if (matchMedia) {
         const mq = window.matchMedia("(min-width: 768px)");
@@ -61,11 +69,11 @@ $(function() {
         if (mq.matches) {
             $('body').addClass('sidebar-expand');
             $('body').removeClass('sidebar-collapse');
-            console.log("window width is at least 768px");
+            //console.log("window width is at least 768px");
         } else {
             $('body').removeClass('sidebar-expand');
             $('body').addClass('sidebar-collapse');
-            console.log("window width is less than 768px");
+            //console.log("window width is less than 768px");
         }
     }
 
@@ -87,12 +95,12 @@ $(function() {
         if (tmpval == '') {
             $(this).parents('.form-group').addClass('empty');
             $(this).parents('.form-group').removeClass('active');
-            console.log(tmpval);
+            //console.log(tmpval);
            
         } else {
             $(this).parents('.form-group').addClass('active');
             $(this).parents('.form-group').removeClass('empty');
-            console.log(tmpval);
+            //console.log(tmpval);
         }
     });
 
@@ -101,11 +109,11 @@ $(function() {
         if (tmpval == '') {
             $(this).parents('.form-group').addClass('is-invalid');
             $(this).parents('.form-group').removeClass('is-valid');
-            console.log(tmpval);
+            //console.log(tmpval);
         }else{
             $(this).parents('.form-group').addClass('is-valid');
             $(this).parents('.form-group').removeClass('is-invalid');
-            console.log(tmpval);
+            //console.log(tmpval);
         }
     });
 
@@ -115,13 +123,13 @@ $(function() {
          {
             $(this).addClass('is-invalid');
             $(this).removeClass('is-valid');
-            console.log(value);
+            //console.log(value);
          }
          else
          {
             $(this).addClass('is-valid');
             $(this).removeClass('is-invalid');
-            console.log(value);
+            //console.log(value);
          }
        });
 

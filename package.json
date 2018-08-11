@@ -22,6 +22,7 @@
         "jquery": "^3.3.1",
         "jquery-confirm": "^3.3.2",
         "popper.js": "~1.14.0",
+        "select2": "^4.0.6-rc.1",
         "simplebar": "^2.6.1",
         "toastr": "^2.1.4"
     },

@@ -45,7 +45,12 @@ block content
             p
               | Content here. 
               a.alert(href='#') Alert!
-        
+
+        +card('Select2', 'https://select2.org/getting-started/basic-usage')
+            select(class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width:100%")
+                option(value="LI") Lima
+                option(value="CH") Chincha
+                option(value="JA") Jaen
     .col-md-12
       +card('jQuery Confirm', 'https://craftpip.github.io/jquery-confirm/')
         p Uso básico de alert
@@ -94,6 +99,8 @@ block append scripts
     script.
         let $ = require('jquery');
         let bootbox = require("bootbox");
+
+        $('.js-example-basic-multiple').select2();
 
         $(document).on("click", ".alert", function(e) {
             bootbox.alert("Hello world!", function() {

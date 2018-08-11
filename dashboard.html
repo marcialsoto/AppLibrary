@@ -166,6 +166,20 @@
                                   <p>Content here. <a class="alert" href="#">Alert!</a></p>
                                 </div>
                               </div>
+                              <div class="card mb-5 undefined">
+                                <div class="card-header">
+                                  <h4 class="card-title">Select2</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-link btn-sm" href="https://select2.org/getting-started/basic-usage"><i class="fas fa-list-ul"></i> Ver todo</a>
+                                  </div>
+                                </div>
+                                <div class="card-block card-body">
+                                  <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width:100%">
+                                    <option value="LI">Lima</option>
+                                    <option value="CH">Chincha</option>
+                                    <option value="JA">Jaen</option>
+                                  </select>
+                                </div>
+                              </div>
               </div>
               <div class="col-md-12">
                               <div class="card mb-5 undefined">
@@ -235,6 +249,8 @@
       <script>
         let $ = require('jquery');
         let bootbox = require("bootbox");
+        
+        $('.js-example-basic-multiple').select2();
         
         $(document).on("click", ".alert", function(e) {
             bootbox.alert("Hello world!", function() {
