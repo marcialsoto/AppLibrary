@@ -10,34 +10,36 @@ block breadcrumb
 block content
     .col-md-12
       .row
-        .col-xs-12.col-sm-6.col-lg-4
+        .col-xs-12.col-sm-6.col-lg-3
                 .info-box.mb-5
-                    .info-box-icon
+                    .info-box-icon.bg-primary
                         i(class="fab fa-android")
                     .info-box-content
-                        .info-box-text Por defecto
+                        .info-box-text bg-primary
                         .info-box-number 10%
-        .col-xs-12.col-sm-6.col-lg-4
-            .info-box.mb-5.info-box-info
-                .info-box-icon
+        .col-xs-12.col-sm-6.col-lg-3
+            .info-box.mb-5
+                .info-box-icon.bg-danger
                     i(class="fas fa-camera")
                 .info-box-content
-                    .info-box-text Info
+                    .info-box-text bg-danger
                     .info-box-number 10%
-        .col-xs-12.col-sm-6.col-lg-4
-            .info-box.mb-5.info-box-danger
+        .col-xs-12.col-sm-6.col-lg-3
+            .info-box.mb-5.bg-info
                 .info-box-icon
                     i(class="fas fa-user")
                 .info-box-content
-                    .info-box-text Danger
+                    .info-box-text bg-info (all)
                     .info-box-number 45%
-        .col-xs-12.col-sm-6.col-lg-4
-            .info-box.mb-5.info-box-success
+        .col-xs-12.col-sm-6.col-lg-3
+            .info-box.mb-5.bg-success
                 .info-box-icon
                     i(class="fas fa-shopping-cart")
                 .info-box-content
-                    .info-box-text Ventas
+                    .info-box-text bg-success (all)
                     .info-box-number 90%
+                    .progress
+                        div(class="progress-bar" style="width: 90%")
 
     .col-md-12.col-lg-8
         +card('Directorio', '#', 'pull-up')

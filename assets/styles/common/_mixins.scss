@@ -58,5 +58,40 @@
     .info-box-icon {
         background-color: $color;
         color: color-yiq($color);
-    } 
+    }
+
+    &.info-box-bg {
+        background-color: $color;
+        color: color-yiq($color);
+
+        .info-box-icon {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .info-box-content {
+            .progress {
+                margin: 5px 0px;
+                height: 0.2rem;
+                background-color: rgba(0, 0, 0, 0.2);
+                
+                .progress-bar {
+                    background-color: color-yiq($color);
+                }
+            }
+        }
+    }
+}
+
+@mixin bg-variant($color) {
+    color: color-yiq($color);
+
+    &.info-box {
+        .progress {
+            background-color: rgba(0, 0, 0, 0.2);
+            
+            .progress-bar {
+                background-color: color-yiq($color);
+            }
+        }
+    }
 }

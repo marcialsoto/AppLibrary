@@ -561,34 +561,32 @@ sup {
 // Infoboxes
 //
 .info-box {
-    @extend .card;
     @extend .media;
 
+    display: flex;
+    align-items: center;
     flex-direction: row;
-    border-top: 0 none;
-    box-shadow: none;
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    min-height: 80px;
+    background: #fff;
 
     .info-box-icon {
-        border-top-left-radius: 2px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25rem;
         display: block;
-        float: left;
-        height: 90px;
-        width: 90px;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
         text-align: center;
-        font-size: 36px;
-        line-height: 90px;
-        background: $primary;
-
-        color: color-yiq($primary);
+        font-size: 30px;
     }
 
     .info-box-content {
-        @extend .media-body;
-
-        padding: 10px;
+        padding: 5px 10px;
 
         .info-box-text {
             text-transform: uppercase;
@@ -604,6 +602,11 @@ sup {
             font-weight: bold;
             font-size: 18px;
         }
+
+        .progress {
+            height: 0.2rem;
+            margin: 0.5rem 0;
+        }
     }
 }
 
@@ -616,7 +619,7 @@ sup {
         @include modal-variant($value);
     }
 
-    .info-box-#{$color} {
-        @include info-box-variant($value);
+    .bg-#{$color} {
+        @include bg-variant($value);
     }
 }
