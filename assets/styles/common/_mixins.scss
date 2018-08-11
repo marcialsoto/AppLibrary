@@ -53,3 +53,10 @@
         }
     } 
 }
+
+@mixin info-box-variant($color) {
+    .info-box-icon {
+        background-color: $color;
+        color: color-yiq($color);
+    } 
+}

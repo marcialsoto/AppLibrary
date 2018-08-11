@@ -106,6 +106,46 @@
               </section>
             </div>
             <section class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="info-box mb-5">
+                      <div class="info-box-icon"><i class="fab fa-android"></i></div>
+                      <div class="info-box-content">
+                        <div class="info-box-text">Por defecto</div>
+                        <div class="info-box-number">10%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="info-box mb-5 info-box-info">
+                      <div class="info-box-icon"><i class="fas fa-camera"></i></div>
+                      <div class="info-box-content">
+                        <div class="info-box-text">Info</div>
+                        <div class="info-box-number">10%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="info-box mb-5 info-box-danger">
+                      <div class="info-box-icon"><i class="fas fa-user"></i></div>
+                      <div class="info-box-content">
+                        <div class="info-box-text">Danger</div>
+                        <div class="info-box-number">45%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-lg-4">
+                    <div class="info-box mb-5 info-box-success">
+                      <div class="info-box-icon"><i class="fas fa-shopping-cart"></i></div>
+                      <div class="info-box-content">
+                        <div class="info-box-text">Ventas</div>
+                        <div class="info-box-number">90%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="col-md-12 col-lg-8">
                               <div class="card mb-5 pull-up">
                                 <div class="card-header">
@@ -178,52 +218,6 @@
                                     <option value="CH">Chincha</option>
                                     <option value="JA">Jaen</option>
                                   </select>
-                                </div>
-                              </div>
-              </div>
-              <div class="col-md-12">
-                              <div class="card mb-5 undefined">
-                                <div class="card-header">
-                                  <h4 class="card-title">jQuery Confirm</h4>
-                                  <div class="dropdown card-config"><a class="btn btn-link btn-sm" href="https://craftpip.github.io/jquery-confirm/"><i class="fas fa-list-ul"></i> Ver todo</a>
-                                  </div>
-                                </div>
-                                <div class="card-block card-body">
-                                  <p>Uso básico de alert</p>
-                                  <pre><code>&lt;script&gt;
- $('.example1').on('click', function () {
-     console.log(&quot;se ha clickado&quot;);
-       $.alert({
-           title: 'Alert!',
-           content: 'Simple alert!',
-       });
-   });
-&lt;/script&gt;</code></pre>
-                                  <button class="example1 btn btn-primary">Alert</button><br><br>
-                                  <p>Uso confirmación</p>
-                                  <pre><code>&lt;script&gt;
- $.confirm({
-         title: 'Confirm!',
-         content: 'Simple confirm!',
-         buttons: {
-             confirm: function () {
-                 $.alert('Confirmed!');
-             },
-             cancel: function () {
-                 $.alert('Canceled!');
-             },
-             somethingElse: {
-                 text: 'Something else',
-                 btnClass: 'btn-blue',
-                 keys: ['enter', 'shift'],
-                 action: function(){
-                     $.alert('Something else?');
-                 }
-             }
-         }
-     });
-&lt;/script&gt;</code></pre>
-                                  <button class="example2 btn btn-primary">Confirm</button>
                                 </div>
                               </div>
               </div>

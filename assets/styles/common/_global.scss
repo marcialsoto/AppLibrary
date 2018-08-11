@@ -545,16 +545,6 @@ sup {
 //
 // Cards
 //
-@each $color, $value in $theme-colors {
-    .card-#{$color} {
-        @include card-variant($value);
-    }
-
-    .modal-#{$color} {
-        @include modal-variant($value);
-    }
-}
-
 .modal {
     .modal-header {
         align-items: center;
@@ -564,5 +554,69 @@ sup {
         .modal-header {
             flex-direction: row-reverse;
         }
+    }
+}
+
+//
+// Infoboxes
+//
+.info-box {
+    @extend .card;
+    @extend .media;
+
+    flex-direction: row;
+    border-top: 0 none;
+    box-shadow: none;
+
+    .info-box-icon {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 2px;
+        display: block;
+        float: left;
+        height: 90px;
+        width: 90px;
+        text-align: center;
+        font-size: 36px;
+        line-height: 90px;
+        background: $primary;
+
+        color: color-yiq($primary);
+    }
+
+    .info-box-content {
+        @extend .media-body;
+
+        padding: 10px;
+
+        .info-box-text {
+            text-transform: uppercase;
+            display: block;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .info-box-number {
+            display: block;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .card-#{$color} {
+        @include card-variant($value);
+    }
+
+    .modal-#{$color} {
+        @include modal-variant($value);
+    }
+
+    .info-box-#{$color} {
+        @include info-box-variant($value);
     }
 }

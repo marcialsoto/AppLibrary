@@ -8,6 +8,37 @@ block breadcrumb
     +breadcrumb(items)
 
 block content
+    .col-md-12
+      .row
+        .col-xs-12.col-sm-6.col-lg-4
+                .info-box.mb-5
+                    .info-box-icon
+                        i(class="fab fa-android")
+                    .info-box-content
+                        .info-box-text Por defecto
+                        .info-box-number 10%
+        .col-xs-12.col-sm-6.col-lg-4
+            .info-box.mb-5.info-box-info
+                .info-box-icon
+                    i(class="fas fa-camera")
+                .info-box-content
+                    .info-box-text Info
+                    .info-box-number 10%
+        .col-xs-12.col-sm-6.col-lg-4
+            .info-box.mb-5.info-box-danger
+                .info-box-icon
+                    i(class="fas fa-user")
+                .info-box-content
+                    .info-box-text Danger
+                    .info-box-number 45%
+        .col-xs-12.col-sm-6.col-lg-4
+            .info-box.mb-5.info-box-success
+                .info-box-icon
+                    i(class="fas fa-shopping-cart")
+                .info-box-content
+                    .info-box-text Ventas
+                    .info-box-number 90%
+
     .col-md-12.col-lg-8
         +card('Directorio', '#', 'pull-up')
             .table-responsive
@@ -51,49 +82,6 @@ block content
                 option(value="LI") Lima
                 option(value="CH") Chincha
                 option(value="JA") Jaen
-    .col-md-12
-      +card('jQuery Confirm', 'https://craftpip.github.io/jquery-confirm/')
-        p Uso básico de alert
-        pre
-          code
-            |&lt;script&gt;
-            |  $('.example1').on('click', function () {
-            |      console.log(&quot;se ha clickado&quot;);
-            |        $.alert({
-            |            title: 'Alert!',
-            |            content: 'Simple alert!',
-            |        });
-            |    });
-            |&lt;/script&gt;
-        button(class="example1 btn btn-primary") Alert
-        br
-        br
-        p Uso confirmación
-        pre
-          code
-            |&lt;script&gt;
-            |  $.confirm({
-            |          title: 'Confirm!',
-            |          content: 'Simple confirm!',
-            |          buttons: {
-            |              confirm: function () {
-            |                  $.alert('Confirmed!');
-            |              },
-            |              cancel: function () {
-            |                  $.alert('Canceled!');
-            |              },
-            |              somethingElse: {
-            |                  text: 'Something else',
-            |                  btnClass: 'btn-blue',
-            |                  keys: ['enter', 'shift'],
-            |                  action: function(){
-            |                      $.alert('Something else?');
-            |                  }
-            |              }
-            |          }
-            |      });
-            |&lt;/script&gt;
-        button(class="example2 btn btn-primary") Confirm
 
 block append scripts
     script.
