@@ -54,10 +54,10 @@ $purple-200: #690a55;
 //System
 $primary: $blue-200;
 $secondary: $green-light-100;
-$success: $green-100;
-$info: $blue-sky-300;
-$warning: $orange-300;
-$danger: $red;
+//$success: $green-100;
+//$info: $blue-sky-300;
+//$warning: $orange-300;
+//$danger: $red;
 
 @mixin theme($name, $primary-color: $blue-200, $analog-color: $blue-sky-100, $accent-color: $green-light-100) {
     // Define colors in your theme
@@ -78,6 +78,13 @@ $danger: $red;
         color: $link-color;
             &:hover{
                 opacity: 0.85;
+            }
+        }
+
+        .dropdown-item {
+            &.active {
+                color: color-yiq($secondary);
+                background-color: $secondary;
             }
         }
 

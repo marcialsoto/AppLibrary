@@ -28,12 +28,15 @@ import "inputmask/dist/inputmask/jquery.inputmask";
 
 const inputmask = require('inputmask');
 
-import fontawesome from '@fortawesome/fontawesome';
-import brands from '@fortawesome/fontawesome-free-brands';
-import solid from '@fortawesome/fontawesome-free-solid';
-import regular from '@fortawesome/fontawesome-free-regular';
+import { library, dom, config } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
-fontawesome.library.add(brands, solid, regular)
+
+library.add(fas, far, fab);
+config.searchPseudoElements = true;
+dom.watch();
 
 const JSZip = require('jszip');
 window.JSZip = JSZip;

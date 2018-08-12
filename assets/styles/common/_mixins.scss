@@ -95,3 +95,13 @@
         }
     }
 }
+
+@mixin callout-variant($color) {
+    border-left: 5px solid $color;
+}
+
+@mixin alert-variant($color) {
+    border-color: $color;
+    background-color: $color;
+    color: color-yiq($color);
+}

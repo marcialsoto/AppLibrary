@@ -121,13 +121,6 @@ body {
                     left: auto;
                     right: 0;
                     @include font-size(12);
-                    
-                    .dropdown-item {
-                        &.active {
-                            color: $black-200;
-                            background-color: $yellow-200;
-                        }
-                    }
                 }
             }
         }

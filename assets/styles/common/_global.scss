@@ -568,7 +568,7 @@ sup {
     flex-direction: row;
     box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
     border-radius: 0.25rem;
-    padding: 0.75rem;
+    padding: 1rem;
     min-height: 80px;
     background: #fff;
 
@@ -610,6 +610,17 @@ sup {
     }
 }
 
+//
+// Callouts
+//
+.callout {
+    border-radius: 0.5rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-left: 5px solid #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+}
+
 @each $color, $value in $theme-colors {
     .card-#{$color} {
         @include card-variant($value);
@@ -621,5 +632,13 @@ sup {
 
     .bg-#{$color} {
         @include bg-variant($value);
+    }
+
+    .callout-#{$color} {
+        @include callout-variant($value);
+    }
+
+    .alert-#{$color} {
+        @include alert-variant($value);
     }
 }

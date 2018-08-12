@@ -1,0 +1,68 @@
+extends includes/base
+block globals
+    - var title= 'Callouts'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Callouts','')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Callouts", href : ''}]
+    +breadcrumb(items)
+
+block content
+        .col-sm-6
+            +card('Callouts', '', '')
+                pre
+                    code
+                        = '<div class="callout callout-danger"></div>'
+                div(class="callout callout-danger")
+                  h5 callout-danger
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+                pre
+                    code
+                        = '<div class="callout callout-info"></div>'
+                div(class="callout callout-info")
+                  h5 callout-info
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+                pre
+                    code
+                        = '<div class="callout callout-warning"></div>'
+                div(class="callout callout-warning")
+                  h5 callout-warning
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+                pre
+                    code
+                        = '<div class="callout callout-success"></div>'
+                div(class="callout callout-success")
+                  h5 callout-success
+                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+
+        .col-sm-6
+            +card('Alerts', '', '')
+                    pre
+                        code
+                            = '<div class="alert alert-danger"></div>'
+                    div(class="alert alert-danger")
+                      h5 callout-danger
+                      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+
+                    pre
+                        code
+                            = '<div class="alert alert-info alert-dismissible fade show"></div>'
+                    div(class="alert alert-info alert-dismissible fade show")
+                      h5 callout-info dismissible
+                      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+                      button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                        span(aria-hidden="true") &times;
+                    div(class="alert alert-warning alert-dismissible fade show")
+                      h5 callout-warning dismissible
+                      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+                      button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                        span(aria-hidden="true") &times;
+                    div(class="alert alert-success alert-dismissible fade show")
+                      h5 callout-success dismissible
+                      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam eligendi neque, temporibus saepe aut repudiandae cumque vitae eum, dolores reiciendis autem repellendus rerum, dolorum aliquam excepturi quas incidunt optio
+                      button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                        span(aria-hidden="true") &times;
+
